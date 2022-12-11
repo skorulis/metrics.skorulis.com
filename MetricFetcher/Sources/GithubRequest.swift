@@ -13,7 +13,16 @@ enum GithubRequest {
         
         return req
     }
+    
+    static func commitCount(repo: String) -> HTTPJSONRequest<X> {
+        let endpoint = "/repos/\(user)/\(repo)/commits"
+        var req = HTTPJSONRequest<X>(endpoint: endpoint)
+        req.params["per_page"] = "1"
+        return req
+    }
 }
+
+struct X: Codable {}
 
 typealias RepoLanguageModel = [String: Int]
 
