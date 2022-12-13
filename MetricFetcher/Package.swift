@@ -22,7 +22,12 @@ let package = Package(
                 "ASKCore"
             ],
             path: "Sources"
-            )
+        ),
+        .testTarget(
+            name: "MetricFetcherTests",
+            dependencies: ["MetricFetcher"],
+            path: "Tests"
+        )
         
     ]
 )

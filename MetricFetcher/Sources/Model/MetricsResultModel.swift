@@ -46,4 +46,5 @@ struct MetricsEntry: Codable {
 struct RepoMetrics: Codable {
     let languageBytes: [String: Int]
     let lastPush: Date
+    let commitCount: Int
 }

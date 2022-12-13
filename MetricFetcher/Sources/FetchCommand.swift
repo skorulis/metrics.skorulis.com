@@ -55,6 +55,7 @@ struct FetchCommand: AsyncParsableCommand {
     
     func run() async throws {
         Self.ioc.resolve(TokensService.self).githubToken = github
+        
         var result = try loadExisting()
         let weekStart = MetricsEntry.weekStart
         var entry = result.entryMatching(weekStart) ?? MetricsEntry(week: weekStart)
@@ -132,9 +133,11 @@ struct FetchCommand: AsyncParsableCommand {
         if let lastFoundPush, lastFoundPush >= lastPush {
             return nil // No changes to this repository
         }
-        print("Get count \(repo.name!)")
-        let lines = try await getLines(repo: repo.name!)
-        let result = RepoMetrics(languageBytes: lines, lastPush: lastPush)
+        let name = repo.name!
+        let lines = try await getLines(repo: name)
+        let commitCount = try await network.execute(request: CommitCountRequest(repo: name))
+        
+        let result = RepoMetrics(languageBytes: lines, lastPush: lastPush, commitCount: commitCount)
         
         return result
     }
