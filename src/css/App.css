@@ -1,0 +1,30 @@
+.main {
+  color: white;
+}
+
+.pageContent {
+  margin: 20px;
+  padding: 20px;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+span.number {
+  font-size: 150%;
+}
+
+.logoColor {
+  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(147deg) brightness(104%) contrast(106%);
+}
+
+.rightElement {
+  margin-left: auto;
+}
+
+.mainFooter {
+  background: rgba(255, 255, 255, .05);
+  padding: 20px;
+}

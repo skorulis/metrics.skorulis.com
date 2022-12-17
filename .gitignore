@@ -1,3 +1,4 @@
 MetricFetcher/.build
 MetricFetcher/.swiftpm/xcode/package.xcworkspace/xcuserdata
 Breakpoints_v2.xcbkptlist
+node_modules
