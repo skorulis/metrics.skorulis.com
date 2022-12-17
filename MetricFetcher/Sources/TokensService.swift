@@ -5,5 +5,5 @@ import Foundation
 final class TokensService {
     
     var githubToken: String?
-    
+    var rescueTimeToken: String?
 }

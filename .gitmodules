@@ -1,0 +1,3 @@
+[submodule "MetricFetcher/Frameworks/ASKCore"]
+	path = MetricFetcher/Frameworks/ASKCore
+	url = git@github.com:skorulis/ASKCore.git

@@ -16,7 +16,7 @@ struct FetchCommand: AsyncParsableCommand {
     }()
     
     private enum CodingKeys : String, CodingKey {
-        case github, output
+        case github, output, rescue
     }
     
     static var configuration = CommandConfiguration(
@@ -27,6 +27,9 @@ struct FetchCommand: AsyncParsableCommand {
     
     @Option(help: "Github API token")
     var github: String
+    
+    @Option(help: "RescueTime API token")
+    var rescue: String
     
     @Option(help: "Where to store the result")
     var output: String
@@ -55,6 +58,7 @@ struct FetchCommand: AsyncParsableCommand {
     
     func run() async throws {
         Self.ioc.resolve(TokensService.self).githubToken = github
+        Self.ioc.resolve(TokensService.self).rescueTimeToken = rescue
         
         var result = try loadExisting()
         let weekStart = MetricsEntry.weekStart
@@ -75,6 +79,8 @@ struct FetchCommand: AsyncParsableCommand {
             result.entries.append(entry)
         }
         
+        let days = try await Self.ioc.resolve(RescueTimeHTTPService.self).execute(request: RescueTimeRequest.days())
+        
         let outputData = try encoder.encode(result)
         try outputData.write(to: outputURL, options: [.atomic])
     }
@@ -86,6 +92,10 @@ struct FetchCommand: AsyncParsableCommand {
         } else {
             return MetricsResultModel(entries: [])
         }
+    }
+    
+    func getRescueTime() async throws -> [RescueTimeDay] {
+        return try await Self.ioc.resolve(RescueTimeHTTPService.self).execute(request: RescueTimeRequest.days())
     }
     
     func getAllRepositories() async throws -> [Repository] {

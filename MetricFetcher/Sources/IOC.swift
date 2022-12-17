@@ -14,5 +14,9 @@ final class IOC: IOCService {
         
         container.autoregister(GithubHTTPService.self, initializer: GithubHTTPService.init)
             .inObjectScope(.container)
+        
+        container.autoregister(RescueTimeHTTPService.self, initializer: RescueTimeHTTPService.init)
+            .inObjectScope(.container)
+        
     }
 }

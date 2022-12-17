@@ -1,15 +1,6 @@
 {
   "pins" : [
     {
-      "identity" : "askcore",
-      "kind" : "remoteSourceControl",
-      "location" : "git@github.com:skorulis/ASKCore.git",
-      "state" : {
-        "branch" : "main",
-        "revision" : "7bac4f0b694105b9398c35a9354d76b030ccf2f7"
-      }
-    },
-    {
       "identity" : "octokit.swift",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/nerdishbynature/octokit.swift",

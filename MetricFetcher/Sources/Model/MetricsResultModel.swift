@@ -32,7 +32,7 @@ struct MetricsEntry: Codable {
     static var weekStart: String {
         let df = DateFormatter()
         df.dateFormat = "yyyy-MM-dd"
-        let weekStart = Date().startOfMonth
+        let weekStart = Date().startOfWeek
         
         return df.string(from: weekStart)
     }

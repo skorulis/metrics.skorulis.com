@@ -11,7 +11,7 @@ let package = Package(
     dependencies: [
         .package(url: "git@github.com:nerdishbynature/octokit.swift.git", from: "0.11.0"),
         .package(url: "https://github.com/apple/swift-argument-parser", from: "1.2.0"),
-        .package(url: "git@github.com:skorulis/ASKCore.git", branch: "main")
+        .package(path: "Frameworks/ASKCore")
     ],
     targets: [
         .executableTarget(
