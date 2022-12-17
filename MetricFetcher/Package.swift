@@ -11,7 +11,8 @@ let package = Package(
     dependencies: [
         .package(url: "git@github.com:nerdishbynature/octokit.swift.git", from: "0.11.0"),
         .package(url: "https://github.com/apple/swift-argument-parser", from: "1.2.0"),
-        .package(path: "Frameworks/ASKCore")
+        .package(path: "Frameworks/ASKCore"),
+        .package(path: "../SwiftCommon")
     ],
     targets: [
         .executableTarget(
@@ -19,7 +20,8 @@ let package = Package(
             dependencies: [
                 .product(name: "OctoKit", package: "octokit.swift"),
                 .product(name: "ArgumentParser", package: "swift-argument-parser"),
-                "ASKCore"
+                "ASKCore",
+                "SwiftCommon"
             ],
             path: "Sources"
         ),

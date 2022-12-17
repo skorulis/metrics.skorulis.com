@@ -4,6 +4,7 @@ import ArgumentParser
 import ASKCore
 import Foundation
 import OctoKit
+import SwiftCommon
 
 @main
 struct FetchCommand: AsyncParsableCommand {

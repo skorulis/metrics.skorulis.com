@@ -2,6 +2,7 @@
 
 import ASKCore
 import Foundation
+import SwiftCommon
 
 enum RescueTimeRequest {
  
