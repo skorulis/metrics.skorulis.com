@@ -21,6 +21,16 @@ public struct MetricsResultModel: Codable {
     public func entryMatching(_ week: String) -> MetricsEntry? {
         return entries.first(where: {$0.week == week})
     }
+    
+    public func lastRepoMetrics(repo: String, before: Date) -> RepoMetrics? {
+        for entry in entries.reversed() {
+            if let value = entry.repos[repo], entry.weekStartDate < before {
+                return value
+            }
+        }
+        return nil
+    }
+    
 }
 
 public struct MetricsEntry: Codable {
@@ -33,12 +43,19 @@ public struct MetricsEntry: Codable {
         repos = [:]
     }
     
-    public static var weekStart: String {
+    var weekStartDate: Date {
+        return Self.dateFormatter.date(from: week)!
+    }
+    
+    private static let dateFormatter: DateFormatter = {
         let df = DateFormatter()
         df.dateFormat = "yyyy-MM-dd"
+        return df
+    }()
+    
+    public static var weekStart: String {
         let weekStart = Date().startOfWeek
-        
-        return df.string(from: weekStart)
+        return dateFormatter.string(from: weekStart)
     }
     
     public func lastPush(repo: String) -> Date? {
@@ -51,12 +68,29 @@ public struct RepoMetrics: Codable {
     public let languageBytes: [String: Int]
     public let lastPush: Date
     public let commitCount: Int
+    /// Metrics change in this week
+    public var diff: RepoChange?
     
     public init(languageBytes: [String: Int], lastPush: Date, commitCount: Int) {
         self.languageBytes = languageBytes
         self.lastPush = lastPush
         self.commitCount = commitCount
     }
+    
+    public func diff(from: RepoMetrics?) -> RepoChange {
+        let commitChange = commitCount - (from?.commitCount ?? 0)
+        let languageChange = languageBytes.map { (key, value) in
+            let change = value - (from?.languageBytes[key] ?? 0)
+            return (key, change)
+        }
+        let languageDict = Dictionary(uniqueKeysWithValues: languageChange)
+        return RepoChange(languageBytes: languageDict, commitCount: commitChange)
+    }
+}
+
+public struct RepoChange: Codable {
+    public let languageBytes: [String: Int]
+    public let commitCount: Int
 }
 
 fileprivate extension Date {

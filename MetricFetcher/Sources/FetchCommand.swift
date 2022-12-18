@@ -62,6 +62,7 @@ struct FetchCommand: AsyncParsableCommand {
         Self.ioc.resolve(TokensService.self).rescueTimeToken = rescue
         
         var result = try loadExisting()
+        let weekStartDate = Date().startOfWeek
         let weekStart = MetricsEntry.weekStart
         var entry = result.entryMatching(weekStart) ?? MetricsEntry(week: weekStart)
         
@@ -69,7 +70,11 @@ struct FetchCommand: AsyncParsableCommand {
         for repo in repos {
             let name = repo.name!
             let lastPush = result.lastPush(repo: name)
-            if let value = try await repoOutput(repo: repo, lastFoundPush: lastPush) {
+            if var value = try await repoOutput(repo: repo, lastFoundPush: lastPush) {
+                let lastRepoMetrics = result.lastRepoMetrics(repo: name, before: weekStartDate)
+                if result.entries.count > 0 {
+                    value.diff = value.diff(from: lastRepoMetrics)
+                }
                 entry.repos[name] = value
             }
         }
