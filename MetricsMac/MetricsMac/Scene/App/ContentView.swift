@@ -12,6 +12,9 @@ struct ContentView: View {
                 .imageScale(.large)
                 .foregroundColor(.accentColor)
             Text("Hello, world!")
+            if let data = viewModel.data {
+                CodeOverviewView(data: data)
+            }
         }
         .padding()
         .task {

@@ -62,6 +62,21 @@ public struct MetricsEntry: Codable {
         return repos[repo]?.lastPush
     }
     
+    public var totalDiff: RepoChange {
+        let commits = repos.values.reduce(0) { partialResult, metrics in
+            return partialResult + (metrics.diff?.commitCount ?? 0)
+        }
+        var languageCounts: [String: Int] = [:]
+        for repo in repos.values {
+            guard let diff = repo.diff else { continue }
+            diff.languageBytes.forEach { key, value in
+                languageCounts[key] = (languageCounts[key] ?? 0) + value
+            }
+        }
+        
+        return RepoChange(languageBytes: languageCounts, commitCount: commits)
+    }
+    
 }
 
 public struct RepoMetrics: Codable {
@@ -71,10 +86,15 @@ public struct RepoMetrics: Codable {
     /// Metrics change in this week
     public var diff: RepoChange?
     
-    public init(languageBytes: [String: Int], lastPush: Date, commitCount: Int) {
+    public init(languageBytes: [String: Int],
+                lastPush: Date,
+                commitCount: Int,
+                diff: RepoChange? = nil
+    ) {
         self.languageBytes = languageBytes
         self.lastPush = lastPush
         self.commitCount = commitCount
+        self.diff = diff
     }
     
     public func diff(from: RepoMetrics?) -> RepoChange {
@@ -91,6 +111,11 @@ public struct RepoMetrics: Codable {
 public struct RepoChange: Codable {
     public let languageBytes: [String: Int]
     public let commitCount: Int
+    
+    public init(languageBytes: [String: Int], commitCount: Int) {
+        self.languageBytes = languageBytes
+        self.commitCount = commitCount
+    }
 }
 
 fileprivate extension Date {

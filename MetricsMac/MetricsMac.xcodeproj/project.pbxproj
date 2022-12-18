@@ -15,6 +15,7 @@
 		FA61FE2D294E90C3009E1417 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA61FE2C294E90C3009E1417 /* ContentViewModel.swift */; };
 		FA61FE30294E90F5009E1417 /* ASKCore in Frameworks */ = {isa = PBXBuildFile; productRef = FA61FE2F294E90F5009E1417 /* ASKCore */; };
 		FA61FE32294E90F7009E1417 /* SwiftCommon in Frameworks */ = {isa = PBXBuildFile; productRef = FA61FE31294E90F7009E1417 /* SwiftCommon */; };
+		FA61FE35294EB326009E1417 /* CodeOverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA61FE34294EB326009E1417 /* CodeOverviewView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		FA61FE23294E8FAD009E1417 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		FA61FE2A294E90B0009E1417 /* IOC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOC.swift; sourceTree = "<group>"; };
 		FA61FE2C294E90C3009E1417 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
+		FA61FE34294EB326009E1417 /* CodeOverviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeOverviewView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 		FA61FE20294E8FAD009E1417 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				FA61FE33294EB2B3009E1417 /* Metric */,
 				FA61FE21294E8FAD009E1417 /* App */,
 			);
 			path = Scene;
@@ -137,6 +140,14 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FA61FE33294EB2B3009E1417 /* Metric */ = {
+			isa = PBXGroup;
+			children = (
+				FA61FE34294EB326009E1417 /* CodeOverviewView.swift */,
+			);
+			path = Metric;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -215,6 +226,7 @@
 			files = (
 				FA61FE2D294E90C3009E1417 /* ContentViewModel.swift in Sources */,
 				FA61FE27294E8FAD009E1417 /* ContentView.swift in Sources */,
+				FA61FE35294EB326009E1417 /* CodeOverviewView.swift in Sources */,
 				FA61FE2B294E90B0009E1417 /* IOC.swift in Sources */,
 				FA61FE26294E8FAD009E1417 /* MetricsMacApp.swift in Sources */,
 			);
