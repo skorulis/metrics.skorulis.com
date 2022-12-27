@@ -17,4 +17,11 @@ export class MainMetricsPage extends Component<{}, {}> {
         </div>
     }
 
+    async componentDidMount() {
+        const jsonPath = "/data/metrics.json"
+        let result = await fetch(jsonPath)
+        let text = await result.json()
+        console.log(text)
+    }
+
 }
