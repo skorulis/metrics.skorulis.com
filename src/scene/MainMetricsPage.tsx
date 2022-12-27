@@ -1,5 +1,6 @@
 import { Component } from "react"; 
 import { Header } from "./Header";
+import { MetricsResultModel } from "../model/MetricsResultModel";
 
 export class MainMetricsPage extends Component<{}, {}> {
 
@@ -20,7 +21,7 @@ export class MainMetricsPage extends Component<{}, {}> {
     async componentDidMount() {
         const jsonPath = "/data/metrics.json"
         let result = await fetch(jsonPath)
-        let text = await result.json()
+        let text = await result.json() as MetricsResultModel
         console.log(text)
     }
 
