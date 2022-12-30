@@ -28,3 +28,12 @@ span.number {
   background: rgba(255, 255, 255, .05);
   padding: 20px;
 }
+
+.horiz-carousel {
+  display: flex;
+  flex-direction: row;
+}
+
+.week-column {
+  padding: 10px;
+}

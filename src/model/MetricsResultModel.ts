@@ -4,17 +4,25 @@ export interface MetricsResultModel {
 
 export interface MetricsEntry {
     week: string
-    repos: {string: RepoMetrics}
+    repos: RepoMetricsDictionary
+}
+
+export interface RepoMetricsDictionary {
+    [key: string]: RepoMetrics;
+}
+
+export interface LanguageBytesDictionary {
+    [key: string]: number;
 }
 
 export interface RepoMetrics {
-    languageBytes: {string: Number}
+    languageBytes: LanguageBytesDictionary
     lastPush: string
-    commitCount: Number
+    commitCount: number
     diff?: RepoChange
 }
 
 export interface RepoChange {
-    languageBytes: {string: Number}
-    commitCount: Number
+    languageBytes: LanguageBytesDictionary
+    commitCount: number
 }
