@@ -18,8 +18,8 @@ public struct MetricsResultModel: Codable {
         return nil
     }
     
-    public func entryMatching(_ week: String) -> MetricsEntry? {
-        return entries.first(where: {$0.week == week})
+    public func entryMatching(_ week: Date) -> MetricsEntry? {
+        return entries.first(where: {$0.weekStartDate == week})
     }
     
     public func lastRepoMetrics(repo: String, before: Date) -> RepoMetrics? {
@@ -31,12 +31,21 @@ public struct MetricsResultModel: Codable {
         return nil
     }
     
+    
+    public mutating func replace(entry: MetricsEntry) {
+        if let index = entries.firstIndex(where: {$0.week == entry.week}) {
+            self.entries[index] = entry
+        } else {
+            self.entries.append(entry)
+        }
+    }
 }
 
 public struct MetricsEntry: Codable {
     
     public let week: String
     public var repos: [String: RepoMetrics]
+    public var timeBreakdown: RescueTimeDay?
     
     public init(week: String) {
         self.week = week

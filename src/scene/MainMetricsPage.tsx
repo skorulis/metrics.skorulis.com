@@ -1,6 +1,7 @@
 import { Component } from "react"; 
 import { Header } from "./Header";
 import { MetricsResultModel, LanguageBytesDictionary, MetricsEntry } from "../model/MetricsResultModel";
+import { RescueTimeDay } from "../model/RescueTimeDay";
 
 type MainMetricsPageState = {
     metrics?: MetricsResultModel
@@ -65,7 +66,18 @@ export class MainMetricsPage extends Component<{}, MainMetricsPageState> {
             <h2>{entry.week}</h2>
             <p>Commits: {totalCommits}</p>
             {langRows}
+            {this.timeDisplay(entry.timeBreakdown)}
         </div>
+    }
+
+    timeDisplay(time?: RescueTimeDay) {
+        if (!time) {
+            return;
+        }
+        return <div>
+            <p>Hours recorded: {time.total_hours}</p>
+        </div>
+        
     }
 
     async componentDidMount() {

@@ -64,7 +64,9 @@ struct FetchCommand: AsyncParsableCommand {
         var result = try loadExisting()
         let weekStartDate = Date().startOfWeek
         let weekStart = MetricsEntry.weekStart
-        var entry = result.entryMatching(weekStart) ?? MetricsEntry(week: weekStart)
+        let lastWeekStart = weekStartDate.addingTimeInterval(-86400).startOfWeek
+        var entry = result.entryMatching(weekStartDate) ?? MetricsEntry(week: weekStart)
+        let previousWeek = result.entryMatching(lastWeekStart)
         
         let repos = try await getAllRepositories()
         for repo in repos {
@@ -79,13 +81,31 @@ struct FetchCommand: AsyncParsableCommand {
             }
         }
         
-        if let previous = result.entries.last, previous.week == entry.week {
-            result.entries[result.entries.count - 1] = entry
-        } else {
-            result.entries.append(entry)
+        let days = try await Self.ioc.resolve(RescueTimeHTTPService.self).execute(request: RescueTimeRequest.days())
+        let weekDays = days.filter { day in
+            let date = FetchCommand.dateFormatter.date(from: day.date)!
+            let weekDate = date.startOfWeek
+            return weekDate == weekStartDate
+        }
+        let previousWeekDays = days.filter { day in
+            let date = FetchCommand.dateFormatter.date(from: day.date)!
+            let weekDate = date.startOfWeek
+            return weekDate == lastWeekStart
+        }
+        if weekDays.count > 0 {
+            entry.timeBreakdown = RescueTimeDay.sum(days: weekDays)
         }
         
-        let days = try await Self.ioc.resolve(RescueTimeHTTPService.self).execute(request: RescueTimeRequest.days())
+        if previousWeekDays.count == 7, var previousWeek {
+            previousWeek.timeBreakdown = RescueTimeDay.sum(days: previousWeekDays)
+            result.replace(entry: previousWeek)
+        }
+        
+        result.replace(entry: entry)
+        
+        print(previousWeekDays.count)
+        
+        print(weekDays)
         
         let outputData = try encoder.encode(result)
         try outputData.write(to: outputURL, options: [.atomic])

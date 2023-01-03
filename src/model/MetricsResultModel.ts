@@ -1,3 +1,5 @@
+import {RescueTimeDay} from "./RescueTimeDay"
+
 export interface MetricsResultModel {
     entries: MetricsEntry[]
 }
@@ -5,6 +7,7 @@ export interface MetricsResultModel {
 export interface MetricsEntry {
     week: string
     repos: RepoMetricsDictionary
+    timeBreakdown?: RescueTimeDay
 }
 
 export interface RepoMetricsDictionary {
