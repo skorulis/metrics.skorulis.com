@@ -2,6 +2,7 @@ import { Component } from "react";
 import { Header } from "./Header";
 import { MetricsResultModel, LanguageBytesDictionary, MetricsEntry } from "../model/MetricsResultModel";
 import { RescueTimeDay } from "../model/RescueTimeDay";
+import { PieChart, Pie, Cell } from 'recharts';
 
 type MainMetricsPageState = {
     metrics?: MetricsResultModel
@@ -21,6 +22,7 @@ export class MainMetricsPage extends Component<{}, MainMetricsPageState> {
             <Header />
             <div className="pageContent">
                 {this.renderMetrics()}
+                
             </div>
             
         </div>
@@ -76,8 +78,30 @@ export class MainMetricsPage extends Component<{}, MainMetricsPageState> {
         }
         return <div>
             <p>Hours recorded: {time.total_hours}</p>
+            {this.pieChart(time)}
         </div>
-        
+    }
+
+    pieChart(time: RescueTimeDay) {
+        let data = this.pieData(time);
+        return <PieChart width={200} height={200}>
+            <Pie dataKey="value" nameKey="name" data={data}>
+            {
+            data.map((entry, index) => (
+                <Cell key={index} fill={entry.color} />
+            ))}
+            </Pie>
+        </PieChart>
+    }
+
+    pieData(time: RescueTimeDay) {
+        return [
+            {color: "Red", value: time.very_distracting_hours},
+            {color: "Pink", value: time.distracting_hours},
+            {color: "Gray", value: time.neutral_hours},
+            {color: "Cyan", value: time.productive_hours},
+            {color: "Blue", value: time.very_productive_hours},
+        ]
     }
 
     async componentDidMount() {
