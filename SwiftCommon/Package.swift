@@ -14,11 +14,12 @@ let package = Package(
             targets: ["SwiftCommon"]),
     ],
     dependencies: [
+        .package(path: "../MetricFetcher/Frameworks/ASKCore"),
     ],
     targets: [
         .target(
             name: "SwiftCommon",
-            dependencies: [],
+            dependencies: ["ASKCore"],
             path: "Sources"
         )
     ]

@@ -45,9 +45,14 @@ public struct MetricsEntry: Codable {
     
     public let week: String
     public var repos: [String: RepoMetrics]
-    public var timeBreakdown: RescueTimeDay?
+    public func data<T: DataSourcePlugin>(_ plugin: T) -> T.DataType? {
+        return pluginData[plugin.keyName] as? T.DataType
+    }
+    public mutating func setData<T: DataSourcePlugin>(_ plugin: T, data: T.DataType) {
+        pluginData[plugin.keyName] = data
+    }
     
-    public var pluginData: [String: Any]
+    public var pluginData: [String: any Codable]
     
     public init(week: String) {
         self.week = week
@@ -59,7 +64,7 @@ public struct MetricsEntry: Codable {
         return Self.dateFormatter.date(from: week)!
     }
     
-    private static let dateFormatter: DateFormatter = {
+    static let dateFormatter: DateFormatter = {
         let df = DateFormatter()
         df.dateFormat = "yyyy-MM-dd"
         return df
@@ -94,7 +99,6 @@ public struct MetricsEntry: Codable {
         let container = try decoder.container(keyedBy: GenericCodingKeys.self)
         self.week = try container.decode(String.self, forKey: "week")
         self.repos = try container.decode([String: RepoMetrics].self, forKey: "repos")
-        self.timeBreakdown = try container.decodeIfPresent(RescueTimeDay.self, forKey: "timeBreakdown")
         
         pluginData = [:]
         for (key, value) in plugins {
@@ -105,11 +109,15 @@ public struct MetricsEntry: Codable {
     }
     
     public func encode(to encoder: Encoder) throws {
-        
+        let plugins = encoder.userInfo[.init(rawValue: "plugins")!] as! [String: any DataSourcePlugin]
         var container = encoder.container(keyedBy: GenericCodingKeys.self)
         try container.encode(week, forKey: "week")
         try container.encode(repos, forKey: "repos")
-        try container.encodeIfPresent(timeBreakdown, forKey: "timeBreakdown")
+        
+        for (key, value) in pluginData {
+            let handler = plugins[key]!
+            try container.encode(value, forKey: .init(stringLiteral: key))
+        }
     }
     
 }
@@ -150,15 +158,6 @@ public struct RepoChange: Codable {
     public init(languageBytes: [String: Int], commitCount: Int) {
         self.languageBytes = languageBytes
         self.commitCount = commitCount
-    }
-}
-
-fileprivate extension Date {
-    /// First monday of the week
-    var startOfWeek: Date {
-        var calendar = Calendar.current
-        calendar.firstWeekday = 2
-        return calendar.date(from: calendar.dateComponents([.yearForWeekOfYear, .weekOfYear], from: calendar.startOfDay(for: self)))!
     }
 }
 

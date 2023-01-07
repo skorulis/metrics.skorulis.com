@@ -63,23 +63,21 @@ struct FetchCommand: AsyncParsableCommand {
         let plugins = Self.ioc.resolve(PluginManager.self)
         plugins.register(plugin: RescueTimePlugin())
             
-        
         Self.ioc.resolve(TokensService.self).githubToken = github
         Self.ioc.resolve(TokensService.self).rescueTimeToken = rescue
         
         var result = try loadExisting()
-        let weekStartDate = Date().startOfWeek
+        let context = FetchContext(result: result, weekStartDate: Date().startOfWeek)
         let weekStart = MetricsEntry.weekStart
-        let lastWeekStart = weekStartDate.addingTimeInterval(-86400).startOfWeek
-        var entry = result.entryMatching(weekStartDate) ?? MetricsEntry(week: weekStart)
-        let previousWeek = result.entryMatching(lastWeekStart)
+        var entry = result.entryMatching(context.weekStartDate) ?? MetricsEntry(week: weekStart)
+        
         
         let repos = try await getAllRepositories()
         for repo in repos {
             let name = repo.name!
             let lastPush = result.lastPush(repo: name)
             if var value = try await repoOutput(repo: repo, lastFoundPush: lastPush) {
-                let lastRepoMetrics = result.lastRepoMetrics(repo: name, before: weekStartDate)
+                let lastRepoMetrics = result.lastRepoMetrics(repo: name, before: context.weekStartDate)
                 if result.entries.count > 0 {
                     value.diff = value.diff(from: lastRepoMetrics)
                 }
@@ -87,31 +85,7 @@ struct FetchCommand: AsyncParsableCommand {
             }
         }
         
-        let days = try await Self.ioc.resolve(RescueTimeHTTPService.self).execute(request: RescueTimeRequest.days())
-        let weekDays = days.filter { day in
-            let date = FetchCommand.dateFormatter.date(from: day.date)!
-            let weekDate = date.startOfWeek
-            return weekDate == weekStartDate
-        }
-        let previousWeekDays = days.filter { day in
-            let date = FetchCommand.dateFormatter.date(from: day.date)!
-            let weekDate = date.startOfWeek
-            return weekDate == lastWeekStart
-        }
-        if weekDays.count > 0 {
-            entry.timeBreakdown = RescueTimeDay.sum(days: weekDays)
-        }
-        
-        if previousWeekDays.count == 7, var previousWeek {
-            previousWeek.timeBreakdown = RescueTimeDay.sum(days: previousWeekDays)
-            result.replace(entry: previousWeek)
-        }
-        
         result.replace(entry: entry)
-        
-        print(previousWeekDays.count)
-        
-        print(weekDays)
         
         let outputData = try encoder.encode(result)
         try outputData.write(to: outputURL, options: [.atomic])
