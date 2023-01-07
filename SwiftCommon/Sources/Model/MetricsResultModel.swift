@@ -47,6 +47,12 @@ public struct MetricsEntry: Codable {
     public var repos: [String: RepoMetrics]
     public var timeBreakdown: RescueTimeDay?
     
+    enum CodingKeys: String, CodingKey {
+        case week
+        case repos
+        case timeBreakdown
+    }
+    
     public init(week: String) {
         self.week = week
         repos = [:]
@@ -84,6 +90,13 @@ public struct MetricsEntry: Codable {
         }
         
         return RepoChange(languageBytes: languageCounts, commitCount: commits)
+    }
+    
+    public init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.week = try container.decode(String.self, forKey: .week)
+        self.repos = try container.decode([String: RepoMetrics].self, forKey: .repos)
+        self.timeBreakdown = try container.decodeIfPresent(RescueTimeDay.self, forKey: .timeBreakdown)
     }
     
 }
