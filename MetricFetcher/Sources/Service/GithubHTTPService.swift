@@ -11,7 +11,7 @@ final class GithubHTTPService: HTTPService {
         self.tokens = tokens
         super.init(
             baseURL: "https://api.github.com",
-            logger: HTTPLogger(level: .full)
+            logger: HTTPLogger(level: .errors)
         )
     }
     

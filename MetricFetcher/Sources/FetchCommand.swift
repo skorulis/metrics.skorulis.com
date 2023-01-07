@@ -48,16 +48,22 @@ struct FetchCommand: AsyncParsableCommand {
     var decoder: JSONDecoder {
         let decoder = JSONDecoder()
         decoder.dateDecodingStrategy = .iso8601
+        decoder.userInfo[.pluginsKey] = Self.ioc.resolve(PluginManager.self).plugins
         return decoder
     }
     
     var encoder: JSONEncoder {
         let encoder = JSONEncoder()
         encoder.dateEncodingStrategy = .iso8601
+        encoder.userInfo[.pluginsKey] = Self.ioc.resolve(PluginManager.self).plugins
         return encoder
     }
     
     func run() async throws {
+        let plugins = Self.ioc.resolve(PluginManager.self)
+        plugins.register(plugin: RescueTimePlugin())
+            
+        
         Self.ioc.resolve(TokensService.self).githubToken = github
         Self.ioc.resolve(TokensService.self).rescueTimeToken = rescue
         

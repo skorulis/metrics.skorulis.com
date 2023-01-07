@@ -3,6 +3,7 @@
 import ASKCore
 import Foundation
 import SwinjectAutoregistration
+import SwiftCommon
 
 final class IOC: IOCService {
     
@@ -18,5 +19,7 @@ final class IOC: IOCService {
         container.autoregister(RescueTimeHTTPService.self, initializer: RescueTimeHTTPService.init)
             .inObjectScope(.container)
         
+        container.autoregister(PluginManager.self, initializer: PluginManager.init)
+            .inObjectScope(.container)
     }
 }

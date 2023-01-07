@@ -11,7 +11,7 @@ final class RescueTimeHTTPService: HTTPService {
         self.tokens = tokens
         super.init(
             baseURL: "https://www.rescuetime.com/anapi",
-            logger: HTTPLogger(level: .full)
+            logger: HTTPLogger(level: .errors)
         )
     }
     

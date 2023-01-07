@@ -47,15 +47,12 @@ public struct MetricsEntry: Codable {
     public var repos: [String: RepoMetrics]
     public var timeBreakdown: RescueTimeDay?
     
-    enum CodingKeys: String, CodingKey {
-        case week
-        case repos
-        case timeBreakdown
-    }
+    public var pluginData: [String: Any]
     
     public init(week: String) {
         self.week = week
         repos = [:]
+        pluginData = [:]
     }
     
     var weekStartDate: Date {
@@ -93,10 +90,26 @@ public struct MetricsEntry: Codable {
     }
     
     public init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: CodingKeys.self)
-        self.week = try container.decode(String.self, forKey: .week)
-        self.repos = try container.decode([String: RepoMetrics].self, forKey: .repos)
-        self.timeBreakdown = try container.decodeIfPresent(RescueTimeDay.self, forKey: .timeBreakdown)
+        let plugins = decoder.userInfo[.init(rawValue: "plugins")!] as! [String: any DataSourcePlugin]
+        let container = try decoder.container(keyedBy: GenericCodingKeys.self)
+        self.week = try container.decode(String.self, forKey: "week")
+        self.repos = try container.decode([String: RepoMetrics].self, forKey: "repos")
+        self.timeBreakdown = try container.decodeIfPresent(RescueTimeDay.self, forKey: "timeBreakdown")
+        
+        pluginData = [:]
+        for (key, value) in plugins {
+            if let data = try container.decodeIfPresent(value.dataType, forKey: .init(stringLiteral: key)) {
+                pluginData[key] = data
+            }
+        }
+    }
+    
+    public func encode(to encoder: Encoder) throws {
+        
+        var container = encoder.container(keyedBy: GenericCodingKeys.self)
+        try container.encode(week, forKey: "week")
+        try container.encode(repos, forKey: "repos")
+        try container.encodeIfPresent(timeBreakdown, forKey: "timeBreakdown")
     }
     
 }
@@ -147,4 +160,17 @@ fileprivate extension Date {
         calendar.firstWeekday = 2
         return calendar.date(from: calendar.dateComponents([.yearForWeekOfYear, .weekOfYear], from: calendar.startOfDay(for: self)))!
     }
+}
+
+struct GenericCodingKeys: CodingKey, ExpressibleByStringLiteral {
+    // MARK: CodingKey
+    var stringValue: String
+    var intValue: Int?
+
+    init?(stringValue: String) { self.stringValue = stringValue }
+    init?(intValue: Int) { return nil }
+
+    // MARK: ExpressibleByStringLiteral
+    typealias StringLiteralType = String
+    init(stringLiteral: StringLiteralType) { self.stringValue = stringLiteral }
 }

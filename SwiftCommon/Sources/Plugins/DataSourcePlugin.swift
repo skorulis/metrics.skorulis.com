@@ -2,11 +2,11 @@
 
 import Foundation
 
-protocol DataSourcePlugin {
+public protocol DataSourcePlugin {
     
     associatedtype DataType: Codable
     
     var keyName: String { get }
-    
-    
+    var dataType: DataType.Type { get }
+        
 }
