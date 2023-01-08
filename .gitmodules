@@ -1,3 +1,6 @@
-[submodule "MetricFetcher/Frameworks/ASKCore"]
-	path = MetricFetcher/Frameworks/ASKCore
+[submodule "App/Frameworks/ASKCore"]
+	path = App/Frameworks/ASKCore
 	url = git@github.com:skorulis/ASKCore.git
+[submodule "App/Frameworks/ASKDesignSystem"]
+	path = App/Frameworks/ASKDesignSystem
+	url = git@github.com:skorulis/ASKDesignSystem.git

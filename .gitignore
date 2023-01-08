@@ -5,3 +5,4 @@ node_modules
 build
 SwiftCommon/.swiftpm/xcode/package.xcworkspace/xcuserdata
 MetricsMac/MetricsMac.xcodeproj/project.xcworkspace/xcuserdata
+App/Metrics.xcodeproj/project.xcworkspace/xcuserdata
