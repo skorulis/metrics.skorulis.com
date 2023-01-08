@@ -19,5 +19,15 @@ final class TokensService {
         store.set(value, forKey: token.key)
     }
     
+    func values<T: DataSourcePlugin>(plugin: T) -> [String: String] {
+        var result: [String: String] = [:]
+        for token in plugin.tokenKeys {
+            if let value = value(token: token) {
+                result[token.key] = value
+            }
+        }
+        return result
+    }
+    
 }
 

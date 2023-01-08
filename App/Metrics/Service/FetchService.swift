@@ -10,17 +10,5 @@ final class FetchService {
         self.plugins = plugins
     }
     
-    var decoder: JSONDecoder {
-        let decoder = JSONDecoder()
-        decoder.dateDecodingStrategy = .iso8601
-        decoder.userInfo[.pluginsKey] = plugins.plugins
-        return decoder
-    }
     
-    var encoder: JSONEncoder {
-        let encoder = JSONEncoder()
-        encoder.dateEncodingStrategy = .iso8601
-        encoder.userInfo[.pluginsKey] = plugins.plugins
-        return encoder
-    }
 }

@@ -11,5 +11,7 @@ public protocol DataSourcePlugin {
     var dataType: DataType.Type { get }
     
     var tokenKeys: [APIToken] { get }
+    
+    func fetch(context: FetchContext, tokens: [String: String]) async throws
         
 }

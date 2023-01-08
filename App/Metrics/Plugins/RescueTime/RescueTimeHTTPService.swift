@@ -5,10 +5,10 @@ import Foundation
 
 final class RescueTimeHTTPService: HTTPService {
     
-    private let tokens: TokensService
+    private let token: String
     
-    init(tokens: TokensService) {
-        self.tokens = tokens
+    init(token: String) {
+        self.token = token
         super.init(
             baseURL: "https://www.rescuetime.com/anapi",
             logger: HTTPLogger(level: .errors)
@@ -16,10 +16,7 @@ final class RescueTimeHTTPService: HTTPService {
     }
     
     override func modify(request: inout URLRequest) throws {
-        guard let rescueTimeToken = tokens.value(token: RescueTimePlugin.rescueTimeToken) else {
-            fatalError("Missing rescue time token")
-        }
-        request.add(param: "key", value: rescueTimeToken)
+        request.add(param: "key", value: token)
     }
     
 }

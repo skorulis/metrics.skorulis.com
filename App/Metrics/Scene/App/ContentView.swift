@@ -8,6 +8,11 @@ struct ContentView: View {
     
     var body: some View {
         TabView {
+            FetchDataView(viewModel: factory.resolve())
+                .tabItem {
+                    Text("Fetch")
+                    Image(systemName: "icloud.and.arrow.down")
+                }
             SettingsView(viewModel: factory.resolve())
                 .tabItem {
                     Text("Settings")

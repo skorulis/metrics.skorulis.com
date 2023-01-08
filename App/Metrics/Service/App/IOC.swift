@@ -17,9 +17,6 @@ final class IOC: IOCService {
         container.autoregister(GithubHTTPService.self, initializer: GithubHTTPService.init)
             .inObjectScope(.container)
         
-        container.autoregister(RescueTimeHTTPService.self, initializer: RescueTimeHTTPService.init)
-            .inObjectScope(.container)
-        
         container.autoregister(PluginManager.self, initializer: PluginManager.init)
             .inObjectScope(.container)
         
@@ -29,9 +26,12 @@ final class IOC: IOCService {
     
     private func registerViewModels() {
         container.autoregister(SettingsViewModel.self, initializer: SettingsViewModel.init)
+        container.autoregister(FetchDataViewModel.self, initializer: FetchDataViewModel.init)
     }
     
     private func registerStores() {
+        container.autoregister(MetricsStore.self, initializer: MetricsStore.init)
+        
         switch purpose {
         case .testing:
             container.autoregister(PKeyValueStore.self, initializer: InMemoryDefaults.init)

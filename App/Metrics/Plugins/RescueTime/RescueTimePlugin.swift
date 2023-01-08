@@ -14,8 +14,8 @@ final class RescueTimePlugin: DataSourcePlugin {
         return [Self.rescueTimeToken]
     }
     
-    func fetch(context: FetchContext, tokens: TokensService) async throws {
-        let service = RescueTimeHTTPService(tokens: tokens)
+    func fetch(context: FetchContext, tokens: [String: String]) async throws {
+        let service = RescueTimeHTTPService(token: tokens[Self.rescueTimeToken.key]!)
         let days = try await service.execute(request: RescueTimeRequest.days())
         let weekDays = days.filter { day in
             let date = MetricsEntry.dateFormatter.date(from: day.date)!

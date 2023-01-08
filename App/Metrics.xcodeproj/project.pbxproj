@@ -34,6 +34,9 @@
 		FA98A125296A778D002471B2 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA98A124296A778D002471B2 /* SettingsViewModel.swift */; };
 		FA98A127296A7A9D002471B2 /* APIToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA98A126296A7A9D002471B2 /* APIToken.swift */; };
 		FA98A129296A858B002471B2 /* GithubPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA98A128296A858B002471B2 /* GithubPlugin.swift */; };
+		FA98A12B296A8AAF002471B2 /* MetricsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA98A12A296A8AAF002471B2 /* MetricsStore.swift */; };
+		FA98A12E296A8FA7002471B2 /* FetchDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA98A12D296A8FA7002471B2 /* FetchDataView.swift */; };
+		FA98A130296A8FB0002471B2 /* FetchDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA98A12F296A8FB0002471B2 /* FetchDataViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +66,9 @@
 		FA98A124296A778D002471B2 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		FA98A126296A7A9D002471B2 /* APIToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIToken.swift; sourceTree = "<group>"; };
 		FA98A128296A858B002471B2 /* GithubPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubPlugin.swift; sourceTree = "<group>"; };
+		FA98A12A296A8AAF002471B2 /* MetricsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricsStore.swift; sourceTree = "<group>"; };
+		FA98A12D296A8FA7002471B2 /* FetchDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchDataView.swift; sourceTree = "<group>"; };
+		FA98A12F296A8FB0002471B2 /* FetchDataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchDataViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				FA98A0F8296A257B002471B2 /* App */,
+				FA98A12C296A8F56002471B2 /* Fetch */,
 				FA98A121296A7777002471B2 /* Settings */,
 			);
 			path = Scene;
@@ -169,6 +176,7 @@
 		FA98A0FB296A257C002471B2 /* Store */ = {
 			isa = PBXGroup;
 			children = (
+				FA98A12A296A8AAF002471B2 /* MetricsStore.swift */,
 			);
 			path = Store;
 			sourceTree = "<group>";
@@ -231,6 +239,15 @@
 			name = Settings;
 			path = Metrics/Scene/Settings;
 			sourceTree = SOURCE_ROOT;
+		};
+		FA98A12C296A8F56002471B2 /* Fetch */ = {
+			isa = PBXGroup;
+			children = (
+				FA98A12D296A8FA7002471B2 /* FetchDataView.swift */,
+				FA98A12F296A8FB0002471B2 /* FetchDataViewModel.swift */,
+			);
+			path = Fetch;
+			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
@@ -317,10 +334,12 @@
 				FA98A114296A257C002471B2 /* RescueTimeRequest.swift in Sources */,
 				FA98A117296A257C002471B2 /* RescueTimeDay.swift in Sources */,
 				FA98A116296A257C002471B2 /* RescueTimeHTTPService.swift in Sources */,
+				FA98A12E296A8FA7002471B2 /* FetchDataView.swift in Sources */,
 				FA98A123296A7787002471B2 /* SettingsView.swift in Sources */,
 				FA98A113296A257C002471B2 /* PluginManager.swift in Sources */,
 				FA98A127296A7A9D002471B2 /* APIToken.swift in Sources */,
 				FA98A118296A257C002471B2 /* GithubRequest.swift in Sources */,
+				FA98A12B296A8AAF002471B2 /* MetricsStore.swift in Sources */,
 				FA98A112296A257C002471B2 /* IOC.swift in Sources */,
 				FA98A11D296A267C002471B2 /* FetchService.swift in Sources */,
 				FA98A10C296A257C002471B2 /* FetchContext.swift in Sources */,
@@ -331,6 +350,7 @@
 				FA98A111296A257C002471B2 /* TokensService.swift in Sources */,
 				FA98A10D296A257C002471B2 /* DataSourcePlugin.swift in Sources */,
 				FA98A10F296A257C002471B2 /* MetricsApp.swift in Sources */,
+				FA98A130296A8FB0002471B2 /* FetchDataViewModel.swift in Sources */,
 				FA98A125296A778D002471B2 /* SettingsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
