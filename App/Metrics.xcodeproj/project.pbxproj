@@ -27,8 +27,6 @@
 		FA98A117296A257C002471B2 /* RescueTimeDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA98A106296A257C002471B2 /* RescueTimeDay.swift */; };
 		FA98A118296A257C002471B2 /* GithubRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA98A108296A257C002471B2 /* GithubRequest.swift */; };
 		FA98A119296A257C002471B2 /* GithubHTTPService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA98A109296A257C002471B2 /* GithubHTTPService.swift */; };
-		FA98A11B296A265F002471B2 /* FetchCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA98A11A296A265F002471B2 /* FetchCommand.swift */; };
-		FA98A11D296A267C002471B2 /* FetchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA98A11C296A267C002471B2 /* FetchService.swift */; };
 		FA98A120296A27C9002471B2 /* OctoKit in Frameworks */ = {isa = PBXBuildFile; productRef = FA98A11F296A27C9002471B2 /* OctoKit */; };
 		FA98A123296A7787002471B2 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA98A122296A7787002471B2 /* SettingsView.swift */; };
 		FA98A125296A778D002471B2 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA98A124296A778D002471B2 /* SettingsViewModel.swift */; };
@@ -37,6 +35,8 @@
 		FA98A12B296A8AAF002471B2 /* MetricsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA98A12A296A8AAF002471B2 /* MetricsStore.swift */; };
 		FA98A12E296A8FA7002471B2 /* FetchDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA98A12D296A8FA7002471B2 /* FetchDataView.swift */; };
 		FA98A130296A8FB0002471B2 /* FetchDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA98A12F296A8FB0002471B2 /* FetchDataViewModel.swift */; };
+		FA98A132296AC1B9002471B2 /* MetricsEntry+Github.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA98A131296AC1B9002471B2 /* MetricsEntry+Github.swift */; };
+		FA98A134296AC1DA002471B2 /* RepoMetrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA98A133296AC1DA002471B2 /* RepoMetrics.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,8 +60,6 @@
 		FA98A106296A257C002471B2 /* RescueTimeDay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RescueTimeDay.swift; sourceTree = "<group>"; };
 		FA98A108296A257C002471B2 /* GithubRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GithubRequest.swift; sourceTree = "<group>"; };
 		FA98A109296A257C002471B2 /* GithubHTTPService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GithubHTTPService.swift; sourceTree = "<group>"; };
-		FA98A11A296A265F002471B2 /* FetchCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchCommand.swift; sourceTree = "<group>"; };
-		FA98A11C296A267C002471B2 /* FetchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchService.swift; sourceTree = "<group>"; };
 		FA98A122296A7787002471B2 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		FA98A124296A778D002471B2 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		FA98A126296A7A9D002471B2 /* APIToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIToken.swift; sourceTree = "<group>"; };
@@ -69,6 +67,8 @@
 		FA98A12A296A8AAF002471B2 /* MetricsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricsStore.swift; sourceTree = "<group>"; };
 		FA98A12D296A8FA7002471B2 /* FetchDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchDataView.swift; sourceTree = "<group>"; };
 		FA98A12F296A8FB0002471B2 /* FetchDataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchDataViewModel.swift; sourceTree = "<group>"; };
+		FA98A131296AC1B9002471B2 /* MetricsEntry+Github.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MetricsEntry+Github.swift"; sourceTree = "<group>"; };
+		FA98A133296AC1DA002471B2 /* RepoMetrics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoMetrics.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,7 +105,6 @@
 		FA98A0D6296A1F5E002471B2 /* Metrics */ = {
 			isa = PBXGroup;
 			children = (
-				FA98A11A296A265F002471B2 /* FetchCommand.swift */,
 				FA98A0F3296A257B002471B2 /* Model */,
 				FA98A101296A257C002471B2 /* Plugins */,
 				FA98A0EF296A257B002471B2 /* Resource */,
@@ -187,7 +186,6 @@
 				FA98A0FE296A257C002471B2 /* App */,
 				FA98A0FD296A257C002471B2 /* TokensService.swift */,
 				FA98A100296A257C002471B2 /* PluginManager.swift */,
-				FA98A11C296A267C002471B2 /* FetchService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -212,8 +210,8 @@
 		FA98A102296A257C002471B2 /* RescueTime */ = {
 			isa = PBXGroup;
 			children = (
-				FA98A103296A257C002471B2 /* RescueTimeRequest.swift */,
 				FA98A104296A257C002471B2 /* RescueTimePlugin.swift */,
+				FA98A103296A257C002471B2 /* RescueTimeRequest.swift */,
 				FA98A105296A257C002471B2 /* RescueTimeHTTPService.swift */,
 				FA98A106296A257C002471B2 /* RescueTimeDay.swift */,
 			);
@@ -223,9 +221,11 @@
 		FA98A107296A257C002471B2 /* Github */ = {
 			isa = PBXGroup;
 			children = (
+				FA98A128296A858B002471B2 /* GithubPlugin.swift */,
 				FA98A108296A257C002471B2 /* GithubRequest.swift */,
 				FA98A109296A257C002471B2 /* GithubHTTPService.swift */,
-				FA98A128296A858B002471B2 /* GithubPlugin.swift */,
+				FA98A131296AC1B9002471B2 /* MetricsEntry+Github.swift */,
+				FA98A133296AC1DA002471B2 /* RepoMetrics.swift */,
 			);
 			path = Github;
 			sourceTree = "<group>";
@@ -330,18 +330,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA98A115296A257C002471B2 /* RescueTimePlugin.swift in Sources */,
-				FA98A11B296A265F002471B2 /* FetchCommand.swift in Sources */,
 				FA98A114296A257C002471B2 /* RescueTimeRequest.swift in Sources */,
 				FA98A117296A257C002471B2 /* RescueTimeDay.swift in Sources */,
 				FA98A116296A257C002471B2 /* RescueTimeHTTPService.swift in Sources */,
 				FA98A12E296A8FA7002471B2 /* FetchDataView.swift in Sources */,
 				FA98A123296A7787002471B2 /* SettingsView.swift in Sources */,
 				FA98A113296A257C002471B2 /* PluginManager.swift in Sources */,
+				FA98A132296AC1B9002471B2 /* MetricsEntry+Github.swift in Sources */,
 				FA98A127296A7A9D002471B2 /* APIToken.swift in Sources */,
+				FA98A134296AC1DA002471B2 /* RepoMetrics.swift in Sources */,
 				FA98A118296A257C002471B2 /* GithubRequest.swift in Sources */,
 				FA98A12B296A8AAF002471B2 /* MetricsStore.swift in Sources */,
 				FA98A112296A257C002471B2 /* IOC.swift in Sources */,
-				FA98A11D296A267C002471B2 /* FetchService.swift in Sources */,
 				FA98A10C296A257C002471B2 /* FetchContext.swift in Sources */,
 				FA98A119296A257C002471B2 /* GithubHTTPService.swift in Sources */,
 				FA98A110296A257C002471B2 /* ContentView.swift in Sources */,

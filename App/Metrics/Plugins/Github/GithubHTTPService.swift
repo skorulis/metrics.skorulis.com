@@ -5,10 +5,10 @@ import Foundation
 
 final class GithubHTTPService: HTTPService {
     
-    private let tokens: TokensService
+    private let token: String
     
-    init(tokens: TokensService) {
-        self.tokens = tokens
+    init(token: String) {
+        self.token = token
         super.init(
             baseURL: "https://api.github.com",
             logger: HTTPLogger(level: .errors)
@@ -16,12 +16,9 @@ final class GithubHTTPService: HTTPService {
     }
     
     override func modify(request: inout URLRequest) throws {
-        guard let githubToken = tokens.value(token: GithubPlugin.apiToken) else {
-            fatalError("Missing github token")
-        }
         request.addValue("2022-11-28", forHTTPHeaderField: "X-GitHub-Api-Version")
         request.addValue(
-            "Bearer \(githubToken)",
+            "Bearer \(token)",
             forHTTPHeaderField: "Authorization"
         )
     }

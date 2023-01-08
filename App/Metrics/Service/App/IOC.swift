@@ -19,9 +19,6 @@ final class IOC: IOCService {
         
         container.autoregister(PluginManager.self, initializer: PluginManager.init)
             .inObjectScope(.container)
-        
-        container.autoregister(FetchService.self, initializer: FetchService.init)
-            .inObjectScope(.container)
     }
     
     private func registerViewModels() {

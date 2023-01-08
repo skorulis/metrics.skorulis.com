@@ -11,6 +11,7 @@ struct MetricsApp: App {
     init() {
         let plugins = ioc.resolve(PluginManager.self)
         plugins.register(plugin: RescueTimePlugin())
+        plugins.register(plugin: GithubPlugin())
     }
     
     var body: some Scene {

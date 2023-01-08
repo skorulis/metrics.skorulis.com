@@ -28,10 +28,11 @@ final class RescueTimePlugin: DataSourcePlugin {
             return weekDate == context.lastWeekStart
         }
         
-        var entry = context.result.entryMatching(context.weekStartDate) ?? MetricsEntry(week: context.weekStart)
+        var entry = context.currentEntry
         
         if weekDays.count > 0 {
             entry.setData(self, data: RescueTimeDay.sum(days: weekDays))
+            context.result.replace(entry: entry)
         }
         let previousWeek = context.result.entryMatching(context.lastWeekStart)
         

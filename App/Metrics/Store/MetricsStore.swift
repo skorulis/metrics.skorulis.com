@@ -38,7 +38,7 @@ private extension MetricsStore {
     
     static var saveFile: URL {
         let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-        return paths[0].appending(path: "data.json")
+        return paths[0].appending(path: "metrics.json")
     }
     
     func loadExisting() throws -> MetricsResultModel {
