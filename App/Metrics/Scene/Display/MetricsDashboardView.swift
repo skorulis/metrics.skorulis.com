@@ -1,5 +1,6 @@
 //Created by Alexander Skorulis on 9/1/2023.
 
+import ASKDesignSystem
 import Foundation
 import SwiftUI
 
@@ -28,8 +29,17 @@ extension MetricsDashboardView: View {
     private func entryView(_ entry: MetricsEntry) -> some View {
         VStack {
             Text(entry.week)
+                .typography(.headline)
+            ForEach(viewModel.plugins.sorted, id: \.name) { plugin in
+                if let view = plugin.render(entry) {
+                    view
+                }
+            }
+            Spacer()
         }
     }
+    
+    
 }
 
 // MARK: - Previews

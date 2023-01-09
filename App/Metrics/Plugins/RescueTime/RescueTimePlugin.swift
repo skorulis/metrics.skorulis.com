@@ -1,6 +1,7 @@
 //  Created by Alexander Skorulis on 7/1/2023.
 
 import Foundation
+import SwiftUI
 
 final class RescueTimePlugin: DataSourcePlugin {
     typealias DataType = RescueTimeDay
@@ -40,6 +41,13 @@ final class RescueTimePlugin: DataSourcePlugin {
             previousWeek.setData(self, data: RescueTimeDay.sum(days: previousWeekDays))
             context.result.replace(entry: previousWeek)
         }
+    }
+    
+    func render(_ entry: MetricsEntry) -> AnyView? {
+        guard let data: DataType = entry.data(self) else {
+            return nil
+        }
+        return AnyView(RescueTimeView(data: data))
     }
     
 }

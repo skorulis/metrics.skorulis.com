@@ -2,6 +2,7 @@
 
 import Foundation
 import OctoKit
+import SwiftUI
 
 final class GithubPlugin: DataSourcePlugin {
     
@@ -89,5 +90,12 @@ final class GithubPlugin: DataSourcePlugin {
         let result = RepoMetrics(languageBytes: lines, lastPush: lastPush, commitCount: commitCount)
         
         return result
+    }
+    
+    func render(_ entry: MetricsEntry) -> AnyView? {
+        guard let data: DataType = entry.data(self) else {
+            return nil
+        }
+        return AnyView(GithubView(data: data))
     }
 }

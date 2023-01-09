@@ -1,6 +1,7 @@
 //  Created by Alexander Skorulis on 7/1/2023.
 
 import Foundation
+import SwiftUI
 
 public protocol DataSourcePlugin {
     
@@ -13,5 +14,7 @@ public protocol DataSourcePlugin {
     var tokenKeys: [APIToken] { get }
     
     func fetch(context: FetchContext, tokens: [String: String]) async throws
+    
+    func render(_ entry: MetricsEntry) -> AnyView?
         
 }

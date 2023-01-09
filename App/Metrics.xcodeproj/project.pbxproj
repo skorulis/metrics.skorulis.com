@@ -40,6 +40,8 @@
 		FA98A13D296BE89B002471B2 /* MetricsDashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA98A13C296BE89B002471B2 /* MetricsDashboardView.swift */; };
 		FA98A13F296BE8A4002471B2 /* MetricsDashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA98A13E296BE8A4002471B2 /* MetricsDashboardViewModel.swift */; };
 		FA98A141296BF1ED002471B2 /* MetricsEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA98A140296BF1ED002471B2 /* MetricsEntry.swift */; };
+		FA98A143296BF915002471B2 /* GithubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA98A142296BF915002471B2 /* GithubView.swift */; };
+		FA98A145296BFA31002471B2 /* RescueTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA98A144296BFA31002471B2 /* RescueTimeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,6 +77,8 @@
 		FA98A13C296BE89B002471B2 /* MetricsDashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricsDashboardView.swift; sourceTree = "<group>"; };
 		FA98A13E296BE8A4002471B2 /* MetricsDashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricsDashboardViewModel.swift; sourceTree = "<group>"; };
 		FA98A140296BF1ED002471B2 /* MetricsEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricsEntry.swift; sourceTree = "<group>"; };
+		FA98A142296BF915002471B2 /* GithubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubView.swift; sourceTree = "<group>"; };
+		FA98A144296BFA31002471B2 /* RescueTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RescueTimeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -222,6 +226,7 @@
 				FA98A103296A257C002471B2 /* RescueTimeRequest.swift */,
 				FA98A105296A257C002471B2 /* RescueTimeHTTPService.swift */,
 				FA98A106296A257C002471B2 /* RescueTimeDay.swift */,
+				FA98A144296BFA31002471B2 /* RescueTimeView.swift */,
 			);
 			path = RescueTime;
 			sourceTree = "<group>";
@@ -234,6 +239,7 @@
 				FA98A109296A257C002471B2 /* GithubHTTPService.swift */,
 				FA98A131296AC1B9002471B2 /* MetricsEntry+Github.swift */,
 				FA98A133296AC1DA002471B2 /* RepoMetrics.swift */,
+				FA98A142296BF915002471B2 /* GithubView.swift */,
 			);
 			path = Github;
 			sourceTree = "<group>";
@@ -370,8 +376,10 @@
 				FA98A111296A257C002471B2 /* TokensService.swift in Sources */,
 				FA98A10D296A257C002471B2 /* DataSourcePlugin.swift in Sources */,
 				FA98A10F296A257C002471B2 /* MetricsApp.swift in Sources */,
+				FA98A145296BFA31002471B2 /* RescueTimeView.swift in Sources */,
 				FA98A130296A8FB0002471B2 /* FetchDataViewModel.swift in Sources */,
 				FA98A125296A778D002471B2 /* SettingsViewModel.swift in Sources */,
+				FA98A143296BF915002471B2 /* GithubView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
