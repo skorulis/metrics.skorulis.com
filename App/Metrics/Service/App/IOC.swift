@@ -24,6 +24,7 @@ final class IOC: IOCService {
     private func registerViewModels() {
         container.autoregister(SettingsViewModel.self, initializer: SettingsViewModel.init)
         container.autoregister(FetchDataViewModel.self, initializer: FetchDataViewModel.init)
+        container.autoregister(MetricsDashboardViewModel.self, initializer: MetricsDashboardViewModel.init)
     }
     
     private func registerStores() {

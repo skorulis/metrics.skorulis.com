@@ -8,6 +8,12 @@ struct ContentView: View {
     
     var body: some View {
         TabView {
+            MetricsDashboardView(viewModel: factory.resolve())
+                .tabItem {
+                    Text("Metrics")
+                    Image(systemName: "gauge.low")
+                }
+            
             FetchDataView(viewModel: factory.resolve())
                 .tabItem {
                     Text("Fetch")

@@ -37,6 +37,9 @@
 		FA98A130296A8FB0002471B2 /* FetchDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA98A12F296A8FB0002471B2 /* FetchDataViewModel.swift */; };
 		FA98A132296AC1B9002471B2 /* MetricsEntry+Github.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA98A131296AC1B9002471B2 /* MetricsEntry+Github.swift */; };
 		FA98A134296AC1DA002471B2 /* RepoMetrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA98A133296AC1DA002471B2 /* RepoMetrics.swift */; };
+		FA98A13D296BE89B002471B2 /* MetricsDashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA98A13C296BE89B002471B2 /* MetricsDashboardView.swift */; };
+		FA98A13F296BE8A4002471B2 /* MetricsDashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA98A13E296BE8A4002471B2 /* MetricsDashboardViewModel.swift */; };
+		FA98A141296BF1ED002471B2 /* MetricsEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA98A140296BF1ED002471B2 /* MetricsEntry.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,6 +72,9 @@
 		FA98A12F296A8FB0002471B2 /* FetchDataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchDataViewModel.swift; sourceTree = "<group>"; };
 		FA98A131296AC1B9002471B2 /* MetricsEntry+Github.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MetricsEntry+Github.swift"; sourceTree = "<group>"; };
 		FA98A133296AC1DA002471B2 /* RepoMetrics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoMetrics.swift; sourceTree = "<group>"; };
+		FA98A13C296BE89B002471B2 /* MetricsDashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricsDashboardView.swift; sourceTree = "<group>"; };
+		FA98A13E296BE8A4002471B2 /* MetricsDashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricsDashboardViewModel.swift; sourceTree = "<group>"; };
+		FA98A140296BF1ED002471B2 /* MetricsEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricsEntry.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +155,7 @@
 				FA98A0F5296A257B002471B2 /* DataSourcePlugin.swift */,
 				FA98A0F6296A257B002471B2 /* MetricsResultModel.swift */,
 				FA98A126296A7A9D002471B2 /* APIToken.swift */,
+				FA98A140296BF1ED002471B2 /* MetricsEntry.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -156,6 +163,7 @@
 		FA98A0F7296A257B002471B2 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				FA98A13B296BE889002471B2 /* Display */,
 				FA98A0F8296A257B002471B2 /* App */,
 				FA98A12C296A8F56002471B2 /* Fetch */,
 				FA98A121296A7777002471B2 /* Settings */,
@@ -249,6 +257,15 @@
 			path = Fetch;
 			sourceTree = "<group>";
 		};
+		FA98A13B296BE889002471B2 /* Display */ = {
+			isa = PBXGroup;
+			children = (
+				FA98A13C296BE89B002471B2 /* MetricsDashboardView.swift */,
+				FA98A13E296BE8A4002471B2 /* MetricsDashboardViewModel.swift */,
+			);
+			path = Display;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -330,12 +347,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA98A115296A257C002471B2 /* RescueTimePlugin.swift in Sources */,
+				FA98A13F296BE8A4002471B2 /* MetricsDashboardViewModel.swift in Sources */,
 				FA98A114296A257C002471B2 /* RescueTimeRequest.swift in Sources */,
 				FA98A117296A257C002471B2 /* RescueTimeDay.swift in Sources */,
 				FA98A116296A257C002471B2 /* RescueTimeHTTPService.swift in Sources */,
 				FA98A12E296A8FA7002471B2 /* FetchDataView.swift in Sources */,
 				FA98A123296A7787002471B2 /* SettingsView.swift in Sources */,
 				FA98A113296A257C002471B2 /* PluginManager.swift in Sources */,
+				FA98A13D296BE89B002471B2 /* MetricsDashboardView.swift in Sources */,
 				FA98A132296AC1B9002471B2 /* MetricsEntry+Github.swift in Sources */,
 				FA98A127296A7A9D002471B2 /* APIToken.swift in Sources */,
 				FA98A134296AC1DA002471B2 /* RepoMetrics.swift in Sources */,
@@ -345,6 +364,7 @@
 				FA98A10C296A257C002471B2 /* FetchContext.swift in Sources */,
 				FA98A119296A257C002471B2 /* GithubHTTPService.swift in Sources */,
 				FA98A110296A257C002471B2 /* ContentView.swift in Sources */,
+				FA98A141296BF1ED002471B2 /* MetricsEntry.swift in Sources */,
 				FA98A10E296A257C002471B2 /* MetricsResultModel.swift in Sources */,
 				FA98A129296A858B002471B2 /* GithubPlugin.swift in Sources */,
 				FA98A111296A257C002471B2 /* TokensService.swift in Sources */,
