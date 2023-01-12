@@ -16,7 +16,8 @@ final class MetricsDashboardViewModel: ObservableObject {
         self.store = store
         self.plugins = plugins
         
-        store.objectWillChange.sink { [unowned self] in
+        store.objectWillChange.delayedChange()
+            .sink { [unowned self] in
             self.objectWillChange.send()
         }
         .store(in: &subscribers)

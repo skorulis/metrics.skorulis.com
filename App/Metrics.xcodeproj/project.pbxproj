@@ -42,6 +42,7 @@
 		FA98A141296BF1ED002471B2 /* MetricsEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA98A140296BF1ED002471B2 /* MetricsEntry.swift */; };
 		FA98A143296BF915002471B2 /* GithubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA98A142296BF915002471B2 /* GithubView.swift */; };
 		FA98A145296BFA31002471B2 /* RescueTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA98A144296BFA31002471B2 /* RescueTimeView.swift */; };
+		FA98A148296EAFC8002471B2 /* PieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA98A147296EAFC8002471B2 /* PieView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -79,6 +80,7 @@
 		FA98A140296BF1ED002471B2 /* MetricsEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricsEntry.swift; sourceTree = "<group>"; };
 		FA98A142296BF915002471B2 /* GithubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubView.swift; sourceTree = "<group>"; };
 		FA98A144296BFA31002471B2 /* RescueTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RescueTimeView.swift; sourceTree = "<group>"; };
+		FA98A147296EAFC8002471B2 /* PieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 		FA98A0D6296A1F5E002471B2 /* Metrics */ = {
 			isa = PBXGroup;
 			children = (
+				FA98A146296EAFC3002471B2 /* Components */,
 				FA98A0F3296A257B002471B2 /* Model */,
 				FA98A101296A257C002471B2 /* Plugins */,
 				FA98A0EF296A257B002471B2 /* Resource */,
@@ -272,6 +275,14 @@
 			path = Display;
 			sourceTree = "<group>";
 		};
+		FA98A146296EAFC3002471B2 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				FA98A147296EAFC8002471B2 /* PieView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -365,6 +376,7 @@
 				FA98A127296A7A9D002471B2 /* APIToken.swift in Sources */,
 				FA98A134296AC1DA002471B2 /* RepoMetrics.swift in Sources */,
 				FA98A118296A257C002471B2 /* GithubRequest.swift in Sources */,
+				FA98A148296EAFC8002471B2 /* PieView.swift in Sources */,
 				FA98A12B296A8AAF002471B2 /* MetricsStore.swift in Sources */,
 				FA98A112296A257C002471B2 /* IOC.swift in Sources */,
 				FA98A10C296A257C002471B2 /* FetchContext.swift in Sources */,

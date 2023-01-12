@@ -1,5 +1,6 @@
 //Created by Alexander Skorulis on 9/1/2023.
 
+import ASKCore
 import Foundation
 import SwiftUI
 
@@ -7,6 +8,13 @@ import SwiftUI
 
 struct RescueTimeView {
     let data: RescueTimeDay
+    
+    private static let veryProductiveColor = Color(0x3498db)
+    private static let productiveColor = Color(0x2980b9)
+    private static let neutralColor = Color(0x95a5a6)
+    private static let unproductiveColor = Color(0xc0392b)
+    private static let veryUnproductiveColor = Color(0xe74c3c)
+    
 }
 
 // MARK: - Rendering
@@ -14,7 +22,22 @@ struct RescueTimeView {
 extension RescueTimeView: View {
     
     var body: some View {
-        Text("Rescue Time")
+        VStack {
+            Text("Total hours: \(data.total_hours)")
+            pie
+        }
+    }
+    
+    private var pie: some View {
+        PieView(slices: [
+            (data.very_productive_hours, Self.veryProductiveColor),
+            (data.productive_hours, Self.productiveColor),
+            (data.neutral_hours, Self.neutralColor),
+            (data.uncategorized_hours, Color.black),
+            (data.distracting_hours, Self.unproductiveColor),
+            (data.very_distracting_hours, Self.veryUnproductiveColor)
+        ])
+        .frame(width: 300, height: 300)
     }
 }
 

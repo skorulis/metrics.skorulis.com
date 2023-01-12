@@ -29,7 +29,7 @@ extension MetricsDashboardView: View {
     private func entryView(_ entry: MetricsEntry) -> some View {
         VStack {
             Text(entry.week)
-                .typography(.headline)
+                .typography(.title)
             ForEach(viewModel.plugins.sorted, id: \.name) { plugin in
                 if let view = plugin.render(entry) {
                     view
