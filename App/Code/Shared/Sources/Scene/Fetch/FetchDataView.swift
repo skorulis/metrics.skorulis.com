@@ -5,15 +5,19 @@ import SwiftUI
 
 // MARK: - Memory footprint
 
-struct FetchDataView {
+public struct FetchDataView {
     @StateObject var viewModel: FetchDataViewModel
+    
+    public init(viewModel: FetchDataViewModel) {
+        _viewModel = StateObject(wrappedValue: viewModel)
+    }
 }
 
 // MARK: - Rendering
 
 extension FetchDataView: View {
     
-    var body: some View {
+    public var body: some View {
         Button(action: viewModel.fetch) {
             Text("Fetch Data")
         }
@@ -25,7 +29,7 @@ extension FetchDataView: View {
 struct FetchDataView_Previews: PreviewProvider {
     
     static var previews: some View {
-        let ioc = IOC()
+        let ioc = SharedAssembly().assembled().factory
         FetchDataView(viewModel: ioc.resolve())
     }
 }

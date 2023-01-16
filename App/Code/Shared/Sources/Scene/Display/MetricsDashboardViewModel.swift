@@ -4,7 +4,7 @@ import Combine
 import Foundation
 import Shared
 
-final class MetricsDashboardViewModel: ObservableObject {
+public final class MetricsDashboardViewModel: ObservableObject {
     
     private var subscribers: Set<AnyCancellable> = []
     

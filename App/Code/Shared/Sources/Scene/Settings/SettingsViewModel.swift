@@ -2,9 +2,8 @@
 
 import Foundation
 import SwiftUI
-import Shared
 
-final class SettingsViewModel: ObservableObject {
+public final class SettingsViewModel: ObservableObject {
     
     private let tokens: TokensService
     private let plugins: PluginManager

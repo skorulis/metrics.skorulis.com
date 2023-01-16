@@ -5,15 +5,19 @@ import SwiftUI
 
 // MARK: - Memory footprint
 
-struct SettingsView {
+public struct SettingsView {
     @StateObject var viewModel: SettingsViewModel
+    
+    public init(viewModel: SettingsViewModel) {
+        _viewModel = StateObject(wrappedValue: viewModel)
+    }
 }
 
 // MARK: - Rendering
 
 extension SettingsView: View {
     
-    var body: some View {
+    public var body: some View {
         VStack {
             ForEach(viewModel.tokenKeys) { token in
                 TextField(token.name, text: viewModel.tokenBinding(token))
@@ -27,7 +31,7 @@ extension SettingsView: View {
 struct SettingsView_Previews: PreviewProvider {
     
     static var previews: some View {
-        let ioc = IOC()
+        let ioc = SharedAssembly().assembled().factory
         SettingsView(viewModel: ioc.resolve())
     }
 }

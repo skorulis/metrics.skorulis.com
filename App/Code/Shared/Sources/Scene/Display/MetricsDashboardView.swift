@@ -3,19 +3,22 @@
 import ASKDesignSystem
 import Foundation
 import SwiftUI
-import Shared
 
 // MARK: - Memory footprint
 
-struct MetricsDashboardView {
+public struct MetricsDashboardView {
     @StateObject var viewModel: MetricsDashboardViewModel
+    
+    public init(viewModel: MetricsDashboardViewModel) {
+        _viewModel = StateObject(wrappedValue: viewModel)
+    }
 }
 
 // MARK: - Rendering
 
 extension MetricsDashboardView: View {
     
-    var body: some View {
+    public var body: some View {
         VStack {
             ScrollView(.horizontal) {
                 HStack {
@@ -48,7 +51,7 @@ extension MetricsDashboardView: View {
 struct MetricsDashboardView_Previews: PreviewProvider {
     
     static var previews: some View {
-        let ioc = IOC()
+        let ioc = SharedAssembly().assembled().factory
         MetricsDashboardView(viewModel: ioc.resolve())
     }
 }

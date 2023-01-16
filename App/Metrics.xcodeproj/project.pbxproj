@@ -24,12 +24,6 @@
 		FA98A10F296A257C002471B2 /* MetricsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA98A0F9296A257B002471B2 /* MetricsApp.swift */; };
 		FA98A110296A257C002471B2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA98A0FA296A257B002471B2 /* ContentView.swift */; };
 		FA98A120296A27C9002471B2 /* OctoKit in Frameworks */ = {isa = PBXBuildFile; productRef = FA98A11F296A27C9002471B2 /* OctoKit */; };
-		FA98A123296A7787002471B2 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA98A122296A7787002471B2 /* SettingsView.swift */; };
-		FA98A125296A778D002471B2 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA98A124296A778D002471B2 /* SettingsViewModel.swift */; };
-		FA98A12E296A8FA7002471B2 /* FetchDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA98A12D296A8FA7002471B2 /* FetchDataView.swift */; };
-		FA98A130296A8FB0002471B2 /* FetchDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA98A12F296A8FB0002471B2 /* FetchDataViewModel.swift */; };
-		FA98A13D296BE89B002471B2 /* MetricsDashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA98A13C296BE89B002471B2 /* MetricsDashboardView.swift */; };
-		FA98A13F296BE8A4002471B2 /* MetricsDashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA98A13E296BE8A4002471B2 /* MetricsDashboardViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,12 +41,6 @@
 		FA98A0F2296A257B002471B2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FA98A0F9296A257B002471B2 /* MetricsApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetricsApp.swift; sourceTree = "<group>"; };
 		FA98A0FA296A257B002471B2 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		FA98A122296A7787002471B2 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
-		FA98A124296A778D002471B2 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
-		FA98A12D296A8FA7002471B2 /* FetchDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchDataView.swift; sourceTree = "<group>"; };
-		FA98A12F296A8FB0002471B2 /* FetchDataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchDataViewModel.swift; sourceTree = "<group>"; };
-		FA98A13C296BE89B002471B2 /* MetricsDashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricsDashboardView.swift; sourceTree = "<group>"; };
-		FA98A13E296BE8A4002471B2 /* MetricsDashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricsDashboardViewModel.swift; sourceTree = "<group>"; };
 		FA98A14F29752A9F002471B2 /* MetricsIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MetricsIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -196,10 +184,7 @@
 		FA98A0F7296A257B002471B2 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
-				FA98A13B296BE889002471B2 /* Display */,
 				FA98A0F8296A257B002471B2 /* App */,
-				FA98A12C296A8F56002471B2 /* Fetch */,
-				FA98A121296A7777002471B2 /* Settings */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -211,34 +196,6 @@
 				FA98A0FA296A257B002471B2 /* ContentView.swift */,
 			);
 			path = App;
-			sourceTree = "<group>";
-		};
-		FA98A121296A7777002471B2 /* Settings */ = {
-			isa = PBXGroup;
-			children = (
-				FA98A122296A7787002471B2 /* SettingsView.swift */,
-				FA98A124296A778D002471B2 /* SettingsViewModel.swift */,
-			);
-			name = Settings;
-			path = Metrics/Scene/Settings;
-			sourceTree = SOURCE_ROOT;
-		};
-		FA98A12C296A8F56002471B2 /* Fetch */ = {
-			isa = PBXGroup;
-			children = (
-				FA98A12D296A8FA7002471B2 /* FetchDataView.swift */,
-				FA98A12F296A8FB0002471B2 /* FetchDataViewModel.swift */,
-			);
-			path = Fetch;
-			sourceTree = "<group>";
-		};
-		FA98A13B296BE889002471B2 /* Display */ = {
-			isa = PBXGroup;
-			children = (
-				FA98A13C296BE89B002471B2 /* MetricsDashboardView.swift */,
-				FA98A13E296BE8A4002471B2 /* MetricsDashboardViewModel.swift */,
-			);
-			path = Display;
 			sourceTree = "<group>";
 		};
 		FA98A15029752A9F002471B2 /* MetricsIOS */ = {
@@ -363,15 +320,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA98A13F296BE8A4002471B2 /* MetricsDashboardViewModel.swift in Sources */,
-				FA98A12E296A8FA7002471B2 /* FetchDataView.swift in Sources */,
-				FA98A123296A7787002471B2 /* SettingsView.swift in Sources */,
 				FA19071A297543C700277A84 /* IOC.swift in Sources */,
-				FA98A13D296BE89B002471B2 /* MetricsDashboardView.swift in Sources */,
 				FA98A110296A257C002471B2 /* ContentView.swift in Sources */,
 				FA98A10F296A257C002471B2 /* MetricsApp.swift in Sources */,
-				FA98A130296A8FB0002471B2 /* FetchDataViewModel.swift in Sources */,
-				FA98A125296A778D002471B2 /* SettingsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

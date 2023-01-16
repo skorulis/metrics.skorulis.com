@@ -10,13 +10,6 @@ final class IOC: IOCService {
     override init(purpose: IOCPurpose = .testing) {
         super.init(purpose: purpose)
         _ = ModuleAssembler(container: self.container, moduleType: SharedAssembly.self)
-        registerViewModels()
-    }
-    
-    private func registerViewModels() {
-        container.autoregister(SettingsViewModel.self, initializer: SettingsViewModel.init)
-        container.autoregister(FetchDataViewModel.self, initializer: FetchDataViewModel.init)
-        container.autoregister(MetricsDashboardViewModel.self, initializer: MetricsDashboardViewModel.init)
     }
     
 }

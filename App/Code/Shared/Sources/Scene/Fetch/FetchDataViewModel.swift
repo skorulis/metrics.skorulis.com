@@ -2,9 +2,8 @@
 
 import Foundation
 import ASKCore
-import Shared
 
-final class FetchDataViewModel: ObservableObject {
+public final class FetchDataViewModel: ObservableObject {
     
     private let store: MetricsStore
     private let plugins: PluginManager
