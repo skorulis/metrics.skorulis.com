@@ -3,6 +3,7 @@
 import ASKDesignSystem
 import Foundation
 import SwiftUI
+import Shared
 
 // MARK: - Memory footprint
 

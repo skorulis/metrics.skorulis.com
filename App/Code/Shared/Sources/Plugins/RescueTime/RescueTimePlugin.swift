@@ -3,19 +3,21 @@
 import Foundation
 import SwiftUI
 
-final class RescueTimePlugin: DataSourcePlugin {
-    typealias DataType = RescueTimeDay
+public final class RescueTimePlugin: DataSourcePlugin {
+    public typealias DataType = RescueTimeDay
     
     static let rescueTimeToken = APIToken(name: "Rescue time token", key: "rescue_time")
     
-    let name: String = "Rescue Time"
-    let keyName: String = "timeBreakdown"
-    var dataType: RescueTimeDay.Type { RescueTimeDay.self }
-    var tokenKeys: [APIToken] {
+    public let name: String = "Rescue Time"
+    public let keyName: String = "timeBreakdown"
+    public var dataType: RescueTimeDay.Type { RescueTimeDay.self }
+    public var tokenKeys: [APIToken] {
         return [Self.rescueTimeToken]
     }
     
-    func fetch(context: FetchContext, tokens: [String: String]) async throws {
+    public init() {}
+    
+    public func fetch(context: FetchContext, tokens: [String: String]) async throws {
         let service = RescueTimeHTTPService(token: tokens[Self.rescueTimeToken.key]!)
         let days = try await service.execute(request: RescueTimeRequest.days())
         let weekDays = days.filter { day in
@@ -43,7 +45,7 @@ final class RescueTimePlugin: DataSourcePlugin {
         }
     }
     
-    func render(_ entry: MetricsEntry) -> AnyView? {
+    public func render(_ entry: MetricsEntry) -> AnyView? {
         guard let data: DataType = entry.data(self) else {
             return nil
         }

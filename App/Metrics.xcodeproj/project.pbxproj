@@ -7,43 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA19071329753E1B00277A84 /* Shared in Resources */ = {isa = PBXBuildFile; fileRef = FA19071229753E1B00277A84 /* Shared */; };
+		FA19071429753E1B00277A84 /* Shared in Resources */ = {isa = PBXBuildFile; fileRef = FA19071229753E1B00277A84 /* Shared */; };
+		FA19071629753ED900277A84 /* Shared in Frameworks */ = {isa = PBXBuildFile; productRef = FA19071529753ED900277A84 /* Shared */; };
+		FA19071A297543C700277A84 /* IOC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA190719297543C700277A84 /* IOC.swift */; };
 		FA98A0E9296A255F002471B2 /* ASKCore in Resources */ = {isa = PBXBuildFile; fileRef = FA98A0E7296A255F002471B2 /* ASKCore */; };
 		FA98A0EA296A255F002471B2 /* ASKDesignSystem in Resources */ = {isa = PBXBuildFile; fileRef = FA98A0E8296A255F002471B2 /* ASKDesignSystem */; };
 		FA98A0EC296A256B002471B2 /* ASKCore in Frameworks */ = {isa = PBXBuildFile; productRef = FA98A0EB296A256B002471B2 /* ASKCore */; };
 		FA98A0EE296A256B002471B2 /* ASKDesignSystem in Frameworks */ = {isa = PBXBuildFile; productRef = FA98A0ED296A256B002471B2 /* ASKDesignSystem */; };
 		FA98A10A296A257C002471B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA98A0F0296A257B002471B2 /* Assets.xcassets */; };
 		FA98A10B296A257C002471B2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA98A0F2296A257B002471B2 /* Preview Assets.xcassets */; };
-		FA98A10C296A257C002471B2 /* FetchContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA98A0F4296A257B002471B2 /* FetchContext.swift */; };
-		FA98A10D296A257C002471B2 /* DataSourcePlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA98A0F5296A257B002471B2 /* DataSourcePlugin.swift */; };
-		FA98A10E296A257C002471B2 /* MetricsResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA98A0F6296A257B002471B2 /* MetricsResultModel.swift */; };
 		FA98A10F296A257C002471B2 /* MetricsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA98A0F9296A257B002471B2 /* MetricsApp.swift */; };
 		FA98A110296A257C002471B2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA98A0FA296A257B002471B2 /* ContentView.swift */; };
-		FA98A111296A257C002471B2 /* TokensService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA98A0FD296A257C002471B2 /* TokensService.swift */; };
-		FA98A112296A257C002471B2 /* IOC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA98A0FF296A257C002471B2 /* IOC.swift */; };
-		FA98A113296A257C002471B2 /* PluginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA98A100296A257C002471B2 /* PluginManager.swift */; };
-		FA98A114296A257C002471B2 /* RescueTimeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA98A103296A257C002471B2 /* RescueTimeRequest.swift */; };
-		FA98A115296A257C002471B2 /* RescueTimePlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA98A104296A257C002471B2 /* RescueTimePlugin.swift */; };
-		FA98A116296A257C002471B2 /* RescueTimeHTTPService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA98A105296A257C002471B2 /* RescueTimeHTTPService.swift */; };
-		FA98A117296A257C002471B2 /* RescueTimeDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA98A106296A257C002471B2 /* RescueTimeDay.swift */; };
-		FA98A118296A257C002471B2 /* GithubRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA98A108296A257C002471B2 /* GithubRequest.swift */; };
-		FA98A119296A257C002471B2 /* GithubHTTPService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA98A109296A257C002471B2 /* GithubHTTPService.swift */; };
 		FA98A120296A27C9002471B2 /* OctoKit in Frameworks */ = {isa = PBXBuildFile; productRef = FA98A11F296A27C9002471B2 /* OctoKit */; };
 		FA98A123296A7787002471B2 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA98A122296A7787002471B2 /* SettingsView.swift */; };
 		FA98A125296A778D002471B2 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA98A124296A778D002471B2 /* SettingsViewModel.swift */; };
-		FA98A127296A7A9D002471B2 /* APIToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA98A126296A7A9D002471B2 /* APIToken.swift */; };
-		FA98A129296A858B002471B2 /* GithubPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA98A128296A858B002471B2 /* GithubPlugin.swift */; };
-		FA98A12B296A8AAF002471B2 /* MetricsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA98A12A296A8AAF002471B2 /* MetricsStore.swift */; };
 		FA98A12E296A8FA7002471B2 /* FetchDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA98A12D296A8FA7002471B2 /* FetchDataView.swift */; };
 		FA98A130296A8FB0002471B2 /* FetchDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA98A12F296A8FB0002471B2 /* FetchDataViewModel.swift */; };
-		FA98A132296AC1B9002471B2 /* MetricsEntry+Github.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA98A131296AC1B9002471B2 /* MetricsEntry+Github.swift */; };
-		FA98A134296AC1DA002471B2 /* RepoMetrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA98A133296AC1DA002471B2 /* RepoMetrics.swift */; };
 		FA98A13D296BE89B002471B2 /* MetricsDashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA98A13C296BE89B002471B2 /* MetricsDashboardView.swift */; };
 		FA98A13F296BE8A4002471B2 /* MetricsDashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA98A13E296BE8A4002471B2 /* MetricsDashboardViewModel.swift */; };
-		FA98A141296BF1ED002471B2 /* MetricsEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA98A140296BF1ED002471B2 /* MetricsEntry.swift */; };
-		FA98A143296BF915002471B2 /* GithubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA98A142296BF915002471B2 /* GithubView.swift */; };
-		FA98A145296BFA31002471B2 /* RescueTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA98A144296BFA31002471B2 /* RescueTimeView.swift */; };
-		FA98A148296EAFC8002471B2 /* PieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA98A147296EAFC8002471B2 /* PieView.swift */; };
-		FA98A14A29720AB8002471B2 /* MetricsPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA98A14929720AB8002471B2 /* MetricsPanel.swift */; };
 		FA98A15229752A9F002471B2 /* MetricsIOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA98A15129752A9F002471B2 /* MetricsIOSApp.swift */; };
 		FA98A15429752A9F002471B2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA98A15329752A9F002471B2 /* ContentView.swift */; };
 		FA98A15629752AA0002471B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA98A15529752AA0002471B2 /* Assets.xcassets */; };
@@ -51,42 +33,22 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FA19071229753E1B00277A84 /* Shared */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Shared; sourceTree = "<group>"; };
+		FA190719297543C700277A84 /* IOC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOC.swift; sourceTree = "<group>"; };
 		FA98A0D4296A1F5E002471B2 /* Metrics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Metrics.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA98A0E0296A1F5F002471B2 /* Metrics.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Metrics.entitlements; sourceTree = "<group>"; };
 		FA98A0E7296A255F002471B2 /* ASKCore */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = ASKCore; sourceTree = "<group>"; };
 		FA98A0E8296A255F002471B2 /* ASKDesignSystem */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = ASKDesignSystem; sourceTree = "<group>"; };
 		FA98A0F0296A257B002471B2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA98A0F2296A257B002471B2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		FA98A0F4296A257B002471B2 /* FetchContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchContext.swift; sourceTree = "<group>"; };
-		FA98A0F5296A257B002471B2 /* DataSourcePlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSourcePlugin.swift; sourceTree = "<group>"; };
-		FA98A0F6296A257B002471B2 /* MetricsResultModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetricsResultModel.swift; sourceTree = "<group>"; };
 		FA98A0F9296A257B002471B2 /* MetricsApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetricsApp.swift; sourceTree = "<group>"; };
 		FA98A0FA296A257B002471B2 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		FA98A0FD296A257C002471B2 /* TokensService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokensService.swift; sourceTree = "<group>"; };
-		FA98A0FF296A257C002471B2 /* IOC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOC.swift; sourceTree = "<group>"; };
-		FA98A100296A257C002471B2 /* PluginManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PluginManager.swift; sourceTree = "<group>"; };
-		FA98A103296A257C002471B2 /* RescueTimeRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RescueTimeRequest.swift; sourceTree = "<group>"; };
-		FA98A104296A257C002471B2 /* RescueTimePlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RescueTimePlugin.swift; sourceTree = "<group>"; };
-		FA98A105296A257C002471B2 /* RescueTimeHTTPService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RescueTimeHTTPService.swift; sourceTree = "<group>"; };
-		FA98A106296A257C002471B2 /* RescueTimeDay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RescueTimeDay.swift; sourceTree = "<group>"; };
-		FA98A108296A257C002471B2 /* GithubRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GithubRequest.swift; sourceTree = "<group>"; };
-		FA98A109296A257C002471B2 /* GithubHTTPService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GithubHTTPService.swift; sourceTree = "<group>"; };
 		FA98A122296A7787002471B2 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		FA98A124296A778D002471B2 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
-		FA98A126296A7A9D002471B2 /* APIToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIToken.swift; sourceTree = "<group>"; };
-		FA98A128296A858B002471B2 /* GithubPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubPlugin.swift; sourceTree = "<group>"; };
-		FA98A12A296A8AAF002471B2 /* MetricsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricsStore.swift; sourceTree = "<group>"; };
 		FA98A12D296A8FA7002471B2 /* FetchDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchDataView.swift; sourceTree = "<group>"; };
 		FA98A12F296A8FB0002471B2 /* FetchDataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchDataViewModel.swift; sourceTree = "<group>"; };
-		FA98A131296AC1B9002471B2 /* MetricsEntry+Github.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MetricsEntry+Github.swift"; sourceTree = "<group>"; };
-		FA98A133296AC1DA002471B2 /* RepoMetrics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoMetrics.swift; sourceTree = "<group>"; };
 		FA98A13C296BE89B002471B2 /* MetricsDashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricsDashboardView.swift; sourceTree = "<group>"; };
 		FA98A13E296BE8A4002471B2 /* MetricsDashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricsDashboardViewModel.swift; sourceTree = "<group>"; };
-		FA98A140296BF1ED002471B2 /* MetricsEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricsEntry.swift; sourceTree = "<group>"; };
-		FA98A142296BF915002471B2 /* GithubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubView.swift; sourceTree = "<group>"; };
-		FA98A144296BFA31002471B2 /* RescueTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RescueTimeView.swift; sourceTree = "<group>"; };
-		FA98A147296EAFC8002471B2 /* PieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieView.swift; sourceTree = "<group>"; };
-		FA98A14929720AB8002471B2 /* MetricsPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricsPanel.swift; sourceTree = "<group>"; };
 		FA98A14F29752A9F002471B2 /* MetricsIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MetricsIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA98A15129752A9F002471B2 /* MetricsIOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricsIOSApp.swift; sourceTree = "<group>"; };
 		FA98A15329752A9F002471B2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -100,6 +62,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA98A120296A27C9002471B2 /* OctoKit in Frameworks */,
+				FA19071629753ED900277A84 /* Shared in Frameworks */,
 				FA98A0EC296A256B002471B2 /* ASKCore in Frameworks */,
 				FA98A0EE296A256B002471B2 /* ASKDesignSystem in Frameworks */,
 			);
@@ -115,9 +78,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FA19071129753E1B00277A84 /* Code */ = {
+			isa = PBXGroup;
+			children = (
+				FA19071229753E1B00277A84 /* Shared */,
+			);
+			path = Code;
+			sourceTree = "<group>";
+		};
+		FA190717297543C700277A84 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				FA190718297543C700277A84 /* App */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		FA190718297543C700277A84 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				FA190719297543C700277A84 /* IOC.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
 		FA98A0CB296A1F5E002471B2 = {
 			isa = PBXGroup;
 			children = (
+				FA19071129753E1B00277A84 /* Code */,
 				FA98A15029752A9F002471B2 /* MetricsIOS */,
 				FA98A0E6296A255F002471B2 /* Frameworks */,
 				FA98A0D6296A1F5E002471B2 /* Metrics */,
@@ -137,13 +125,9 @@
 		FA98A0D6296A1F5E002471B2 /* Metrics */ = {
 			isa = PBXGroup;
 			children = (
-				FA98A146296EAFC3002471B2 /* Components */,
-				FA98A0F3296A257B002471B2 /* Model */,
-				FA98A101296A257C002471B2 /* Plugins */,
+				FA190717297543C700277A84 /* Service */,
 				FA98A0EF296A257B002471B2 /* Resource */,
 				FA98A0F7296A257B002471B2 /* Scene */,
-				FA98A0FC296A257C002471B2 /* Service */,
-				FA98A0FB296A257C002471B2 /* Store */,
 				FA98A0E0296A1F5F002471B2 /* Metrics.entitlements */,
 			);
 			path = Metrics;
@@ -175,18 +159,6 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		FA98A0F3296A257B002471B2 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				FA98A0F4296A257B002471B2 /* FetchContext.swift */,
-				FA98A0F5296A257B002471B2 /* DataSourcePlugin.swift */,
-				FA98A0F6296A257B002471B2 /* MetricsResultModel.swift */,
-				FA98A126296A7A9D002471B2 /* APIToken.swift */,
-				FA98A140296BF1ED002471B2 /* MetricsEntry.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		FA98A0F7296A257B002471B2 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
@@ -205,66 +177,6 @@
 				FA98A0FA296A257B002471B2 /* ContentView.swift */,
 			);
 			path = App;
-			sourceTree = "<group>";
-		};
-		FA98A0FB296A257C002471B2 /* Store */ = {
-			isa = PBXGroup;
-			children = (
-				FA98A12A296A8AAF002471B2 /* MetricsStore.swift */,
-			);
-			path = Store;
-			sourceTree = "<group>";
-		};
-		FA98A0FC296A257C002471B2 /* Service */ = {
-			isa = PBXGroup;
-			children = (
-				FA98A0FE296A257C002471B2 /* App */,
-				FA98A0FD296A257C002471B2 /* TokensService.swift */,
-				FA98A100296A257C002471B2 /* PluginManager.swift */,
-			);
-			path = Service;
-			sourceTree = "<group>";
-		};
-		FA98A0FE296A257C002471B2 /* App */ = {
-			isa = PBXGroup;
-			children = (
-				FA98A0FF296A257C002471B2 /* IOC.swift */,
-			);
-			path = App;
-			sourceTree = "<group>";
-		};
-		FA98A101296A257C002471B2 /* Plugins */ = {
-			isa = PBXGroup;
-			children = (
-				FA98A102296A257C002471B2 /* RescueTime */,
-				FA98A107296A257C002471B2 /* Github */,
-			);
-			path = Plugins;
-			sourceTree = "<group>";
-		};
-		FA98A102296A257C002471B2 /* RescueTime */ = {
-			isa = PBXGroup;
-			children = (
-				FA98A104296A257C002471B2 /* RescueTimePlugin.swift */,
-				FA98A103296A257C002471B2 /* RescueTimeRequest.swift */,
-				FA98A105296A257C002471B2 /* RescueTimeHTTPService.swift */,
-				FA98A106296A257C002471B2 /* RescueTimeDay.swift */,
-				FA98A144296BFA31002471B2 /* RescueTimeView.swift */,
-			);
-			path = RescueTime;
-			sourceTree = "<group>";
-		};
-		FA98A107296A257C002471B2 /* Github */ = {
-			isa = PBXGroup;
-			children = (
-				FA98A128296A858B002471B2 /* GithubPlugin.swift */,
-				FA98A108296A257C002471B2 /* GithubRequest.swift */,
-				FA98A109296A257C002471B2 /* GithubHTTPService.swift */,
-				FA98A131296AC1B9002471B2 /* MetricsEntry+Github.swift */,
-				FA98A133296AC1DA002471B2 /* RepoMetrics.swift */,
-				FA98A142296BF915002471B2 /* GithubView.swift */,
-			);
-			path = Github;
 			sourceTree = "<group>";
 		};
 		FA98A121296A7777002471B2 /* Settings */ = {
@@ -293,15 +205,6 @@
 				FA98A13E296BE8A4002471B2 /* MetricsDashboardViewModel.swift */,
 			);
 			path = Display;
-			sourceTree = "<group>";
-		};
-		FA98A146296EAFC3002471B2 /* Components */ = {
-			isa = PBXGroup;
-			children = (
-				FA98A147296EAFC8002471B2 /* PieView.swift */,
-				FA98A14929720AB8002471B2 /* MetricsPanel.swift */,
-			);
-			path = Components;
 			sourceTree = "<group>";
 		};
 		FA98A15029752A9F002471B2 /* MetricsIOS */ = {
@@ -343,6 +246,7 @@
 				FA98A0EB296A256B002471B2 /* ASKCore */,
 				FA98A0ED296A256B002471B2 /* ASKDesignSystem */,
 				FA98A11F296A27C9002471B2 /* OctoKit */,
+				FA19071529753ED900277A84 /* Shared */,
 			);
 			productName = Metrics;
 			productReference = FA98A0D4296A1F5E002471B2 /* Metrics.app */;
@@ -410,6 +314,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA19071329753E1B00277A84 /* Shared in Resources */,
 				FA98A10B296A257C002471B2 /* Preview Assets.xcassets in Resources */,
 				FA98A0EA296A255F002471B2 /* ASKDesignSystem in Resources */,
 				FA98A10A296A257C002471B2 /* Assets.xcassets in Resources */,
@@ -423,6 +328,7 @@
 			files = (
 				FA98A15929752AA0002471B2 /* Preview Assets.xcassets in Resources */,
 				FA98A15629752AA0002471B2 /* Assets.xcassets in Resources */,
+				FA19071429753E1B00277A84 /* Shared in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,36 +339,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA98A115296A257C002471B2 /* RescueTimePlugin.swift in Sources */,
 				FA98A13F296BE8A4002471B2 /* MetricsDashboardViewModel.swift in Sources */,
-				FA98A114296A257C002471B2 /* RescueTimeRequest.swift in Sources */,
-				FA98A117296A257C002471B2 /* RescueTimeDay.swift in Sources */,
-				FA98A116296A257C002471B2 /* RescueTimeHTTPService.swift in Sources */,
 				FA98A12E296A8FA7002471B2 /* FetchDataView.swift in Sources */,
 				FA98A123296A7787002471B2 /* SettingsView.swift in Sources */,
-				FA98A113296A257C002471B2 /* PluginManager.swift in Sources */,
+				FA19071A297543C700277A84 /* IOC.swift in Sources */,
 				FA98A13D296BE89B002471B2 /* MetricsDashboardView.swift in Sources */,
-				FA98A132296AC1B9002471B2 /* MetricsEntry+Github.swift in Sources */,
-				FA98A127296A7A9D002471B2 /* APIToken.swift in Sources */,
-				FA98A134296AC1DA002471B2 /* RepoMetrics.swift in Sources */,
-				FA98A118296A257C002471B2 /* GithubRequest.swift in Sources */,
-				FA98A148296EAFC8002471B2 /* PieView.swift in Sources */,
-				FA98A12B296A8AAF002471B2 /* MetricsStore.swift in Sources */,
-				FA98A112296A257C002471B2 /* IOC.swift in Sources */,
-				FA98A10C296A257C002471B2 /* FetchContext.swift in Sources */,
-				FA98A119296A257C002471B2 /* GithubHTTPService.swift in Sources */,
 				FA98A110296A257C002471B2 /* ContentView.swift in Sources */,
-				FA98A141296BF1ED002471B2 /* MetricsEntry.swift in Sources */,
-				FA98A10E296A257C002471B2 /* MetricsResultModel.swift in Sources */,
-				FA98A129296A858B002471B2 /* GithubPlugin.swift in Sources */,
-				FA98A111296A257C002471B2 /* TokensService.swift in Sources */,
-				FA98A10D296A257C002471B2 /* DataSourcePlugin.swift in Sources */,
-				FA98A14A29720AB8002471B2 /* MetricsPanel.swift in Sources */,
 				FA98A10F296A257C002471B2 /* MetricsApp.swift in Sources */,
-				FA98A145296BFA31002471B2 /* RescueTimeView.swift in Sources */,
 				FA98A130296A8FB0002471B2 /* FetchDataViewModel.swift in Sources */,
 				FA98A125296A778D002471B2 /* SettingsViewModel.swift in Sources */,
-				FA98A143296BF915002471B2 /* GithubView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -752,6 +637,10 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		FA19071529753ED900277A84 /* Shared */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Shared;
+		};
 		FA98A0EB296A256B002471B2 /* ASKCore */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = ASKCore;

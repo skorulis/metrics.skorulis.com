@@ -2,6 +2,7 @@
 
 import ASKCore
 import SwiftUI
+import Shared
 
 @main
 struct MetricsApp: App {

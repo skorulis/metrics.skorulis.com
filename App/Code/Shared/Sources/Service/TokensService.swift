@@ -3,7 +3,7 @@
 import ASKCore
 import Foundation
 
-final class TokensService {
+public final class TokensService {
     
     private let store: PKeyValueStore
     
@@ -11,15 +11,15 @@ final class TokensService {
         self.store = store
     }
     
-    func value(token: APIToken) -> String? {
+    public func value(token: APIToken) -> String? {
         return store.string(forKey: token.key)
     }
     
-    func set(value: String, token: APIToken) {
+    public func set(value: String, token: APIToken) {
         store.set(value, forKey: token.key)
     }
     
-    func values<T: DataSourcePlugin>(plugin: T) -> [String: String] {
+    public func values<T: DataSourcePlugin>(plugin: T) -> [String: String] {
         var result: [String: String] = [:]
         for token in plugin.tokenKeys {
             if let value = value(token: token) {

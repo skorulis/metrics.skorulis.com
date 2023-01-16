@@ -2,6 +2,7 @@
 
 import Combine
 import Foundation
+import Shared
 
 final class MetricsDashboardViewModel: ObservableObject {
     

@@ -22,15 +22,6 @@ public struct MetricsResultModel: Codable {
         return entries.first(where: {$0.weekStartDate == week})
     }
     
-    public func lastRepoMetrics(repo: String, before: Date) -> RepoMetrics? {
-        for entry in entries.reversed() {
-            if let value = entry.repos[repo], entry.weekStartDate < before {
-                return value
-            }
-        }
-        return nil
-    }
-    
     public mutating func replace(entry: MetricsEntry) {
         if let index = entries.firstIndex(where: {$0.week == entry.week}) {
             self.entries[index] = entry

@@ -4,18 +4,20 @@ import Foundation
 import OctoKit
 import SwiftUI
 
-final class GithubPlugin: DataSourcePlugin {
+public final class GithubPlugin: DataSourcePlugin {
     
-    static let apiToken: APIToken = .init(name: "Github", key: "github")
-    typealias DataType = [String: RepoMetrics]
-    let name: String = "Github"
-    let keyName: String = "repos"
-    var dataType: [String: RepoMetrics].Type { [String: RepoMetrics].self }
-    var tokenKeys: [APIToken] {
+    public static let apiToken: APIToken = .init(name: "Github", key: "github")
+    public typealias DataType = [String: RepoMetrics]
+    public let name: String = "Github"
+    public let keyName: String = "repos"
+    public var dataType: [String: RepoMetrics].Type { [String: RepoMetrics].self }
+    public var tokenKeys: [APIToken] {
         return [Self.apiToken]
     }
     
-    func fetch(context: FetchContext, tokens: [String: String]) async throws {
+    public init() {}
+    
+    public func fetch(context: FetchContext, tokens: [String: String]) async throws {
         let token = tokens[Self.apiToken.key]!
         let config = TokenConfiguration(token)
         let network = GithubHTTPService(token: token)
@@ -92,7 +94,7 @@ final class GithubPlugin: DataSourcePlugin {
         return result
     }
     
-    func render(_ entry: MetricsEntry) -> AnyView? {
+    public func render(_ entry: MetricsEntry) -> AnyView? {
         guard let data: DataType = entry.data(self) else {
             return nil
         }

@@ -6,3 +6,4 @@ build
 SwiftCommon/.swiftpm/xcode/package.xcworkspace/xcuserdata
 MetricsMac/MetricsMac.xcodeproj/project.xcworkspace/xcuserdata
 App/Metrics.xcodeproj/project.xcworkspace/xcuserdata
+App/Code/Shared/.swiftpm

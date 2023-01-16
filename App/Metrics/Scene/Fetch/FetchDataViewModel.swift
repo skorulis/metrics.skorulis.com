@@ -2,6 +2,7 @@
 
 import Foundation
 import ASKCore
+import Shared
 
 final class FetchDataViewModel: ObservableObject {
     

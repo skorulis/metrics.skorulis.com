@@ -14,7 +14,7 @@ public final class PluginManager {
         plugins[plugin.keyName] = plugin
     }
     
-    var sorted: [any DataSourcePlugin] {
+    public var sorted: [any DataSourcePlugin] {
         let values = Array(plugins.values)
         return values.sorted { d1, d2 in
             return d1.name < d2.name

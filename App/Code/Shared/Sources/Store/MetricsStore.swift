@@ -2,9 +2,9 @@
 
 import Foundation
 
-final class MetricsStore: ObservableObject {
+public final class MetricsStore: ObservableObject {
     
-    var currentData: MetricsResultModel! {
+    public var currentData: MetricsResultModel! {
         didSet {
             let data = try! encoder.encode(currentData)
             try! data.write(to: Self.saveFile)

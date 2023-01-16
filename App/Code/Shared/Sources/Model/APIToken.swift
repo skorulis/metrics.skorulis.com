@@ -3,8 +3,8 @@
 import Foundation
 
 public struct APIToken: Identifiable {
-    let name: String
-    let key: String
+    public let name: String
+    public let key: String
     
     public var id: String { key }
 }

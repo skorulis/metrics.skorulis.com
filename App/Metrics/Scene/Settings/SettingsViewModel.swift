@@ -2,6 +2,7 @@
 
 import Foundation
 import SwiftUI
+import Shared
 
 final class SettingsViewModel: ObservableObject {
     
