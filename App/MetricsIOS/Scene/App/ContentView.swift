@@ -1,16 +1,30 @@
 //Created by Alexander Skorulis on 16/1/2023.
 
 import SwiftUI
+import Shared
 
 struct ContentView: View {
+    @Environment(\.factory) private var factory
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        TabView {
+            MetricsDashboardView(viewModel: factory.resolve())
+                .tabItem {
+                    Text("Metrics")
+                    Image(systemName: "gauge.low")
+                }
+            
+            FetchDataView(viewModel: factory.resolve())
+                .tabItem {
+                    Text("Fetch")
+                    Image(systemName: "icloud.and.arrow.down")
+                }
+            SettingsView(viewModel: factory.resolve())
+                .tabItem {
+                    Text("Settings")
+                    Image(systemName: "gearshape.circle.fill")
+                }
         }
-        .padding()
     }
 }
 
