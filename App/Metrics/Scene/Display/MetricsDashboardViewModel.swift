@@ -30,12 +30,8 @@ final class MetricsDashboardViewModel: ObservableObject {
 extension MetricsDashboardViewModel {
     
     var entries: [MetricsEntry] {
-        return store.currentData.entries
+        return store.currentData.entries.reversed()
     }
-    
-    /*func pairs(entry: MetricsEntry) -> (any PluginData)? {
-        
-    }*/
     
 }
 

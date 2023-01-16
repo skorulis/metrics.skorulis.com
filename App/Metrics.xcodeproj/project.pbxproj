@@ -43,6 +43,7 @@
 		FA98A143296BF915002471B2 /* GithubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA98A142296BF915002471B2 /* GithubView.swift */; };
 		FA98A145296BFA31002471B2 /* RescueTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA98A144296BFA31002471B2 /* RescueTimeView.swift */; };
 		FA98A148296EAFC8002471B2 /* PieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA98A147296EAFC8002471B2 /* PieView.swift */; };
+		FA98A14A29720AB8002471B2 /* MetricsPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA98A14929720AB8002471B2 /* MetricsPanel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,6 +82,7 @@
 		FA98A142296BF915002471B2 /* GithubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubView.swift; sourceTree = "<group>"; };
 		FA98A144296BFA31002471B2 /* RescueTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RescueTimeView.swift; sourceTree = "<group>"; };
 		FA98A147296EAFC8002471B2 /* PieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieView.swift; sourceTree = "<group>"; };
+		FA98A14929720AB8002471B2 /* MetricsPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricsPanel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -279,6 +281,7 @@
 			isa = PBXGroup;
 			children = (
 				FA98A147296EAFC8002471B2 /* PieView.swift */,
+				FA98A14929720AB8002471B2 /* MetricsPanel.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -387,6 +390,7 @@
 				FA98A129296A858B002471B2 /* GithubPlugin.swift in Sources */,
 				FA98A111296A257C002471B2 /* TokensService.swift in Sources */,
 				FA98A10D296A257C002471B2 /* DataSourcePlugin.swift in Sources */,
+				FA98A14A29720AB8002471B2 /* MetricsPanel.swift in Sources */,
 				FA98A10F296A257C002471B2 /* MetricsApp.swift in Sources */,
 				FA98A145296BFA31002471B2 /* RescueTimeView.swift in Sources */,
 				FA98A130296A8FB0002471B2 /* FetchDataViewModel.swift in Sources */,
