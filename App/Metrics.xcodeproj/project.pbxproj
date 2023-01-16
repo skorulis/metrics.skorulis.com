@@ -11,6 +11,10 @@
 		FA19071429753E1B00277A84 /* Shared in Resources */ = {isa = PBXBuildFile; fileRef = FA19071229753E1B00277A84 /* Shared */; };
 		FA19071629753ED900277A84 /* Shared in Frameworks */ = {isa = PBXBuildFile; productRef = FA19071529753ED900277A84 /* Shared */; };
 		FA19071A297543C700277A84 /* IOC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA190719297543C700277A84 /* IOC.swift */; };
+		FA19071F2975501300277A84 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA19071C2975501200277A84 /* Assets.xcassets */; };
+		FA1907202975501300277A84 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA19071E2975501200277A84 /* Preview Assets.xcassets */; };
+		FA1907252975502900277A84 /* MetricsIOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1907232975502900277A84 /* MetricsIOSApp.swift */; };
+		FA1907262975502900277A84 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1907242975502900277A84 /* ContentView.swift */; };
 		FA98A0E9296A255F002471B2 /* ASKCore in Resources */ = {isa = PBXBuildFile; fileRef = FA98A0E7296A255F002471B2 /* ASKCore */; };
 		FA98A0EA296A255F002471B2 /* ASKDesignSystem in Resources */ = {isa = PBXBuildFile; fileRef = FA98A0E8296A255F002471B2 /* ASKDesignSystem */; };
 		FA98A0EC296A256B002471B2 /* ASKCore in Frameworks */ = {isa = PBXBuildFile; productRef = FA98A0EB296A256B002471B2 /* ASKCore */; };
@@ -26,15 +30,15 @@
 		FA98A130296A8FB0002471B2 /* FetchDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA98A12F296A8FB0002471B2 /* FetchDataViewModel.swift */; };
 		FA98A13D296BE89B002471B2 /* MetricsDashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA98A13C296BE89B002471B2 /* MetricsDashboardView.swift */; };
 		FA98A13F296BE8A4002471B2 /* MetricsDashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA98A13E296BE8A4002471B2 /* MetricsDashboardViewModel.swift */; };
-		FA98A15229752A9F002471B2 /* MetricsIOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA98A15129752A9F002471B2 /* MetricsIOSApp.swift */; };
-		FA98A15429752A9F002471B2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA98A15329752A9F002471B2 /* ContentView.swift */; };
-		FA98A15629752AA0002471B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA98A15529752AA0002471B2 /* Assets.xcassets */; };
-		FA98A15929752AA0002471B2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA98A15829752AA0002471B2 /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		FA19071229753E1B00277A84 /* Shared */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Shared; sourceTree = "<group>"; };
 		FA190719297543C700277A84 /* IOC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOC.swift; sourceTree = "<group>"; };
+		FA19071C2975501200277A84 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FA19071E2975501200277A84 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		FA1907232975502900277A84 /* MetricsIOSApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetricsIOSApp.swift; sourceTree = "<group>"; };
+		FA1907242975502900277A84 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		FA98A0D4296A1F5E002471B2 /* Metrics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Metrics.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA98A0E0296A1F5F002471B2 /* Metrics.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Metrics.entitlements; sourceTree = "<group>"; };
 		FA98A0E7296A255F002471B2 /* ASKCore */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = ASKCore; sourceTree = "<group>"; };
@@ -50,10 +54,6 @@
 		FA98A13C296BE89B002471B2 /* MetricsDashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricsDashboardView.swift; sourceTree = "<group>"; };
 		FA98A13E296BE8A4002471B2 /* MetricsDashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricsDashboardViewModel.swift; sourceTree = "<group>"; };
 		FA98A14F29752A9F002471B2 /* MetricsIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MetricsIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		FA98A15129752A9F002471B2 /* MetricsIOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricsIOSApp.swift; sourceTree = "<group>"; };
-		FA98A15329752A9F002471B2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		FA98A15529752AA0002471B2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		FA98A15829752AA0002471B2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +98,40 @@
 			isa = PBXGroup;
 			children = (
 				FA190719297543C700277A84 /* IOC.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		FA19071B2975501200277A84 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				FA19071C2975501200277A84 /* Assets.xcassets */,
+				FA19071D2975501200277A84 /* Preview Content */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		FA19071D2975501200277A84 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				FA19071E2975501200277A84 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		FA1907212975502900277A84 /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				FA1907222975502900277A84 /* App */,
+			);
+			path = Scene;
+			sourceTree = "<group>";
+		};
+		FA1907222975502900277A84 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				FA1907232975502900277A84 /* MetricsIOSApp.swift */,
+				FA1907242975502900277A84 /* ContentView.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -210,20 +244,10 @@
 		FA98A15029752A9F002471B2 /* MetricsIOS */ = {
 			isa = PBXGroup;
 			children = (
-				FA98A15129752A9F002471B2 /* MetricsIOSApp.swift */,
-				FA98A15329752A9F002471B2 /* ContentView.swift */,
-				FA98A15529752AA0002471B2 /* Assets.xcassets */,
-				FA98A15729752AA0002471B2 /* Preview Content */,
+				FA19071B2975501200277A84 /* Resource */,
+				FA1907212975502900277A84 /* Scene */,
 			);
 			path = MetricsIOS;
-			sourceTree = "<group>";
-		};
-		FA98A15729752AA0002471B2 /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				FA98A15829752AA0002471B2 /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -326,8 +350,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA98A15929752AA0002471B2 /* Preview Assets.xcassets in Resources */,
-				FA98A15629752AA0002471B2 /* Assets.xcassets in Resources */,
+				FA19071F2975501300277A84 /* Assets.xcassets in Resources */,
+				FA1907202975501300277A84 /* Preview Assets.xcassets in Resources */,
 				FA19071429753E1B00277A84 /* Shared in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -355,8 +379,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA98A15429752A9F002471B2 /* ContentView.swift in Sources */,
-				FA98A15229752A9F002471B2 /* MetricsIOSApp.swift in Sources */,
+				FA1907262975502900277A84 /* ContentView.swift in Sources */,
+				FA1907252975502900277A84 /* MetricsIOSApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -537,7 +561,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"MetricsIOS/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"MetricsIOS/Resource/Preview Content\"";
 				DEVELOPMENT_TEAM = X4S6MUZL2D;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -568,7 +592,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"MetricsIOS/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"MetricsIOS/Resource/Preview Content\"";
 				DEVELOPMENT_TEAM = X4S6MUZL2D;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
