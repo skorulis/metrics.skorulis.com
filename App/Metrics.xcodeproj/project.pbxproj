@@ -44,6 +44,10 @@
 		FA98A145296BFA31002471B2 /* RescueTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA98A144296BFA31002471B2 /* RescueTimeView.swift */; };
 		FA98A148296EAFC8002471B2 /* PieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA98A147296EAFC8002471B2 /* PieView.swift */; };
 		FA98A14A29720AB8002471B2 /* MetricsPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA98A14929720AB8002471B2 /* MetricsPanel.swift */; };
+		FA98A15229752A9F002471B2 /* MetricsIOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA98A15129752A9F002471B2 /* MetricsIOSApp.swift */; };
+		FA98A15429752A9F002471B2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA98A15329752A9F002471B2 /* ContentView.swift */; };
+		FA98A15629752AA0002471B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA98A15529752AA0002471B2 /* Assets.xcassets */; };
+		FA98A15929752AA0002471B2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA98A15829752AA0002471B2 /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -83,6 +87,11 @@
 		FA98A144296BFA31002471B2 /* RescueTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RescueTimeView.swift; sourceTree = "<group>"; };
 		FA98A147296EAFC8002471B2 /* PieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieView.swift; sourceTree = "<group>"; };
 		FA98A14929720AB8002471B2 /* MetricsPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricsPanel.swift; sourceTree = "<group>"; };
+		FA98A14F29752A9F002471B2 /* MetricsIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MetricsIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA98A15129752A9F002471B2 /* MetricsIOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricsIOSApp.swift; sourceTree = "<group>"; };
+		FA98A15329752A9F002471B2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		FA98A15529752AA0002471B2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FA98A15829752AA0002471B2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,12 +105,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FA98A14C29752A9F002471B2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		FA98A0CB296A1F5E002471B2 = {
 			isa = PBXGroup;
 			children = (
+				FA98A15029752A9F002471B2 /* MetricsIOS */,
 				FA98A0E6296A255F002471B2 /* Frameworks */,
 				FA98A0D6296A1F5E002471B2 /* Metrics */,
 				FA98A0D5296A1F5E002471B2 /* Products */,
@@ -112,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				FA98A0D4296A1F5E002471B2 /* Metrics.app */,
+				FA98A14F29752A9F002471B2 /* MetricsIOS.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -286,6 +304,25 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		FA98A15029752A9F002471B2 /* MetricsIOS */ = {
+			isa = PBXGroup;
+			children = (
+				FA98A15129752A9F002471B2 /* MetricsIOSApp.swift */,
+				FA98A15329752A9F002471B2 /* ContentView.swift */,
+				FA98A15529752AA0002471B2 /* Assets.xcassets */,
+				FA98A15729752AA0002471B2 /* Preview Content */,
+			);
+			path = MetricsIOS;
+			sourceTree = "<group>";
+		};
+		FA98A15729752AA0002471B2 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				FA98A15829752AA0002471B2 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -311,6 +348,23 @@
 			productReference = FA98A0D4296A1F5E002471B2 /* Metrics.app */;
 			productType = "com.apple.product-type.application";
 		};
+		FA98A14E29752A9F002471B2 /* MetricsIOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FA98A15C29752AA0002471B2 /* Build configuration list for PBXNativeTarget "MetricsIOS" */;
+			buildPhases = (
+				FA98A14B29752A9F002471B2 /* Sources */,
+				FA98A14C29752A9F002471B2 /* Frameworks */,
+				FA98A14D29752A9F002471B2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MetricsIOS;
+			productName = MetricsIOS;
+			productReference = FA98A14F29752A9F002471B2 /* MetricsIOS.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -322,6 +376,9 @@
 				LastUpgradeCheck = 1410;
 				TargetAttributes = {
 					FA98A0D3296A1F5E002471B2 = {
+						CreatedOnToolsVersion = 14.1;
+					};
+					FA98A14E29752A9F002471B2 = {
 						CreatedOnToolsVersion = 14.1;
 					};
 				};
@@ -343,6 +400,7 @@
 			projectRoot = "";
 			targets = (
 				FA98A0D3296A1F5E002471B2 /* Metrics */,
+				FA98A14E29752A9F002471B2 /* MetricsIOS */,
 			);
 		};
 /* End PBXProject section */
@@ -356,6 +414,15 @@
 				FA98A0EA296A255F002471B2 /* ASKDesignSystem in Resources */,
 				FA98A10A296A257C002471B2 /* Assets.xcassets in Resources */,
 				FA98A0E9296A255F002471B2 /* ASKCore in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA98A14D29752A9F002471B2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA98A15929752AA0002471B2 /* Preview Assets.xcassets in Resources */,
+				FA98A15629752AA0002471B2 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -396,6 +463,15 @@
 				FA98A130296A8FB0002471B2 /* FetchDataViewModel.swift in Sources */,
 				FA98A125296A778D002471B2 /* SettingsViewModel.swift in Sources */,
 				FA98A143296BF915002471B2 /* GithubView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA98A14B29752A9F002471B2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA98A15429752A9F002471B2 /* ContentView.swift in Sources */,
+				FA98A15229752A9F002471B2 /* MetricsIOSApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -569,6 +645,69 @@
 			};
 			name = Release;
 		};
+		FA98A15A29752AA0002471B2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"MetricsIOS/Preview Content\"";
+				DEVELOPMENT_TEAM = X4S6MUZL2D;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.skorulis.MetricsIOS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FA98A15B29752AA0002471B2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"MetricsIOS/Preview Content\"";
+				DEVELOPMENT_TEAM = X4S6MUZL2D;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.skorulis.MetricsIOS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -586,6 +725,15 @@
 			buildConfigurations = (
 				FA98A0E4296A1F5F002471B2 /* Debug */,
 				FA98A0E5296A1F5F002471B2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FA98A15C29752AA0002471B2 /* Build configuration list for PBXNativeTarget "MetricsIOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA98A15A29752AA0002471B2 /* Debug */,
+				FA98A15B29752AA0002471B2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
