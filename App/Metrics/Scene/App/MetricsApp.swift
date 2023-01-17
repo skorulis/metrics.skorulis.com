@@ -1,6 +1,7 @@
 //  Created by Alexander Skorulis on 8/1/2023.
 
 import ASKCore
+import FirebaseCore
 import SwiftUI
 import Shared
 
@@ -10,6 +11,7 @@ struct MetricsApp: App {
     private let ioc = IOC(purpose: .normal)
     
     init() {
+        FirebaseApp.configure()
         let plugins = ioc.resolve(PluginManager.self)
         plugins.register(plugin: RescueTimePlugin())
         plugins.register(plugin: GithubPlugin())

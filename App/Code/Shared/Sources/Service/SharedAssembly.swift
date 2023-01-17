@@ -32,6 +32,7 @@ public final class SharedAssembly: AutoModuleAssembly {
     
     private func registerStores(container: Container) {
         container.autoregister(MetricsStore.self, initializer: MetricsStore.init)
+            .inObjectScope(.container)
         
         switch container.purpose {
         case .testing:
