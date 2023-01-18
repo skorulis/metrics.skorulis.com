@@ -14,14 +14,10 @@
 		FA19071F2975501300277A84 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA19071C2975501200277A84 /* Assets.xcassets */; };
 		FA1907202975501300277A84 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA19071E2975501200277A84 /* Preview Assets.xcassets */; };
 		FA1907252975502900277A84 /* MetricsIOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1907232975502900277A84 /* MetricsIOSApp.swift */; };
-		FA1907262975502900277A84 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1907242975502900277A84 /* ContentView.swift */; };
 		FA19072829755AD500277A84 /* ASKCore in Frameworks */ = {isa = PBXBuildFile; productRef = FA19072729755AD500277A84 /* ASKCore */; };
 		FA19072A29755AD500277A84 /* ASKDesignSystem in Frameworks */ = {isa = PBXBuildFile; productRef = FA19072929755AD500277A84 /* ASKDesignSystem */; };
 		FA19072C29755AD500277A84 /* Shared in Frameworks */ = {isa = PBXBuildFile; productRef = FA19072B29755AD500277A84 /* Shared */; };
 		FA19073029755B5500277A84 /* IOC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA19072F29755B5500277A84 /* IOC.swift */; };
-		FA1907332976381C00277A84 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = FA1907322976381C00277A84 /* FirebaseAuth */; };
-		FA1907352976381C00277A84 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = FA1907342976381C00277A84 /* FirebaseFirestore */; };
-		FA1907372976381C00277A84 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = FA1907362976381C00277A84 /* FirebaseFirestoreSwift */; };
 		FA19073B2976A4DD00277A84 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA19073A2976A4DD00277A84 /* GoogleService-Info.plist */; };
 		FA98A0E9296A255F002471B2 /* ASKCore in Resources */ = {isa = PBXBuildFile; fileRef = FA98A0E7296A255F002471B2 /* ASKCore */; };
 		FA98A0EA296A255F002471B2 /* ASKDesignSystem in Resources */ = {isa = PBXBuildFile; fileRef = FA98A0E8296A255F002471B2 /* ASKDesignSystem */; };
@@ -30,8 +26,6 @@
 		FA98A10A296A257C002471B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA98A0F0296A257B002471B2 /* Assets.xcassets */; };
 		FA98A10B296A257C002471B2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA98A0F2296A257B002471B2 /* Preview Assets.xcassets */; };
 		FA98A10F296A257C002471B2 /* MetricsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA98A0F9296A257B002471B2 /* MetricsApp.swift */; };
-		FA98A110296A257C002471B2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA98A0FA296A257B002471B2 /* ContentView.swift */; };
-		FA98A120296A27C9002471B2 /* OctoKit in Frameworks */ = {isa = PBXBuildFile; productRef = FA98A11F296A27C9002471B2 /* OctoKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,7 +34,6 @@
 		FA19071C2975501200277A84 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA19071E2975501200277A84 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FA1907232975502900277A84 /* MetricsIOSApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetricsIOSApp.swift; sourceTree = "<group>"; };
-		FA1907242975502900277A84 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		FA19072F29755B5500277A84 /* IOC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOC.swift; sourceTree = "<group>"; };
 		FA19073A2976A4DD00277A84 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FA98A0D4296A1F5E002471B2 /* Metrics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Metrics.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -50,7 +43,6 @@
 		FA98A0F0296A257B002471B2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA98A0F2296A257B002471B2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FA98A0F9296A257B002471B2 /* MetricsApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetricsApp.swift; sourceTree = "<group>"; };
-		FA98A0FA296A257B002471B2 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		FA98A14F29752A9F002471B2 /* MetricsIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MetricsIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -59,13 +51,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA98A120296A27C9002471B2 /* OctoKit in Frameworks */,
-				FA1907332976381C00277A84 /* FirebaseAuth in Frameworks */,
 				FA19071629753ED900277A84 /* Shared in Frameworks */,
-				FA1907372976381C00277A84 /* FirebaseFirestoreSwift in Frameworks */,
 				FA98A0EC296A256B002471B2 /* ASKCore in Frameworks */,
 				FA98A0EE296A256B002471B2 /* ASKDesignSystem in Frameworks */,
-				FA1907352976381C00277A84 /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,7 +123,6 @@
 			isa = PBXGroup;
 			children = (
 				FA1907232975502900277A84 /* MetricsIOSApp.swift */,
-				FA1907242975502900277A84 /* ContentView.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -242,7 +229,6 @@
 			isa = PBXGroup;
 			children = (
 				FA98A0F9296A257B002471B2 /* MetricsApp.swift */,
-				FA98A0FA296A257B002471B2 /* ContentView.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -276,11 +262,7 @@
 			packageProductDependencies = (
 				FA98A0EB296A256B002471B2 /* ASKCore */,
 				FA98A0ED296A256B002471B2 /* ASKDesignSystem */,
-				FA98A11F296A27C9002471B2 /* OctoKit */,
 				FA19071529753ED900277A84 /* Shared */,
-				FA1907322976381C00277A84 /* FirebaseAuth */,
-				FA1907342976381C00277A84 /* FirebaseFirestore */,
-				FA1907362976381C00277A84 /* FirebaseFirestoreSwift */,
 			);
 			productName = Metrics;
 			productReference = FA98A0D4296A1F5E002471B2 /* Metrics.app */;
@@ -336,8 +318,6 @@
 			);
 			mainGroup = FA98A0CB296A1F5E002471B2;
 			packageReferences = (
-				FA98A11E296A27C9002471B2 /* XCRemoteSwiftPackageReference "octokit.swift" */,
-				FA1907312976381C00277A84 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = FA98A0D5296A1F5E002471B2 /* Products */;
 			projectDirPath = "";
@@ -381,7 +361,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA19071A297543C700277A84 /* IOC.swift in Sources */,
-				FA98A110296A257C002471B2 /* ContentView.swift in Sources */,
 				FA98A10F296A257C002471B2 /* MetricsApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -390,7 +369,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA1907262975502900277A84 /* ContentView.swift in Sources */,
 				FA19073029755B5500277A84 /* IOC.swift in Sources */,
 				FA1907252975502900277A84 /* MetricsIOSApp.swift in Sources */,
 			);
@@ -661,25 +639,6 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCRemoteSwiftPackageReference section */
-		FA1907312976381C00277A84 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 9.0.0;
-			};
-		};
-		FA98A11E296A27C9002471B2 /* XCRemoteSwiftPackageReference "octokit.swift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "git@github.com:nerdishbynature/octokit.swift.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.9.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
 /* Begin XCSwiftPackageProductDependency section */
 		FA19071529753ED900277A84 /* Shared */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -697,21 +656,6 @@
 			isa = XCSwiftPackageProductDependency;
 			productName = Shared;
 		};
-		FA1907322976381C00277A84 /* FirebaseAuth */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = FA1907312976381C00277A84 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseAuth;
-		};
-		FA1907342976381C00277A84 /* FirebaseFirestore */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = FA1907312976381C00277A84 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseFirestore;
-		};
-		FA1907362976381C00277A84 /* FirebaseFirestoreSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = FA1907312976381C00277A84 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseFirestoreSwift;
-		};
 		FA98A0EB296A256B002471B2 /* ASKCore */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = ASKCore;
@@ -719,11 +663,6 @@
 		FA98A0ED296A256B002471B2 /* ASKDesignSystem */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = ASKDesignSystem;
-		};
-		FA98A11F296A27C9002471B2 /* OctoKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = FA98A11E296A27C9002471B2 /* XCRemoteSwiftPackageReference "octokit.swift" */;
-			productName = OctoKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

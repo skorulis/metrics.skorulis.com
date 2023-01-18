@@ -25,13 +25,17 @@ public final class SharedAssembly: AutoModuleAssembly {
     }
     
     private func registerViewModels(container: Container) {
+        container.autoregister(ContentViewModel.self, initializer: ContentViewModel.init)
         container.autoregister(SettingsViewModel.self, initializer: SettingsViewModel.init)
         container.autoregister(FetchDataViewModel.self, initializer: FetchDataViewModel.init)
         container.autoregister(MetricsDashboardViewModel.self, initializer: MetricsDashboardViewModel.init)
+        container.autoregister(LoginViewModel.self, initializer: LoginViewModel.init)
     }
     
     private func registerStores(container: Container) {
         container.autoregister(MetricsStore.self, initializer: MetricsStore.init)
+            .inObjectScope(.container)
+        container.autoregister(MainStore.self, initializer: MainStore.init)
             .inObjectScope(.container)
         
         switch container.purpose {

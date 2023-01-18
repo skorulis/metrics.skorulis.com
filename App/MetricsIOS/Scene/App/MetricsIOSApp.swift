@@ -3,6 +3,7 @@
 import ASKCore
 import SwiftUI
 import Shared
+import FirebaseCore
 
 @main
 struct MetricsApp: App {
@@ -10,6 +11,7 @@ struct MetricsApp: App {
     private let ioc = IOC(purpose: .normal)
     
     init() {
+        FirebaseApp.configure()
         let plugins = ioc.resolve(PluginManager.self)
         plugins.register(plugin: RescueTimePlugin())
         plugins.register(plugin: GithubPlugin())
@@ -17,7 +19,7 @@ struct MetricsApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(viewModel: ioc.resolve())
                 .environment(\.factory, ioc)
         }
     }

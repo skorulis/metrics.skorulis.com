@@ -16,6 +16,8 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/nerdishbynature/octokit.swift", from: "0.11.0"),
+        .package(url: "git@github.com:alickbass/CodableFirebase.git", from: "0.2.0"),
+        .package(url: "git@github.com:firebase/firebase-ios-sdk.git", from: "9.0.0"),
         .package(path: "../../Frameworks/ASKCore"),
         .package(path: "../../Frameworks/ASKDesignSystem")
     ],
@@ -25,6 +27,8 @@ let package = Package(
             dependencies: [
                 "ASKCore",
                 "ASKDesignSystem",
+                "CodableFirebase",
+                .product(name: "FirebaseAuth", package: "firebase-ios-sdk"),
                 .product(name: "OctoKit", package: "octokit.swift")
             ],
             path: "Sources"
