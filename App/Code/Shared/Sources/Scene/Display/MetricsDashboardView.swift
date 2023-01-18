@@ -30,7 +30,7 @@ extension MetricsDashboardView: View {
         }
     }
     
-    private func entryView(_ entry: MetricsEntry) -> some View {
+    private func entryView(_ entry: MetricsWeekEntry) -> some View {
         VStack {
             Text(entry.week)
                 .typography(.title)

@@ -1,10 +1,10 @@
-//  Created by Alexander Skorulis on 18/1/2023.
+//Created by Alexander Skorulis on 9/1/2023.
 
 import Foundation
 
-public struct MetricsEntry: Codable, Identifiable {
+public struct MetricsWeekEntry: Codable, Identifiable {
     
-    public let day: String
+    public let week: String
     public func data<T: DataSourcePlugin>(_ plugin: T) -> T.DataType? {
         return pluginData[plugin.keyName] as? T.DataType
     }
@@ -14,18 +14,13 @@ public struct MetricsEntry: Codable, Identifiable {
     
     public var pluginData: [String: any Codable]
     
-    public init(day: String) {
-        self.day = day
+    public init(week: String) {
+        self.week = week
         pluginData = [:]
     }
     
-    public init(date: Date) {
-        let dayStart = Calendar.current.startOfDay(for: date)
-        self.init(day: Self.dateFormatter.string(from: dayStart))
-    }
-    
-    var date: Date {
-        return Self.dateFormatter.date(from: day)!
+    var weekStartDate: Date {
+        return Self.dateFormatter.date(from: week)!
     }
     
     static let dateFormatter: DateFormatter = {
@@ -34,10 +29,15 @@ public struct MetricsEntry: Codable, Identifiable {
         return df
     }()
     
+    public static var weekStart: String {
+        let weekStart = Date().startOfWeek
+        return dateFormatter.string(from: weekStart)
+    }
+    
     public init(from decoder: Decoder) throws {
         let plugins = decoder.userInfo[.init(rawValue: "plugins")!] as! [String: any DataSourcePlugin]
         let container = try decoder.container(keyedBy: GenericCodingKeys.self)
-        self.day = try container.decode(String.self, forKey: "day")
+        self.week = try container.decode(String.self, forKey: "week")
         
         pluginData = [:]
         for (key, value) in plugins {
@@ -51,14 +51,13 @@ public struct MetricsEntry: Codable, Identifiable {
     
     public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: GenericCodingKeys.self)
-        try container.encode(day, forKey: "day")
+        try container.encode(week, forKey: "week")
         
         for (key, value) in pluginData {
             try container.encode(value, forKey: .init(stringLiteral: key))
         }
     }
     
-    public var id: String { day }
+    public var id: String { week }
     
 }
-

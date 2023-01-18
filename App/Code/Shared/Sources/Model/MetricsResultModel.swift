@@ -3,9 +3,9 @@
 import Foundation
 
 public struct MetricsResultModel: Codable {
-    public var entries: [MetricsEntry]
+    public var entries: [MetricsWeekEntry]
     
-    public init(entries: [MetricsEntry]) {
+    public init(entries: [MetricsWeekEntry]) {
         self.entries = entries
     }
     
@@ -18,11 +18,11 @@ public struct MetricsResultModel: Codable {
         return nil
     }
     
-    public func entryMatching(_ week: Date) -> MetricsEntry? {
+    public func entryMatching(_ week: Date) -> MetricsWeekEntry? {
         return entries.first(where: {$0.weekStartDate == week})
     }
     
-    public mutating func replace(entry: MetricsEntry) {
+    public mutating func replace(entry: MetricsWeekEntry) {
         if let index = entries.firstIndex(where: {$0.week == entry.week}) {
             self.entries[index] = entry
         } else {

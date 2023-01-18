@@ -4,7 +4,9 @@ import Foundation
 
 public final class MetricsStore: ObservableObject {
     
-    public var currentData: MetricsResultModel! {
+    @Published var entries: [MetricsEntry] = []
+    
+    @Published public var currentData: MetricsResultModel! {
         didSet {
             let data = try! encoder.encode(currentData)
             try! data.write(to: Self.saveFile)

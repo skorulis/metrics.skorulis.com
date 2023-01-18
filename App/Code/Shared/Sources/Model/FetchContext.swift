@@ -20,10 +20,10 @@ public final class FetchContext {
     }
     
     public var weekStart: String {
-        return MetricsEntry.dateFormatter.string(from: weekStartDate)
+        return MetricsWeekEntry.dateFormatter.string(from: weekStartDate)
     }
     
-    public var currentEntry: MetricsEntry {
-        result.entryMatching(weekStartDate) ?? MetricsEntry(week: weekStart)
+    public var currentEntry: MetricsWeekEntry {
+        result.entryMatching(weekStartDate) ?? MetricsWeekEntry(week: weekStart)
     }
 }

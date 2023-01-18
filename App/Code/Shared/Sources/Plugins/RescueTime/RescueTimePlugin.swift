@@ -21,12 +21,12 @@ public final class RescueTimePlugin: DataSourcePlugin {
         let service = RescueTimeHTTPService(token: tokens[Self.rescueTimeToken.key]!)
         let days = try await service.execute(request: RescueTimeRequest.days())
         let weekDays = days.filter { day in
-            let date = MetricsEntry.dateFormatter.date(from: day.date)!
+            let date = MetricsWeekEntry.dateFormatter.date(from: day.date)!
             let weekDate = date.startOfWeek
             return weekDate == context.weekStartDate
         }
         let previousWeekDays = days.filter { day in
-            let date = MetricsEntry.dateFormatter.date(from: day.date)!
+            let date = MetricsWeekEntry.dateFormatter.date(from: day.date)!
             let weekDate = date.startOfWeek
             return weekDate == context.lastWeekStart
         }
@@ -45,7 +45,7 @@ public final class RescueTimePlugin: DataSourcePlugin {
         }
     }
     
-    public func render(_ entry: MetricsEntry) -> AnyView? {
+    public func render(_ entry: MetricsWeekEntry) -> AnyView? {
         guard let data: DataType = entry.data(self) else {
             return nil
         }

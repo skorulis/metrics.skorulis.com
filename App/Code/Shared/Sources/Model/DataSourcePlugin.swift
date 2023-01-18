@@ -15,6 +15,6 @@ public protocol DataSourcePlugin {
     
     func fetch(context: FetchContext, tokens: [String: String]) async throws
     
-    func render(_ entry: MetricsEntry) -> AnyView?
+    func render(_ entry: MetricsWeekEntry) -> AnyView?
         
 }

@@ -94,7 +94,7 @@ public final class GithubPlugin: DataSourcePlugin {
         return result
     }
     
-    public func render(_ entry: MetricsEntry) -> AnyView? {
+    public func render(_ entry: MetricsWeekEntry) -> AnyView? {
         guard let data: DataType = entry.data(self) else {
             return nil
         }

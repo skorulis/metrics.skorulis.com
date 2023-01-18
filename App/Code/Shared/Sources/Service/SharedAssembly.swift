@@ -11,6 +11,12 @@ public final class SharedAssembly: AutoModuleAssembly {
     public init() {}
     
     public func assemble(container: Container) {
+        registerServices(container: container)
+        registerStores(container: container)
+        registerViewModels(container: container)
+    }
+    
+    private func registerServices(container: Container) {
         container.autoregister(TokensService.self, initializer: TokensService.init)
             .inObjectScope(.container)
         
@@ -20,8 +26,7 @@ public final class SharedAssembly: AutoModuleAssembly {
         container.autoregister(PluginManager.self, initializer: PluginManager.init)
             .inObjectScope(.container)
         
-        registerStores(container: container)
-        registerViewModels(container: container)
+        container.autoregister(DataService.self, initializer: DataService.init)
     }
     
     private func registerViewModels(container: Container) {

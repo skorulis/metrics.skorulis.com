@@ -2,7 +2,6 @@
 
 import Combine
 import Foundation
-import Shared
 
 public final class MetricsDashboardViewModel: ObservableObject {
     
@@ -17,7 +16,8 @@ public final class MetricsDashboardViewModel: ObservableObject {
         self.store = store
         self.plugins = plugins
         
-        store.objectWillChange.delayedChange()
+        store.objectWillChange
+            .delayedChange()
             .sink { [unowned self] in
             self.objectWillChange.send()
         }
@@ -30,7 +30,7 @@ public final class MetricsDashboardViewModel: ObservableObject {
 
 extension MetricsDashboardViewModel {
     
-    var entries: [MetricsEntry] {
+    var entries: [MetricsWeekEntry] {
         return store.currentData.entries.reversed()
     }
     

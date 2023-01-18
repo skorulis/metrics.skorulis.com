@@ -8,14 +8,26 @@ public final class FetchDataViewModel: ObservableObject {
     private let store: MetricsStore
     private let plugins: PluginManager
     private let tokens: TokensService
+    private let dataService: DataService
     
     init(store: MetricsStore,
          plugins: PluginManager,
-         tokens: TokensService
+         tokens: TokensService,
+         dataService: DataService
     ) {
         self.store = store
         self.plugins = plugins
         self.tokens = tokens
+        self.dataService = dataService
+        
+        var entry = MetricsEntry(date: Date())
+        var gitData = GithubPlugin.DataType()
+        gitData["test"] = .init(languageBytes: ["swift": 1000], lastPush: Date(), commitCount: 300)
+        
+        entry.setData(GithubPlugin(), data: gitData)
+        dataService.save(entry: entry)
+        
+        dataService.fetch()
     }
     
 }
