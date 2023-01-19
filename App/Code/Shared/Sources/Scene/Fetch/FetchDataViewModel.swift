@@ -40,14 +40,14 @@ extension FetchDataViewModel {
         Task {
             do {
                 let todo = plugins.sorted
-                let context = FetchContext(result: store.currentData, weekStartDate: Date().startOfWeek)
+                let context = FetchContext(entries: [:], date: Date().startOfWeek)
                 for plugin in todo {
                     print("Fetching \(plugin.name)")
                     let tokens = tokens.values(plugin: plugin)
                     try await plugin.fetch(context: context, tokens: tokens)
                 }
                 print("Saving results")
-                self.store.currentData = context.result
+                store.entries = context.orderedEntries
             } catch {
                 print(error)
             }

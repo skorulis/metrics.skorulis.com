@@ -62,3 +62,15 @@ public struct MetricsEntry: Codable, Identifiable {
     
 }
 
+struct GenericCodingKeys: CodingKey, ExpressibleByStringLiteral {
+    // MARK: CodingKey
+    var stringValue: String
+    var intValue: Int?
+
+    init?(stringValue: String) { self.stringValue = stringValue }
+    init?(intValue: Int) { return nil }
+
+    // MARK: ExpressibleByStringLiteral
+    typealias StringLiteralType = String
+    init(stringLiteral: StringLiteralType) { self.stringValue = stringLiteral }
+}

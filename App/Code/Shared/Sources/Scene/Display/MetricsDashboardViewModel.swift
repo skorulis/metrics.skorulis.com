@@ -30,8 +30,8 @@ public final class MetricsDashboardViewModel: ObservableObject {
 
 extension MetricsDashboardViewModel {
     
-    var entries: [MetricsWeekEntry] {
-        return store.currentData.entries.reversed()
+    var entries: [MetricsEntry] {
+        return store.entries.reversed()
     }
     
 }

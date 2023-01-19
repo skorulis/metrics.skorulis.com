@@ -6,17 +6,10 @@ public final class MetricsStore: ObservableObject {
     
     @Published var entries: [MetricsEntry] = []
     
-    @Published public var currentData: MetricsResultModel! {
-        didSet {
-            let data = try! encoder.encode(currentData)
-            try! data.write(to: Self.saveFile)
-        }
-    }
     let plugins: PluginManager
     
     init(plugins: PluginManager) {
         self.plugins = plugins
-        currentData = try! loadExisting()
         print("Using data at \(Self.saveFile.absoluteString)")
     }
     
@@ -43,12 +36,12 @@ private extension MetricsStore {
         return paths[0].appending(path: "metrics.json")
     }
     
-    func loadExisting() throws -> MetricsResultModel {
+    func loadExisting() throws -> [MetricsEntry] {
         if FileManager.default.fileExists(at: Self.saveFile) {
             let data = try Data(contentsOf: Self.saveFile)
-            return try decoder.decode(MetricsResultModel.self, from: data)
+            return try decoder.decode([MetricsEntry].self, from: data)
         } else {
-            return MetricsResultModel(entries: [])
+            return []
         }
     }
     

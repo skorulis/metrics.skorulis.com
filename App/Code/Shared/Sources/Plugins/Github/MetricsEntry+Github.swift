@@ -2,7 +2,7 @@
 
 import Foundation
 
-extension MetricsWeekEntry {
+extension MetricsEntry {
     
     var repos: [String: RepoMetrics] {
         get {

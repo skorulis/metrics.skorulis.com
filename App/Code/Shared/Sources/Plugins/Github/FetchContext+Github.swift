@@ -2,11 +2,11 @@
 
 import Foundation
 
-extension MetricsResultModel {
+extension FetchContext {
     
     public func lastRepoMetrics(repo: String, before: Date) -> RepoMetrics? {
-        for entry in entries.reversed() {
-            if let value = entry.repos[repo], entry.weekStartDate < before {
+        for entry in orderedEntries.reversed() {
+            if let value = entry.repos[repo], entry.date < before {
                 return value
             }
         }

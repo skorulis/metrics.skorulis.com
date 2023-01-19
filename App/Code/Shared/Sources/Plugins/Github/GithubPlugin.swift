@@ -27,17 +27,17 @@ public final class GithubPlugin: DataSourcePlugin {
         let repos = try await getAllRepositories(config: config)
         for repo in repos {
             let name = repo.name!
-            let lastPush = context.result.lastPush(repo: name)
+            let lastPush = context.lastPush(repo: name)
             if var value = try await repoOutput(network: network, repo: repo, lastFoundPush: lastPush) {
-                let lastRepoMetrics = context.result.lastRepoMetrics(repo: name, before: context.weekStartDate)
-                if context.result.entries.count > 0 {
+                let lastRepoMetrics = context.lastRepoMetrics(repo: name, before: context.date)
+                if context.entries.count > 0 {
                     value.diff = value.diff(from: lastRepoMetrics)
                 }
                 entry.repos[name] = value
             }
         }
         
-        context.result.replace(entry: entry)
+        context.replace(entry: entry)
     }
     
     func getAllRepositories(config: TokenConfiguration) async throws -> [Repository] {
@@ -94,10 +94,22 @@ public final class GithubPlugin: DataSourcePlugin {
         return result
     }
     
-    public func render(_ entry: MetricsWeekEntry) -> AnyView? {
+    public func render(_ entry: MetricsEntry) -> AnyView? {
         guard let data: DataType = entry.data(self) else {
             return nil
         }
         return AnyView(GithubView(data: data))
+    }
+}
+
+extension FetchContext {
+    
+    public func lastPush(repo: String) -> Date? {
+        for entry in orderedEntries.reversed() {
+            if let date = entry.lastPush(repo: repo) {
+                return date
+            }
+        }
+        return nil
     }
 }

@@ -5,25 +5,32 @@ import Foundation
 
 public final class FetchContext {
  
-    public var result: MetricsResultModel
-    public let weekStartDate: Date
+    public var entries: [Date: MetricsEntry]
+    public let date: Date
     
-    public init(result: MetricsResultModel,
-                weekStartDate: Date
+    public init(entries: [Date: MetricsEntry],
+                date: Date
     ) {
-        self.result = result
-        self.weekStartDate = weekStartDate
+        self.entries = entries
+        self.date = date
+    }
+
+    var currentEntry: MetricsEntry {
+        return entries[date] ?? MetricsEntry(date: date)
     }
     
-    public var lastWeekStart: Date {
-        weekStartDate.addingTimeInterval(-86400).startOfWeek
+    var orderedEntries: [MetricsEntry] {
+        return entries.values.sorted { d1, d2 in
+            d1.date < d2.date
+        }
     }
     
-    public var weekStart: String {
-        return MetricsWeekEntry.dateFormatter.string(from: weekStartDate)
+    func replace(entry: MetricsEntry) {
+        entries[entry.date] = entry
     }
     
-    public var currentEntry: MetricsWeekEntry {
-        result.entryMatching(weekStartDate) ?? MetricsWeekEntry(week: weekStart)
+    func entry(date: Date) -> MetricsEntry {
+        return entries[date] ?? MetricsEntry(date: date)
     }
+    
 }
