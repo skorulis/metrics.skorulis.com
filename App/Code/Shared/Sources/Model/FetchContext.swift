@@ -5,7 +5,8 @@ import Foundation
 
 public final class FetchContext {
  
-    public var entries: [Date: MetricsEntry]
+    public private(set) var entries: [Date: MetricsEntry]
+    public private(set) var changed: Set<Date> = []
     public let date: Date
     
     public init(entries: [Date: MetricsEntry],
@@ -16,7 +17,7 @@ public final class FetchContext {
     }
 
     var currentEntry: MetricsEntry {
-        return entries[date] ?? MetricsEntry(date: date)
+        return entry(date: date)
     }
     
     var orderedEntries: [MetricsEntry] {
@@ -26,7 +27,9 @@ public final class FetchContext {
     }
     
     func replace(entry: MetricsEntry) {
+        print("Replace \(entry.day)")
         entries[entry.date] = entry
+        changed.insert(entry.date)
     }
     
     func entry(date: Date) -> MetricsEntry {

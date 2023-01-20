@@ -35,13 +35,21 @@ extension DataService {
         return encoder
     }
     
-    func save(entry: MetricsEntry) {
-        let data = try! encoder.encode(entry)
-        db.collection("metrics")
-            .document("skorulis")
-            .collection("days")
-            .document(entry.id)
-            .setData(data as! [String: Any])
+    func upload(entry: MetricsEntry) async throws {
+        return try await withCheckedThrowingContinuation { continuation in
+            let data = try! encoder.encode(entry)
+            db.collection("metrics")
+                .document("skorulis")
+                .collection("days")
+                .document(entry.id)
+                .setData(data as! [String: Any]) { error in
+                    if let error {
+                        continuation.resume(throwing: error)
+                    } else {
+                        continuation.resume()
+                    }
+                }
+        }
     }
     
     func fetch() {

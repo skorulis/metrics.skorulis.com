@@ -23,6 +23,7 @@ public final class GithubPlugin: DataSourcePlugin {
         let network = GithubHTTPService(token: token)
         
         var entry = context.currentEntry
+        var hasChanges: Bool = false
         print("Fetching all repositories")
         let repos = try await getAllRepositories(config: config)
         for repo in repos {
@@ -35,10 +36,12 @@ public final class GithubPlugin: DataSourcePlugin {
                     value.diff = value.diff(from: lastRepoMetrics)
                 }
                 entry.repos[name] = value
+                hasChanges = true
             }
         }
-        
-        context.replace(entry: entry)
+        if hasChanges {
+            context.replace(entry: entry)
+        }
     }
     
     func getAllRepositories(config: TokenConfiguration) async throws -> [Repository] {
@@ -87,7 +90,7 @@ public final class GithubPlugin: DataSourcePlugin {
             return nil // No changes to this repository
         }
         let name = repo.name!
-        print("Fetching lines for \(repo.name)")
+        print("Fetching lines for \(name)")
         let lines = try await getLines(network: network, repo: name)
         let commitCount = try await network.execute(request: CommitCountRequest(repo: name))
         

@@ -17,7 +17,6 @@ public final class MetricsStore: ObservableObject {
         self.plugins = plugins
         self.entries = try! loadExisting()
         print("Using data at \(Self.saveFile.absoluteString)")
-        print(self.entries)
     }
     
     var decoder: JSONDecoder {

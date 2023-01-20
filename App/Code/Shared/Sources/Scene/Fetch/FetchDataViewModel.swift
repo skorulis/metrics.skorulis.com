@@ -19,15 +19,6 @@ public final class FetchDataViewModel: ObservableObject {
         self.plugins = plugins
         self.tokens = tokens
         self.dataService = dataService
-        
-        var entry = MetricsEntry(date: Date())
-        var gitData = GithubPlugin.DataType()
-        gitData["test"] = .init(languageBytes: ["swift": 1000], lastPush: Date(), commitCount: 300)
-        
-        entry.setData(GithubPlugin(), data: gitData)
-        dataService.save(entry: entry)
-        
-        dataService.fetch()
     }
     
 }
@@ -40,7 +31,8 @@ extension FetchDataViewModel {
         Task {
             do {
                 let todo = plugins.sorted
-                let context = FetchContext(entries: store.entryMap, date: Date().startOfWeek)
+                let dayStart = Calendar.current.startOfDay(for: Date())
+                let context = FetchContext(entries: store.entryMap, date: dayStart)
                 for plugin in todo {
                     print("Fetching \(plugin.name)")
                     let tokens = tokens.values(plugin: plugin)
@@ -48,6 +40,11 @@ extension FetchDataViewModel {
                 }
                 print("Saving results")
                 store.entries = context.orderedEntries
+                for date in context.changed {
+                    let entry = context.entry(date: date)
+                    try await dataService.upload(entry: entry)
+                }
+                print("Finished upload")
             } catch {
                 print(error)
             }
