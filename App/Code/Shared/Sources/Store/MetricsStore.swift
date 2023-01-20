@@ -4,13 +4,20 @@ import Foundation
 
 public final class MetricsStore: ObservableObject {
     
-    @Published var entries: [MetricsEntry] = []
+    @Published var entries: [MetricsEntry] = [] {
+        didSet {
+            let data = try! encoder.encode(entries)
+            try! data.write(to: Self.saveFile)
+        }
+    }
     
     let plugins: PluginManager
-    
+     
     init(plugins: PluginManager) {
         self.plugins = plugins
+        self.entries = try! loadExisting()
         print("Using data at \(Self.saveFile.absoluteString)")
+        print(self.entries)
     }
     
     var decoder: JSONDecoder {
@@ -27,6 +34,10 @@ public final class MetricsStore: ObservableObject {
         return encoder
     }
     
+    var entryMap: [Date: MetricsEntry] {
+        return Dictionary(grouping: entries, by: {$0.date}).mapValues { $0[0] }
+    }
+    
 }
 
 private extension MetricsStore {
@@ -39,7 +50,7 @@ private extension MetricsStore {
     func loadExisting() throws -> [MetricsEntry] {
         if FileManager.default.fileExists(at: Self.saveFile) {
             let data = try Data(contentsOf: Self.saveFile)
-            return try decoder.decode([MetricsEntry].self, from: data)
+            return (try? decoder.decode([MetricsEntry].self, from: data)) ?? []
         } else {
             return []
         }

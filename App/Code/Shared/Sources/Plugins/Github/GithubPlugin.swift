@@ -23,10 +23,11 @@ public final class GithubPlugin: DataSourcePlugin {
         let network = GithubHTTPService(token: token)
         
         var entry = context.currentEntry
-        
+        print("Fetching all repositories")
         let repos = try await getAllRepositories(config: config)
         for repo in repos {
             let name = repo.name!
+            
             let lastPush = context.lastPush(repo: name)
             if var value = try await repoOutput(network: network, repo: repo, lastFoundPush: lastPush) {
                 let lastRepoMetrics = context.lastRepoMetrics(repo: name, before: context.date)
@@ -80,12 +81,13 @@ public final class GithubPlugin: DataSourcePlugin {
     
     func repoOutput(network: GithubHTTPService, repo: Repository, lastFoundPush: Date?) async throws -> RepoMetrics? {
         guard let lastPush = repo.lastPush else {
-            return nil
+            return nil // No commits
         }
         if let lastFoundPush, lastFoundPush >= lastPush {
             return nil // No changes to this repository
         }
         let name = repo.name!
+        print("Fetching lines for \(repo.name)")
         let lines = try await getLines(network: network, repo: name)
         let commitCount = try await network.execute(request: CommitCountRequest(repo: name))
         

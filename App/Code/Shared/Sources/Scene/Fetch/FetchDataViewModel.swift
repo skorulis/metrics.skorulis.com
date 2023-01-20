@@ -40,7 +40,7 @@ extension FetchDataViewModel {
         Task {
             do {
                 let todo = plugins.sorted
-                let context = FetchContext(entries: [:], date: Date().startOfWeek)
+                let context = FetchContext(entries: store.entryMap, date: Date().startOfWeek)
                 for plugin in todo {
                     print("Fetching \(plugin.name)")
                     let tokens = tokens.values(plugin: plugin)
