@@ -13,8 +13,9 @@ struct MetricsApp: App {
     init() {
         FirebaseApp.configure()
         let plugins = ioc.resolve(PluginManager.self)
-        plugins.register(plugin: RescueTimePlugin())
-        plugins.register(plugin: GithubPlugin())
+        //plugins.register(plugin: RescueTimePlugin())
+        //plugins.register(plugin: GithubPlugin())
+        plugins.register(plugin: HealthKitPlugin())
     }
     
     var body: some Scene {

@@ -18,3 +18,9 @@ public protocol DataSourcePlugin {
     func render(_ entry: MetricsEntry) -> AnyView?
         
 }
+
+public extension DataSourcePlugin {
+    var keyName: String {
+        return String(describing: self)
+    }
+}

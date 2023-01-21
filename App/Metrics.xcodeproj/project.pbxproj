@@ -36,6 +36,8 @@
 		FA1907232975502900277A84 /* MetricsIOSApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetricsIOSApp.swift; sourceTree = "<group>"; };
 		FA19072F29755B5500277A84 /* IOC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOC.swift; sourceTree = "<group>"; };
 		FA19073A2976A4DD00277A84 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FA19074D297B66EF00277A84 /* MetricsIOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MetricsIOS.entitlements; sourceTree = "<group>"; };
+		FA19074E297B699600277A84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA98A0D4296A1F5E002471B2 /* Metrics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Metrics.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA98A0E0296A1F5F002471B2 /* Metrics.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Metrics.entitlements; sourceTree = "<group>"; };
 		FA98A0E7296A255F002471B2 /* ASKCore */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = ASKCore; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 		FA1907392976A4DD00277A84 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
+				FA19074E297B699600277A84 /* Info.plist */,
 				FA19073A2976A4DD00277A84 /* GoogleService-Info.plist */,
 			);
 			path = iOS;
@@ -236,6 +239,7 @@
 		FA98A15029752A9F002471B2 /* MetricsIOS */ = {
 			isa = PBXGroup;
 			children = (
+				FA19074D297B66EF00277A84 /* MetricsIOS.entitlements */,
 				FA19072D29755B5500277A84 /* Service */,
 				FA19071B2975501200277A84 /* Resource */,
 				FA1907212975502900277A84 /* Scene */,
@@ -549,12 +553,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = MetricsIOS/MetricsIOS.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MetricsIOS/Resource/Preview Content\"";
 				DEVELOPMENT_TEAM = X4S6MUZL2D;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Config/iOS/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -580,12 +586,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = MetricsIOS/MetricsIOS.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MetricsIOS/Resource/Preview Content\"";
 				DEVELOPMENT_TEAM = X4S6MUZL2D;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Config/iOS/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

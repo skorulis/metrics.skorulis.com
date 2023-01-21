@@ -30,6 +30,7 @@ let package = Package(
                 "CodableFirebase",
                 .product(name: "FirebaseAuth", package: "firebase-ios-sdk"),
                 .product(name: "FirebaseFirestore", package: "firebase-ios-sdk"),
+                .product(name: "FirebaseFirestoreSwift", package: "firebase-ios-sdk"),
                 .product(name: "OctoKit", package: "octokit.swift")
             ],
             path: "Sources"
