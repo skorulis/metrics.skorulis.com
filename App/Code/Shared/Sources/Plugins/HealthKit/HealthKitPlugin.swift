@@ -47,13 +47,13 @@ public final class HealthKitPlugin: DataSourcePlugin {
                     continuation.resume(throwing: error)
                     return
                 }
-                var total: Double = 0
+                var total: Int = 0
                 result?.enumerateStatistics(from: start, to: now) { statistics, _ in
                     print(statistics)
                     
                     if let sumQuantity = statistics.sumQuantity() {
                         let x = sumQuantity.doubleValue(for: HKUnit.count())
-                        total += x
+                        total += Int(x)
                         print(total)
                     }
                 }
@@ -63,7 +63,7 @@ public final class HealthKitPlugin: DataSourcePlugin {
         }
     }
     
-    public func render(_ entry: MetricsEntry) -> AnyView? {
+    public func render(_ entry: MetricsEntry, _ data: DataType) -> AnyView {
         return AnyView(Text("TODO"))
     }
     
@@ -76,6 +76,9 @@ public final class HealthKitPlugin: DataSourcePlugin {
         }
     }
     
+    public func merge(data: DataType, newData: DataType) -> DataType {
+        return data
+    }
     
     
 }

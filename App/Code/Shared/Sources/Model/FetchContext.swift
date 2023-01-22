@@ -27,7 +27,6 @@ public final class FetchContext {
     }
     
     func replace(entry: MetricsEntry) {
-        print("Replace \(entry.day)")
         entries[entry.date] = entry
         changed.insert(entry.date)
     }

@@ -12,7 +12,7 @@ public struct MetricsEntry: Codable, Identifiable {
         pluginData[plugin.keyName] = data
     }
     
-    public var pluginData: [String: any Codable]
+    public var pluginData: [String: any PluginDataType]
     
     public init(day: String) {
         self.day = day
@@ -58,9 +58,30 @@ public struct MetricsEntry: Codable, Identifiable {
         }
     }
     
+    public mutating func merge(other: MetricsEntry, plugins: [any DataSourcePlugin]) {
+        for plugin in plugins {
+            merge(other: other, plugin: plugin)
+        }
+    }
+    
+    public mutating func merge<T: DataSourcePlugin>(other: MetricsEntry, plugin: T) {
+        guard let newData = other.data(plugin) else {
+            return
+        }
+        guard let selfData = self.data(plugin) else {
+            self.setData(plugin, data: newData)
+            return
+        }
+        let merged = plugin.merge(data: selfData, newData: newData)
+        self.setData(plugin, data: merged)
+    }
+    
     public var id: String { day }
     
 }
+
+public typealias PluginDataType = Codable
+
 
 struct GenericCodingKeys: CodingKey, ExpressibleByStringLiteral {
     // MARK: CodingKey

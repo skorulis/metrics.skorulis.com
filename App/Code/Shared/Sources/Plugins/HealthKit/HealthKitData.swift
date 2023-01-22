@@ -4,4 +4,6 @@ import Foundation
 
 public struct HealthKitData: Codable {
     
+    public var steps: Int
+    
 }

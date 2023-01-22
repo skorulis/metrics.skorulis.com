@@ -20,6 +20,7 @@ extension MetricsDashboardView: View {
     
     public var body: some View {
         VStack {
+            groupPicker
             ScrollView(.horizontal) {
                 HStack {
                     ForEach(viewModel.entries) { entry in
@@ -30,19 +31,27 @@ extension MetricsDashboardView: View {
         }
     }
     
+    private var groupPicker: some View {
+        Picker("Grouping", selection:  $viewModel.groupType) {
+            ForEach(MetricsDashboardViewModel.GroupType.allCases) { type in
+                Text(type.rawValue)
+                    .tag(type)
+            }
+        }
+        .pickerStyle(.segmented)
+    }
+    
     private func entryView(_ entry: MetricsEntry) -> some View {
         VStack {
             Text(entry.day)
                 .typography(.title)
+            
             ForEach(viewModel.plugins.sorted, id: \.name) { plugin in
-                if let view = plugin.render(entry) {
-                    view
-                }
+                plugin.maybeRender(entry: entry)
             }
             Spacer()
         }
     }
-    
     
 }
 

@@ -99,11 +99,50 @@ public final class GithubPlugin: DataSourcePlugin {
         return result
     }
     
-    public func render(_ entry: MetricsEntry) -> AnyView? {
-        guard let data: DataType = entry.data(self) else {
-            return nil
-        }
+    public func render(_ entry: MetricsEntry, _ data: DataType) -> AnyView {
         return AnyView(GithubView(data: data))
+    }
+    
+    public func merge(data: DataType, newData: DataType) -> DataType {
+        var output = [String: RepoMetrics]()
+        let allRepos = Set(data.keys).union(newData.keys)
+        for key in allRepos {
+            guard let oldMetrics = data[key] else {
+                output[key] = newData[key]
+                break
+            }
+            guard let newMetrics = newData[key] else {
+                output[key] = oldMetrics
+                break
+            }
+            let diff = merge(oldDiff: oldMetrics.diff, newDiff: newMetrics.diff)
+            output[key] = RepoMetrics(
+                languageBytes: newMetrics.languageBytes,
+                lastPush: newMetrics.lastPush,
+                commitCount: oldMetrics.commitCount + newMetrics.commitCount,
+                diff: diff
+            )
+            
+        }
+        return output
+    }
+    
+    private func merge(oldDiff: RepoChange?, newDiff: RepoChange?) -> RepoChange? {
+        guard let oldDiff else {
+            return newDiff
+        }
+        guard let newDiff else {
+            return oldDiff
+        }
+        let allLanguages = Set(oldDiff.languageBytes.keys).union(newDiff.languageBytes.keys)
+        var languageBytes: [String: Int] = [:]
+        for key in allLanguages {
+            languageBytes[key] = (oldDiff.languageBytes[key] ?? 0) + (newDiff.languageBytes[key] ?? 0)
+        }
+        return RepoChange(
+            languageBytes: languageBytes,
+            commitCount: oldDiff.commitCount + newDiff.commitCount
+        )
     }
 }
 

@@ -10,6 +10,8 @@ public final class MetricsDashboardViewModel: ObservableObject {
     let store: MetricsStore
     let plugins: PluginManager
     
+    @Published var groupType: GroupType = .day
+    
     init(store: MetricsStore,
          plugins: PluginManager
     ) {
@@ -31,8 +33,34 @@ public final class MetricsDashboardViewModel: ObservableObject {
 extension MetricsDashboardViewModel {
     
     var entries: [MetricsEntry] {
-        return store.entries.reversed()
+        switch groupType {
+        case .day:
+            return store.entries.reversed()
+        case .week:
+            return weekGrouped
+        }
     }
+    
+    var weekGrouped: [MetricsEntry] {
+        var entries: [MetricsEntry] = []
+        for entry in store.entries {
+            let weekStart = entry.date.startOfWeek
+            var current = entries.last ?? MetricsEntry(date: weekStart)
+            if current.date != weekStart {
+                current = MetricsEntry(date: weekStart)
+            }
+            
+            current.merge(other: entry, plugins: plugins.sorted)
+            
+            if entries.last?.date == weekStart {
+                entries[entries.count - 1] = current
+            } else {
+                entries.append(current)
+            }
+        }
+        return entries.reversed()
+    }
+    
     
 }
 
@@ -46,4 +74,14 @@ struct PluginData<T: DataSourcePlugin> {
         self.data = data
     }
     
+}
+
+// MARK: - Inner types
+
+extension MetricsDashboardViewModel {
+    enum GroupType: String, Identifiable, CaseIterable {
+        case day, week
+        
+        var id: String { rawValue }
+    }
 }
