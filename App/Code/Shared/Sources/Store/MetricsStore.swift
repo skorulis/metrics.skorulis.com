@@ -37,6 +37,17 @@ public final class MetricsStore: ObservableObject {
         return Dictionary(grouping: entries, by: {$0.date}).mapValues { $0[0] }
     }
     
+    func replace(entry: MetricsEntry) {
+        guard let index = entries.firstIndex(where: {$0.date == entry.date}) else {
+            entries.append(entry)
+            entries = entries.sorted(by: { m1, m2 in
+                return m1.date < m2.date
+            })
+            return
+        }
+        entries[index] = entry
+    }
+    
 }
 
 private extension MetricsStore {

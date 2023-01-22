@@ -16,6 +16,7 @@ final class DataService {
     ) {
         self.store = store
         self.plugins = plugins
+        self.fetch()
     }
 }
 
@@ -56,9 +57,15 @@ extension DataService {
         db.collection("metrics")
             .document("skorulis")
             .collection("days")
-            .getDocuments { snapshot, error in
-                print(error)
-                print(snapshot?.count)
+            .getDocuments { [weak self] (snapshot, error) in
+                guard let snapshot else { return }
+                
+                for doc in snapshot.documents {
+                    guard let entry = try? self?.decoder.decode(MetricsEntry.self, from: doc.data()) else {
+                        continue
+                    }
+                    self?.store.replace(entry: entry)
+                }
             }
     }
 }

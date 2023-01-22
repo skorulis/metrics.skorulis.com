@@ -21,11 +21,16 @@ public final class HealthKitPlugin: DataSourcePlugin {
         }
         
         //self.authorizeHealthKit()
-        try await getSteps()
-
+        let steps = try await getSteps()
+        for (date, value) in steps {
+            var entry = context.entry(date: date)
+            let data = HealthKitData(steps: value)
+            entry.setData(self, data: data)
+            context.replace(entry: entry)
+        }
     }
     
-    private func getSteps() async throws {
+    private func getSteps() async throws -> [Date: Int] {
         let type = HKQuantityType.quantityType(forIdentifier: .stepCount)!
         let now = Date()
         let dayStart = Calendar.current.startOfDay(for: now)
@@ -47,24 +52,22 @@ public final class HealthKitPlugin: DataSourcePlugin {
                     continuation.resume(throwing: error)
                     return
                 }
-                var total: Int = 0
+                var steps: [Date: Int] = [:]
                 result?.enumerateStatistics(from: start, to: now) { statistics, _ in
-                    print(statistics)
                     
                     if let sumQuantity = statistics.sumQuantity() {
                         let x = sumQuantity.doubleValue(for: HKUnit.count())
-                        total += Int(x)
-                        print(total)
+                        steps[statistics.startDate] = (steps[statistics.startDate] ?? 0) + Int(x)
                     }
                 }
-                continuation.resume()
+                continuation.resume(returning: steps)
             }
             healthStore.execute(queryStepCount)
         }
     }
     
     public func render(_ entry: MetricsEntry, _ data: DataType) -> AnyView {
-        return AnyView(Text("TODO"))
+        return AnyView(Text("Steps: \(data.steps)"))
     }
     
     public init() {}
@@ -77,7 +80,8 @@ public final class HealthKitPlugin: DataSourcePlugin {
     }
     
     public func merge(data: DataType, newData: DataType) -> DataType {
-        return data
+        let steps = data.steps + newData.steps
+        return HealthKitData(steps: steps)
     }
     
     
