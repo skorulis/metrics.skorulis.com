@@ -34,6 +34,12 @@ let package = Package(
                 .product(name: "OctoKit", package: "octokit.swift")
             ],
             path: "Sources"
+        ),
+        .testTarget(
+            name: "SharedUnitTests",
+            dependencies: ["Shared"],
+            path: "UnitTests"
         )
+        
     ]
 )

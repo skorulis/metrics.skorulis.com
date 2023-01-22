@@ -1,0 +1,38 @@
+{
+  "configurations" : [
+    {
+      "id" : "066F755C-68A8-4AD0-8A2D-05965BDE4A1D",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "testTimeoutsEnabled" : true
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:Frameworks\/ASKCore",
+        "identifier" : "ASKCoreUnitTests",
+        "name" : "ASKCoreUnitTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:Frameworks\/ASKDesignSystem",
+        "identifier" : "ASKDesignSystemTests",
+        "name" : "ASKDesignSystemTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:Code\/Shared",
+        "identifier" : "SharedUnitTests",
+        "name" : "SharedUnitTests"
+      }
+    }
+  ],
+  "version" : 1
+}

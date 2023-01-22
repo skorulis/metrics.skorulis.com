@@ -109,11 +109,11 @@ public final class GithubPlugin: DataSourcePlugin {
         for key in allRepos {
             guard let oldMetrics = data[key] else {
                 output[key] = newData[key]
-                break
+                continue
             }
             guard let newMetrics = newData[key] else {
                 output[key] = oldMetrics
-                break
+                continue
             }
             let diff = merge(oldDiff: oldMetrics.diff, newDiff: newMetrics.diff)
             output[key] = RepoMetrics(
