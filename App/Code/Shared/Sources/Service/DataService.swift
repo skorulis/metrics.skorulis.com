@@ -16,7 +16,7 @@ final class DataService {
     ) {
         self.store = store
         self.plugins = plugins
-        self.fetch()
+        self.pullLatest()
     }
 }
 
@@ -53,7 +53,7 @@ extension DataService {
         }
     }
     
-    func fetch() {
+    func pullLatest() {
         db.collection("metrics")
             .document("skorulis")
             .collection("days")

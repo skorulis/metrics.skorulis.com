@@ -26,8 +26,10 @@ extension LoginView: View {
     private func content() -> some View {
         VStack {
             TextField("Email", text: $viewModel.email)
+            #if os(iOS)
                 .autocapitalization(.none)
                 .textContentType(.emailAddress)
+            #endif
             
             SecureField("Password", text: $viewModel.password)
                 .textContentType(.password)

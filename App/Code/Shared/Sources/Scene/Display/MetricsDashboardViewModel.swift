@@ -61,6 +61,15 @@ extension MetricsDashboardViewModel {
         return entries.reversed()
     }
     
+    func title(entry: MetricsEntry) -> String {
+        switch groupType {
+        case .day:
+            return DateFormatter.dayFormatter.string(from: entry.date)
+        case .week:
+            let dateString = DateFormatter.weekFormatter.string(from: entry.date)
+            return "Week \(dateString)"
+        }
+    }
     
 }
 

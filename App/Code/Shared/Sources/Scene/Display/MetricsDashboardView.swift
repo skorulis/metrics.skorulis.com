@@ -43,7 +43,7 @@ extension MetricsDashboardView: View {
     
     private func entryView(_ entry: MetricsEntry) -> some View {
         VStack {
-            Text(entry.day)
+            Text(viewModel.title(entry: entry))
                 .typography(.title)
             
             ForEach(viewModel.plugins.sorted, id: \.name) { plugin in
