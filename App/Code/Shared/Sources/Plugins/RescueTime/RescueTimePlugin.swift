@@ -28,10 +28,6 @@ public final class RescueTimePlugin: DataSourcePlugin {
         }
     }
     
-    public func render(_ entry: MetricsEntry, _ data: DataType) -> AnyView {
-        return AnyView(RescueTimeView(data: data))
-    }
-    
     public func merge(data: DataType, newData: DataType) -> DataType {
         return RescueTimeDay(
             productivity_pulse: data.productivity_pulse + newData.productivity_pulse,

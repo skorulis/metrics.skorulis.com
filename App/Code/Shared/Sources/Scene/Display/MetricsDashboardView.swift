@@ -46,11 +46,18 @@ extension MetricsDashboardView: View {
             Text(viewModel.title(entry: entry))
                 .typography(.title)
             
-            ForEach(viewModel.plugins.sorted, id: \.name) { plugin in
-                plugin.maybeRender(entry: entry)
+            ForEach(viewModel.plugins.renderers, id: \.name) { plugin in
+                plugin.erasedRender(entry)
             }
+            .padding(10)
+            .background(pluginBackground)
             Spacer()
         }
+    }
+    
+    private var pluginBackground: some View {
+        RoundedRectangle(cornerRadius: 8)
+            .stroke(Color.red, lineWidth: 3)
     }
     
 }

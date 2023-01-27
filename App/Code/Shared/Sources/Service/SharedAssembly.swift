@@ -27,6 +27,8 @@ public final class SharedAssembly: AutoModuleAssembly {
             .inObjectScope(.container)
         
         container.autoregister(DataService.self, initializer: DataService.init)
+        container.autoregister(FetchStatusService.self, initializer: FetchStatusService.init)
+            .inObjectScope(.container)
     }
     
     private func registerViewModels(container: Container) {

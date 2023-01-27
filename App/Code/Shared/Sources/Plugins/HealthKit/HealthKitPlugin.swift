@@ -66,10 +66,6 @@ public final class HealthKitPlugin: DataSourcePlugin {
         }
     }
     
-    public func render(_ entry: MetricsEntry, _ data: DataType) -> AnyView {
-        return AnyView(Text("Steps: \(data.steps)"))
-    }
-    
     public init() {}
     
     private func authorizeHealthKit() {

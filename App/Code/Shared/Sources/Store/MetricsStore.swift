@@ -22,14 +22,14 @@ public final class MetricsStore: ObservableObject {
     var decoder: JSONDecoder {
         let decoder = JSONDecoder()
         decoder.dateDecodingStrategy = .iso8601
-        decoder.userInfo[.pluginsKey] = plugins.plugins
+        decoder.userInfo[.pluginsKey] = plugins.dataPlugins
         return decoder
     }
     
     var encoder: JSONEncoder {
         let encoder = JSONEncoder()
         encoder.dateEncodingStrategy = .iso8601
-        encoder.userInfo[.pluginsKey] = plugins.plugins
+        encoder.userInfo[.pluginsKey] = plugins.dataPlugins
         return encoder
     }
     

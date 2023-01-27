@@ -4,18 +4,23 @@ import Foundation
 
 public final class PluginManager {
     
-    public var plugins: [String: any DataSourcePlugin] = [:]
+    public var dataPlugins: [String: any DataSourcePlugin] = [:]
+    public var renderers: [any DataRendererPlugin] = []
     
     public init() {
         
     }
     
     public func register<T: DataSourcePlugin>(plugin: T) {
-        plugins[plugin.keyName] = plugin
+        dataPlugins[plugin.keyName] = plugin
+    }
+    
+    public func register<T: DataRendererPlugin>(plugin: T) {
+        renderers.append(plugin)
     }
     
     public var sorted: [any DataSourcePlugin] {
-        let values = Array(plugins.values)
+        let values = Array(dataPlugins.values)
         return values.sorted { d1, d2 in
             return d1.name < d2.name
         }

@@ -25,14 +25,14 @@ extension DataService {
     var decoder: FirebaseDecoder {
         let decoder = FirebaseDecoder()
         decoder.dateDecodingStrategy = .iso8601
-        decoder.userInfo[.pluginsKey] = plugins.plugins
+        decoder.userInfo[.pluginsKey] = plugins.dataPlugins
         return decoder
     }
     
     var encoder: FirebaseEncoder {
         let encoder = FirebaseEncoder()
         encoder.dateEncodingStrategy = .iso8601
-        encoder.userInfo[.pluginsKey] = plugins.plugins
+        encoder.userInfo[.pluginsKey] = plugins.dataPlugins
         return encoder
     }
     

@@ -99,10 +99,6 @@ public final class GithubPlugin: DataSourcePlugin {
         return result
     }
     
-    public func render(_ entry: MetricsEntry, _ data: DataType) -> AnyView {
-        return AnyView(GithubView(data: data))
-    }
-    
     public func merge(data: DataType, newData: DataType) -> DataType {
         var output = [String: RepoMetrics]()
         let allRepos = Set(data.keys).union(newData.keys)
