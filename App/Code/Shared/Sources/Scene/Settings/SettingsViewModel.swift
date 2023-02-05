@@ -31,4 +31,8 @@ extension SettingsViewModel {
             self.tokens.set(value: newValue, token: token)
         }
     }
+    
+    func startAddPlugin() {
+        
+    }
 }

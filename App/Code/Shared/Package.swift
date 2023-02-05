@@ -18,8 +18,9 @@ let package = Package(
         .package(url: "https://github.com/nerdishbynature/octokit.swift", from: "0.11.0"),
         .package(url: "git@github.com:alickbass/CodableFirebase.git", from: "0.2.0"),
         .package(url: "git@github.com:firebase/firebase-ios-sdk.git", from: "9.0.0"),
+        .package(url: "git@github.com:siteline/SwiftUI-Introspect.git", from: "0.1.4"),
         .package(path: "../../Frameworks/ASKCore"),
-        .package(path: "../../Frameworks/ASKDesignSystem")
+        .package(path: "../../Frameworks/ASKDesignSystem"),
     ],
     targets: [
         .target(
@@ -31,7 +32,8 @@ let package = Package(
                 .product(name: "FirebaseAuth", package: "firebase-ios-sdk"),
                 .product(name: "FirebaseFirestore", package: "firebase-ios-sdk"),
                 .product(name: "FirebaseFirestoreSwift", package: "firebase-ios-sdk"),
-                .product(name: "OctoKit", package: "octokit.swift")
+                .product(name: "OctoKit", package: "octokit.swift"),
+                .product(name: "Introspect", package: "SwiftUI-Introspect")
             ],
             path: "Sources"
         ),

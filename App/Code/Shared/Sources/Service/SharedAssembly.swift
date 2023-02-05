@@ -6,7 +6,9 @@ import Swinject
 import SwinjectAutoregistration
 
 public final class SharedAssembly: AutoModuleAssembly {
-    public static var dependencies: [ModuleAssembly.Type] = []
+    public static var dependencies: [ModuleAssembly.Type] = [
+        CoreModuleAssembly.self
+    ]
     
     public init() {}
     

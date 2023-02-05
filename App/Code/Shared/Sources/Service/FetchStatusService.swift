@@ -1,5 +1,6 @@
 //  Created by Alexander Skorulis on 27/1/2023.
 
+import ASKDesignSystem
 import Foundation
 import SwiftUI
 
@@ -63,6 +64,15 @@ extension FetchStatusService {
             case .active: return Image(systemName: "play.fill")
             case .failed: return Image(systemName: "exclamationmark.triangle.fill")
             case .finished: return Image(systemName: "checkmark.circle.fill")
+            }
+        }
+        
+        var flavor: AlertCell.Flavor {
+            switch self {
+            case .waiting: return .brand
+            case .active: return .brand
+            case .failed: return .error
+            case .finished: return .success
             }
         }
     }

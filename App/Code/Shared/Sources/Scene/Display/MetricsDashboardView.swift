@@ -2,6 +2,7 @@
 
 import ASKDesignSystem
 import Foundation
+import Introspect
 import SwiftUI
 
 // MARK: - Memory footprint
@@ -19,13 +20,20 @@ public struct MetricsDashboardView {
 extension MetricsDashboardView: View {
     
     public var body: some View {
-        VStack {
-            groupPicker
-            ScrollView(.horizontal) {
-                HStack {
-                    ForEach(viewModel.entries) { entry in
-                        entryView(entry)
+        GeometryReader { proxy in
+            VStack {
+                groupPicker
+                ScrollView(.horizontal) {
+                    HStack(spacing: 0) {
+                        ForEach(viewModel.entries) { entry in
+                            entryView(entry, pageWidth: proxy.size.width)
+                                .padding(.horizontal, 8)
+                                .frame(width: proxy.size.width)
+                        }
                     }
+                }
+                .introspectScrollView { uiScrollView in
+                    uiScrollView.isPagingEnabled = true
                 }
             }
         }
@@ -41,23 +49,21 @@ extension MetricsDashboardView: View {
         .pickerStyle(.segmented)
     }
     
-    private func entryView(_ entry: MetricsEntry) -> some View {
-        VStack {
+    private func entryView(_ entry: MetricsEntry, pageWidth: CGFloat) -> some View {
+        VStack(spacing: 12) {
             Text(viewModel.title(entry: entry))
                 .typography(.title)
             
             ForEach(viewModel.plugins.renderers, id: \.name) { plugin in
-                plugin.erasedRender(entry)
+                if let view = plugin.erasedRender(entry) {
+                    view
+                        .frame(width: pageWidth - 40)
+                        .modifier(MetricsPanelModifier(title: plugin.name))
+                }
+                
             }
-            .padding(10)
-            .background(pluginBackground)
             Spacer()
         }
-    }
-    
-    private var pluginBackground: some View {
-        RoundedRectangle(cornerRadius: 8)
-            .stroke(Color.red, lineWidth: 3)
     }
     
 }

@@ -32,18 +32,11 @@ extension FetchDataView: View {
     
     private func row(_ plugin: any DataSourcePlugin) -> some View {
         let status = viewModel.fetchStatus.status(plugin: plugin)
-        return HStack {
-            VStack(alignment: .leading) {
-                Text(plugin.name)
-                    .typography(.title)
-                Text(status.fullTitle)
-            }
-            Spacer()
-            status.icon
-                .resizable()
-                .frame(width: 24, height: 24)
-            
-        }
+        return AlertCell(
+            title: plugin.name,
+            subtitle: status.fullTitle,
+            image: status.icon
+        )
     }
 }
 
