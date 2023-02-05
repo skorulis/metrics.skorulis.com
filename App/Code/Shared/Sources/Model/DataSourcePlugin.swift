@@ -14,9 +14,9 @@ public protocol DataSourcePlugin {
     
     var tokenKeys: [APIToken] { get }
     
+    init()
     func fetch(context: FetchContext, tokens: [String: String]) async throws
     func merge(data: DataType, newData: DataType) -> DataType
-    
     func settingsView(_ viewModel: SettingsViewModel) -> SettingsViewType
     
 }

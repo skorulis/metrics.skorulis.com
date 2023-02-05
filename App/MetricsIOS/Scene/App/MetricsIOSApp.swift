@@ -16,10 +16,12 @@ struct MetricsApp: App {
         plugins.register(plugin: RescueTimePlugin())
         plugins.register(plugin: GithubPlugin())
         plugins.register(plugin: HealthKitPlugin())
+        plugins.register(plugin: LocationPlugin())
         
         plugins.register(plugin: RescueTimeChartRenderer())
         plugins.register(plugin: GithubLineListRenderer())
         plugins.register(plugin: HealthKitRenderer())
+        plugins.register(plugin: LocationRenderer())
     }
     
     var body: some Scene {
