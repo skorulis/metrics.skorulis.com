@@ -140,6 +140,13 @@ public final class GithubPlugin: DataSourcePlugin {
             commitCount: oldDiff.commitCount + newDiff.commitCount
         )
     }
+    
+    public func settingsView(_ viewModel: SettingsViewModel) -> some View {
+        VStack {
+            TextField(Self.apiToken.name, text: viewModel.tokenBinding(Self.apiToken))
+                .textFieldStyle(.roundedBorder)
+        }
+    }
 }
 
 extension FetchContext {

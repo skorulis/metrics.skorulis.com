@@ -30,11 +30,21 @@ extension SettingsView: View {
     }
     
     private func content() -> some View {
-        VStack {
-            ForEach(viewModel.tokenKeys) { token in
-                TextField(token.name, text: viewModel.tokenBinding(token))
-            }
+        VStack(spacing: 16) {
+            pluginViews
         }
+        .padding(.horizontal, 16)
+    }
+    
+    private var pluginViews: some View {
+        ForEach(viewModel.plugins.sorted, id: \.name) { plugin in
+            wrappedView(plugin)
+        }
+    }
+    
+    private func wrappedView(_ plugin: any DataSourcePlugin) -> some View {
+        plugin.anySettingsView(viewModel)
+            .modifier(MetricsPanelModifier(title: plugin.name))
     }
 }
 
@@ -44,7 +54,8 @@ struct SettingsView_Previews: PreviewProvider {
     
     static var previews: some View {
         let ioc = SharedAssembly().assembled().factory
-        SettingsView(viewModel: ioc.resolve())
+        ioc.resolve(PluginManager.self).register(plugin: GithubPlugin())
+        return SettingsView(viewModel: ioc.resolve())
     }
 }
 

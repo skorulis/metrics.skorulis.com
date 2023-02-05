@@ -80,5 +80,11 @@ public final class HealthKitPlugin: DataSourcePlugin {
         return HealthKitData(steps: steps)
     }
     
+    public func settingsView(_ viewModel: SettingsViewModel) -> some View {
+        VStack {
+            Text("TEST")
+        }
+    }
+    
     
 }

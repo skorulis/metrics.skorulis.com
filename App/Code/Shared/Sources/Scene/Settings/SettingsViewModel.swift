@@ -6,7 +6,7 @@ import SwiftUI
 public final class SettingsViewModel: ObservableObject {
     
     private let tokens: TokensService
-    private let plugins: PluginManager
+    let plugins: PluginManager
     
     init(tokens: TokensService,
          plugins: PluginManager

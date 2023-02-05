@@ -54,4 +54,11 @@ public final class RescueTimePlugin: DataSourcePlugin {
         )
     }
     
+    public func settingsView(_ viewModel: SettingsViewModel) -> some View {
+        VStack {
+            TextField(Self.rescueTimeToken.name, text: viewModel.tokenBinding(Self.rescueTimeToken))
+                .textFieldStyle(.roundedBorder)
+        }
+    }
+    
 }

@@ -6,6 +6,7 @@ import SwiftUI
 public protocol DataSourcePlugin {
     
     associatedtype DataType: PluginDataType
+    associatedtype SettingsViewType: View
     
     var name: String { get }
     var keyName: String { get }
@@ -15,7 +16,9 @@ public protocol DataSourcePlugin {
     
     func fetch(context: FetchContext, tokens: [String: String]) async throws
     func merge(data: DataType, newData: DataType) -> DataType
-        
+    
+    func settingsView(_ viewModel: SettingsViewModel) -> SettingsViewType
+    
 }
 
 public extension DataSourcePlugin {
@@ -31,5 +34,9 @@ public extension DataSourcePlugin {
             return oldData
         }
         return merge(data: oldData, newData: newData)
+    }
+    
+    func anySettingsView(_ viewModel: SettingsViewModel) -> AnyView {
+        AnyView(settingsView(viewModel))
     }
 }
