@@ -13,10 +13,6 @@ struct MetricsApp: App {
     init() {
         FirebaseApp.configure()
         let plugins = ioc.resolve(PluginManager.self)
-        plugins.register(plugin: RescueTimePlugin())
-        plugins.register(plugin: GithubPlugin())
-        plugins.register(plugin: HealthKitPlugin())
-        plugins.register(plugin: LocationPlugin())
         
         plugins.register(plugin: RescueTimeChartRenderer())
         plugins.register(plugin: GithubLineListRenderer())

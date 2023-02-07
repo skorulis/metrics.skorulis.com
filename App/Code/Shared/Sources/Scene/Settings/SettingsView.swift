@@ -54,7 +54,6 @@ struct SettingsView_Previews: PreviewProvider {
     
     static var previews: some View {
         let ioc = SharedAssembly().assembled().factory
-        ioc.resolve(PluginManager.self).register(plugin: GithubPlugin())
         return SettingsView(viewModel: ioc.resolve())
     }
 }

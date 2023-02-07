@@ -6,10 +6,10 @@ public struct MetricsWeekEntry: Codable, Identifiable {
     
     public let week: String
     public func data<T: DataSourcePlugin>(_ plugin: T) -> T.DataType? {
-        return pluginData[plugin.keyName] as? T.DataType
+        return pluginData[T.keyName] as? T.DataType
     }
     public mutating func setData<T: DataSourcePlugin>(_ plugin: T, data: T.DataType?) {
-        pluginData[plugin.keyName] = data
+        pluginData[T.keyName] = data
     }
     
     public var pluginData: [String: any Codable]

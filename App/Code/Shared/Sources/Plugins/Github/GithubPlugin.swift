@@ -9,7 +9,7 @@ public final class GithubPlugin: DataSourcePlugin {
     public static let apiToken: APIToken = .init(name: "Github", key: "github")
     public typealias DataType = [String: RepoMetrics]
     public let name: String = "Github"
-    public let keyName: String = "repos"
+    public static let keyName: String = "repos"
     public var dataType: [String: RepoMetrics].Type { [String: RepoMetrics].self }
     public var tokenKeys: [APIToken] {
         return [Self.apiToken]

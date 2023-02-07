@@ -13,9 +13,15 @@ public final class SharedAssembly: AutoModuleAssembly {
     public init() {}
     
     public func assemble(container: Container) {
+        registerBehaviors(container: container)
         registerServices(container: container)
         registerStores(container: container)
         registerViewModels(container: container)
+        registerPlugins(container: container)
+    }
+    
+    private func registerBehaviors(container: Container) {
+        container.addBehavior(InstanceAggregation<SourcePlugin>(isChild: { $0 is SourcePlugin.Type }))
     }
     
     private func registerServices(container: Container) {
@@ -55,8 +61,13 @@ public final class SharedAssembly: AutoModuleAssembly {
             container.autoregister(PKeyValueStore.self, initializer: UserDefaults.init)
                 .inObjectScope(.container)
         }
-        
     }
     
+    private func registerPlugins(container: Container) {
+        container.autoregister(GithubPlugin.self, initializer: GithubPlugin.init)
+        container.autoregister(RescueTimePlugin.self, initializer: RescueTimePlugin.init)
+        container.autoregister(HealthKitPlugin.self, initializer: HealthKitPlugin.init)
+        container.autoregister(LocationPlugin.self, initializer: LocationPlugin.init)
+    }
     
 }

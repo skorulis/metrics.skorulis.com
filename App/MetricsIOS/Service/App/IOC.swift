@@ -9,7 +9,9 @@ final class IOC: IOCService {
     
     override init(purpose: IOCPurpose = .testing) {
         super.init(purpose: purpose)
-        _ = ModuleAssembler(container: self.container, moduleType: SharedAssembly.self)
+        _ = ModuleAssembler(container: self.container,
+                            modules: [SharedAssembly(), CoreModuleAssembly(purpose: purpose)]
+        )
     }
     
 }

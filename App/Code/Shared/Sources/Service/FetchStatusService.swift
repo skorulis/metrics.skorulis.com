@@ -14,12 +14,12 @@ final class FetchStatusService: ObservableObject {
     }
     
     func status(plugin: any DataSourcePlugin) -> Status {
-        let key = plugin.keyName
+        let key = type(of: plugin).keyName
         return pluginStatuses[key] ?? Status.waiting
     }
     
     func set(status: Status, plugin: any DataSourcePlugin) {
-        let key = plugin.keyName
+        let key = type(of: plugin).keyName
         pluginStatuses[key] = status
     }
     

@@ -10,12 +10,12 @@ final class GithubPluginTests: XCTestCase {
     
     func test_mergeNoNewData() {
         var entry = MetricsEntry(date: Date())
-        entry.setData(sut, data: Self.basicData)
+        entry.setData(plugin: sut, data: Self.basicData)
         let newEntry = MetricsEntry(date: Date())
         
         entry.merge(other: newEntry, plugin: sut)
         
-        let newData = entry.data(sut)!
+        let newData = entry.data(plugin: sut)!
         
         XCTAssertEqual(newData["Test"]?.languageBytes, Self.basicData["Test"]?.languageBytes)
         XCTAssertEqual(newData["Test"]?.commitCount, 5)
@@ -26,9 +26,9 @@ final class GithubPluginTests: XCTestCase {
     func test_mergeOnlyNew() {
         var entry = MetricsEntry(date: Date())
         var newEntry = MetricsEntry(date: Date())
-        newEntry.setData(sut, data: Self.basicData)
+        newEntry.setData(plugin: sut, data: Self.basicData)
         entry.merge(other: newEntry, plugin: sut)
-        let newData = entry.data(sut)!
+        let newData = entry.data(plugin: sut)!
         XCTAssertEqual(newData["Test"]?.languageBytes, Self.basicData["Test"]?.languageBytes)
         XCTAssertEqual(newData["Test"]?.commitCount, 5)
         XCTAssertEqual(newData["Test"]?.diff?.languageBytes, ["Swift": 50])
@@ -38,11 +38,11 @@ final class GithubPluginTests: XCTestCase {
     func test_doubleMerge() {
         var entry = MetricsEntry(date: Date())
         var newEntry = MetricsEntry(date: Date())
-        newEntry.setData(sut, data: Self.basicData)
+        newEntry.setData(plugin: sut, data: Self.basicData)
         entry.merge(other: newEntry, plugin: sut)
         entry.merge(other: newEntry, plugin: sut)
         
-        let newData = entry.data(sut)!
+        let newData = entry.data(plugin: sut)!
         XCTAssertEqual(newData["Test"]?.commitCount, 10)
         XCTAssertEqual(newData["Test"]?.diff?.languageBytes, ["Swift": 100])
         XCTAssertEqual(newData["Test"]?.diff?.commitCount, 20)

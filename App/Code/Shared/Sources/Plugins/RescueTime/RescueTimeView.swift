@@ -23,7 +23,7 @@ extension RescueTimeView: View {
     
     var body: some View {
         VStack {
-            Text("Total hours: \(data.total_hours)")
+            Text("Hours logged: \(numberString)")
             pie
         }
     }
@@ -38,6 +38,10 @@ extension RescueTimeView: View {
             (data.very_distracting_hours, Self.veryUnproductiveColor)
         ])
         .frame(width: 300, height: 300)
+    }
+    
+    private var numberString: String {
+        return NumberFormatter.decimalFormatter.string(from: data.total_hours)
     }
 }
 

@@ -23,7 +23,7 @@ public final class RescueTimePlugin: DataSourcePlugin {
         for day in days {
             let date = MetricsEntry.dateFormatter.date(from: day.date)!
             var entry = context.entry(date: date)
-            entry.setData(self, data: day)
+            entry.setData(plugin: self, data: day)
             context.replace(entry: entry)
         }
     }

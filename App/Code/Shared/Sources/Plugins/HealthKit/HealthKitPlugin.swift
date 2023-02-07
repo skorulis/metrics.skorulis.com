@@ -25,7 +25,7 @@ public final class HealthKitPlugin: DataSourcePlugin {
         for (date, value) in steps {
             var entry = context.entry(date: date)
             let data = HealthKitData(steps: value)
-            entry.setData(self, data: data)
+            entry.setData(plugin: self, data: data)
             context.replace(entry: entry)
         }
     }

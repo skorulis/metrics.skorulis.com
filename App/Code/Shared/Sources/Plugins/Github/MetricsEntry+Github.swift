@@ -6,10 +6,10 @@ extension MetricsEntry {
     
     var repos: [String: RepoMetrics] {
         get {
-            return data(GithubPlugin()) ?? [:]
+            return data(GithubPlugin.self) ?? [:]
         }
         set {
-            self.setData(GithubPlugin(), data: newValue)
+            self.setData(GithubPlugin.self, data: newValue)
         }
     }
     

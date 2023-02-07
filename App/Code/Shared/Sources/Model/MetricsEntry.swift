@@ -5,11 +5,20 @@ import Foundation
 public struct MetricsEntry: Codable, Identifiable {
     
     public let day: String
-    public func data<T: DataSourcePlugin>(_ plugin: T) -> T.DataType? {
-        return pluginData[plugin.keyName] as? T.DataType
+    
+    public func data<T: DataSourcePlugin>(plugin: T) -> T.DataType? {
+        return pluginData[T.keyName] as? T.DataType
     }
-    public mutating func setData<T: DataSourcePlugin>(_ plugin: T, data: T.DataType?) {
-        pluginData[plugin.keyName] = data
+    
+    public mutating func setData<T: DataSourcePlugin>(plugin: T, data: T.DataType?) {
+        pluginData[T.keyName] = data
+    }
+    
+    public func data<T: DataSourcePlugin>(_ plugin: T.Type) -> T.DataType? {
+        return pluginData[T.keyName] as? T.DataType
+    }
+    public mutating func setData<T: DataSourcePlugin>(_ plugin: T.Type, data: T.DataType?) {
+        pluginData[T.keyName] = data
     }
     
     public var pluginData: [String: any PluginDataType]
@@ -65,15 +74,15 @@ public struct MetricsEntry: Codable, Identifiable {
     }
     
     public mutating func merge<T: DataSourcePlugin>(other: MetricsEntry, plugin: T) {
-        guard let newData = other.data(plugin) else {
+        guard let newData = other.data(plugin: plugin) else {
             return
         }
-        guard let selfData = self.data(plugin) else {
-            self.setData(plugin, data: newData)
+        guard let selfData = self.data(plugin: plugin) else {
+            self.setData(plugin: plugin, data: newData)
             return
         }
         let merged = plugin.merge(data: selfData, newData: newData)
-        self.setData(plugin, data: merged)
+        self.setData(plugin: plugin, data: merged)
     }
     
     public var id: String { day }
