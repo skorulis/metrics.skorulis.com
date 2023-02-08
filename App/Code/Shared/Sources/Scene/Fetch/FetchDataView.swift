@@ -19,14 +19,24 @@ public struct FetchDataView {
 extension FetchDataView: View {
     
     public var body: some View {
+        PageTemplate(nav: nav, content: content)
+    }
+    
+    private func nav() -> some View {
+        NavBar(mid: NavBarItem.title("Fetch"))
+    }
+    
+    private func content() -> some View {
         VStack {
+            
+            ForEach(viewModel.pluginList, id: \.name) { plugin in
+                row(plugin)
+            }
+            
             Button(action: viewModel.fetch) {
                 Text("Fetch Data")
             }
             .buttonStyle(ASKButtonStyle())
-            ForEach(viewModel.pluginList, id: \.name) { plugin in
-                row(plugin)
-            }
         }
     }
     
