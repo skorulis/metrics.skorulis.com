@@ -8,11 +8,13 @@ import FirebaseCore
 @main
 struct MetricsApp: App {
     
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     private let ioc = IOC(purpose: .normal)
     
     init() {
         FirebaseApp.configure()
         let plugins = ioc.resolve(PluginManager.self)
+        delegate.ioc = ioc
         
         plugins.register(plugin: RescueTimeChartRenderer())
         plugins.register(plugin: GithubLineListRenderer())

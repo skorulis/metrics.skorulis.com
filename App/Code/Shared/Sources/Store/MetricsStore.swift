@@ -1,7 +1,9 @@
 //Created by Alexander Skorulis on 8/1/2023.
 
+import ASKCore
 import Foundation
 
+// TODO: Turn into async API. Maybe try @MainActor
 public final class MetricsStore: ObservableObject {
     
     @Published var entries: [MetricsEntry] = [] {
@@ -11,10 +13,21 @@ public final class MetricsStore: ObservableObject {
         }
     }
     
+    @Published var lastFetchTime: Date? {
+        didSet {
+            self.keyValueStore.set(date: lastFetchTime, forKey: Self.lastFetchKey)
+        }
+    }
+    
+    private static let lastFetchKey = "lastFetchKey"
+    
     let plugins: PluginManager
+    private let keyValueStore: PKeyValueStore
      
-    init(plugins: PluginManager) {
+    init(plugins: PluginManager, keyValueStore: PKeyValueStore) {
         self.plugins = plugins
+        self.keyValueStore = keyValueStore
+        self.lastFetchTime = keyValueStore.date(forKey: Self.lastFetchKey)
         self.entries = try! loadExisting()
         print("Using data at \(Self.saveFile.absoluteString)")
     }

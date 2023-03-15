@@ -19,6 +19,7 @@
 		FA19072C29755AD500277A84 /* Shared in Frameworks */ = {isa = PBXBuildFile; productRef = FA19072B29755AD500277A84 /* Shared */; };
 		FA19073029755B5500277A84 /* IOC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA19072F29755B5500277A84 /* IOC.swift */; };
 		FA19073B2976A4DD00277A84 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA19073A2976A4DD00277A84 /* GoogleService-Info.plist */; };
+		FA3AD16B29B5CD1D00873D5C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3AD16A29B5CD1D00873D5C /* AppDelegate.swift */; };
 		FA98A0E9296A255F002471B2 /* ASKCore in Resources */ = {isa = PBXBuildFile; fileRef = FA98A0E7296A255F002471B2 /* ASKCore */; };
 		FA98A0EA296A255F002471B2 /* ASKDesignSystem in Resources */ = {isa = PBXBuildFile; fileRef = FA98A0E8296A255F002471B2 /* ASKDesignSystem */; };
 		FA98A0EC296A256B002471B2 /* ASKCore in Frameworks */ = {isa = PBXBuildFile; productRef = FA98A0EB296A256B002471B2 /* ASKCore */; };
@@ -39,6 +40,7 @@
 		FA19074D297B66EF00277A84 /* MetricsIOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MetricsIOS.entitlements; sourceTree = "<group>"; };
 		FA19074E297B699600277A84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA19074F297CD4BA00277A84 /* TestPlan.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = TestPlan.xctestplan; sourceTree = "<group>"; };
+		FA3AD16A29B5CD1D00873D5C /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA98A0D4296A1F5E002471B2 /* Metrics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Metrics.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA98A0E0296A1F5F002471B2 /* Metrics.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Metrics.entitlements; sourceTree = "<group>"; };
 		FA98A0E7296A255F002471B2 /* ASKCore */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = ASKCore; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 		FA1907222975502900277A84 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				FA3AD16A29B5CD1D00873D5C /* AppDelegate.swift */,
 				FA1907232975502900277A84 /* MetricsIOSApp.swift */,
 			);
 			path = App;
@@ -375,6 +378,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA3AD16B29B5CD1D00873D5C /* AppDelegate.swift in Sources */,
 				FA19073029755B5500277A84 /* IOC.swift in Sources */,
 				FA1907252975502900277A84 /* MetricsIOSApp.swift in Sources */,
 			);
@@ -563,6 +567,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Config/iOS/Info.plist;
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "Fetch metric data from HealthKit";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Fetch metric data from HealthKit";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -596,6 +602,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Config/iOS/Info.plist;
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "Fetch metric data from HealthKit";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Fetch metric data from HealthKit";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

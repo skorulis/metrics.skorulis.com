@@ -9,6 +9,11 @@ final class FetchStatusService: ObservableObject {
  
     @Published private var pluginStatuses: [String: Status] = [:]
     
+    
+    nonisolated init() {
+        
+    }
+    
     func start() {
         pluginStatuses.removeAll()
     }

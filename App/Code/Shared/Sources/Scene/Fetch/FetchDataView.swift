@@ -37,6 +37,10 @@ extension FetchDataView: View {
                 Text("Fetch Data")
             }
             .buttonStyle(ASKButtonStyle())
+            if let text = viewModel.lastUpdateString {
+                Text("Last update \(text)")
+            }
+            
         }
     }
     
